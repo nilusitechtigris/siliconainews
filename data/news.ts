@@ -13,6 +13,8 @@ export type Story = {
   time: string;
   published: string;
   graphNode: string;
+  sourceCount: number;
+  primarySource: string;
 };
 
 export type NodeCategory = 'Hardware' | 'Models' | 'Policy' | 'Robotics';
@@ -33,56 +35,56 @@ export const stories: Story[] = [
     title: 'The hidden bottleneck in the next generation of reasoning models',
     summary: 'Inference is getting cheaper. Moving memory is not. Three emerging architectures suggest the next race will be won between the chips.',
     keyPoint: 'Memory bandwidth is becoming the defining constraint—not raw compute.',
-    tags: ['LLMs', 'Hardware', 'HBM'], time: '6 min', published: '07:40', graphNode: 'hbm4',
+    tags: ['LLMs', 'Hardware', 'HBM'], time: '6 min', published: '07:40', graphNode: 'hbm4', sourceCount: 2, primarySource: 'NVIDIA',
   },
   {
     id: 'agent-economy', code: 'CA', author: 'The Cynical Analyst', role: 'MARKETS & MOATS', accent: 'amber',
     title: 'Everyone has an agent platform. Almost nobody has an agent economy.',
     summary: 'The demos are dazzling, the unit economics are not. We trace the uncomfortable gap between autonomy and sustainable margins.',
     keyPoint: 'Agent reliability costs are outpacing early productivity gains.',
-    tags: ['Agents', 'Markets', 'Inference'], time: '4 min', published: '08:15', graphNode: 'agentic-systems',
+    tags: ['Agents', 'Markets', 'Inference'], time: '4 min', published: '08:15', graphNode: 'agentic-systems', sourceCount: 2, primarySource: 'Anthropic',
   },
   {
     id: 'robot-middle', code: 'CO', author: 'The Cyber-Optimist', role: 'FUTURES & ROBOTICS', accent: 'blue',
     title: 'Robots are learning the messy middle of everyday work',
     summary: 'A new wave of tactile models is leaving pristine labs for warehouses, kitchens, and the glorious chaos of the real world.',
     keyPoint: 'Generalist control models now recover from real-world mistakes.',
-    tags: ['Robotics', 'World Models'], time: '5 min', published: '08:52', graphNode: 'embodied-ai',
+    tags: ['Robotics', 'World Models'], time: '5 min', published: '08:52', graphNode: 'embodied-ai', sourceCount: 2, primarySource: 'Google DeepMind',
   },
   {
     id: 'open-weights', code: 'OS', author: 'The Open Source Scout', role: 'MODELS & COMMUNITY', accent: 'coral',
     title: 'Small open models are quietly winning the deployment race',
     summary: 'Teams are trading leaderboard prestige for models that fit inside a budget, a device, and a governance policy.',
     keyPoint: 'Deployment fit is replacing benchmark rank as the deciding metric.',
-    tags: ['Open Source', 'Edge AI'], time: '5 min', published: '09:20', graphNode: 'open-models',
+    tags: ['Open Source', 'Edge AI'], time: '5 min', published: '09:20', graphNode: 'open-models', sourceCount: 2, primarySource: 'Hugging Face',
   },
   {
     id: 'energy-ledger', code: 'CL', author: 'The Carbon Ledger', role: 'ENERGY & INFRA', accent: 'mint',
     title: 'AI’s power problem is becoming a scheduling problem',
     summary: 'Data centers are learning to move flexible workloads through time, following cleaner and cheaper electricity across the grid.',
     keyPoint: 'Carbon-aware scheduling turns latency tolerance into margin.',
-    tags: ['Energy', 'Data Centers'], time: '7 min', published: '10:05', graphNode: 'power-grid',
+    tags: ['Energy', 'Data Centers'], time: '7 min', published: '10:05', graphNode: 'power-grid', sourceCount: 2, primarySource: 'Google',
   },
   {
     id: 'compute-policy', code: 'PW', author: 'The Policy Wonk', role: 'GOVERNANCE & POWER', accent: 'amber',
     title: 'Compute reporting is the new front line of AI policy',
     summary: 'Regulators are moving from debating abstract risk toward thresholds they can actually measure, audit, and enforce.',
     keyPoint: 'Governance is converging on compute, energy, and incident reporting.',
-    tags: ['Policy', 'Compute'], time: '6 min', published: '10:44', graphNode: 'compute-policy',
+    tags: ['Policy', 'Compute'], time: '6 min', published: '10:44', graphNode: 'compute-policy', sourceCount: 2, primarySource: 'European Commission',
   },
   {
     id: 'context-memory', code: 'UX', author: 'The Interface Cartographer', role: 'PRODUCT & INTERFACE', accent: 'blue',
     title: 'Long context is turning software into a place, not a tool',
     summary: 'When assistants remember projects instead of prompts, the interface shifts from command bar to persistent working environment.',
     keyPoint: 'Continuity—not context size—is the feature users can feel.',
-    tags: ['Context', 'UX', 'Agents'], time: '4 min', published: '11:18', graphNode: 'long-context',
+    tags: ['Context', 'UX', 'Agents'], time: '4 min', published: '11:18', graphNode: 'long-context', sourceCount: 2, primarySource: 'Anthropic',
   },
   {
     id: 'chiplets', code: 'RE', author: 'Deep-Tech Researcher', role: 'SYSTEMS & SILICON', accent: 'mint',
     title: 'Chiplets are making the AI accelerator a modular system',
     summary: 'Packaging, interconnect, and memory are becoming a design surface as important as the compute die itself.',
     keyPoint: 'The winning accelerator may be an ecosystem of specialized tiles.',
-    tags: ['Chiplets', 'Hardware'], time: '8 min', published: '11:46', graphNode: 'chiplets',
+    tags: ['Chiplets', 'Hardware'], time: '8 min', published: '11:46', graphNode: 'chiplets', sourceCount: 2, primarySource: 'AMD',
   },
 ];
 

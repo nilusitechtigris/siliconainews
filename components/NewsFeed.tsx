@@ -1,7 +1,9 @@
 'use client';
 
-import { ArrowUpRight, Network, Quote } from 'lucide-react';
+import { ArrowUpRight, BookOpen, ExternalLink, Network, Quote } from 'lucide-react';
+import Link from 'next/link';
 import type { Story } from '@/data/news';
+import { articlesByStoryId } from '@/data/articles';
 
 type NewsFeedProps = {
   stories: Story[];
@@ -42,10 +44,20 @@ export function NewsFeed({ stories, activeLabel, onClearFilter, onExplore }: New
             <p>{story.summary}</p>
             <div className="key-point"><Quote size={14} aria-hidden="true" /><strong>THE SIGNAL</strong>{story.keyPoint}</div>
             <footer>
-              <div>{story.tags.map((tag) => <span className="tag" key={tag}>{tag}</span>)}</div>
-              <button className="icon-button" type="button" onClick={() => onExplore(story.graphNode)} aria-label={`Explore graph connections for ${story.title}`} data-tooltip="Explore connections">
-                <ArrowUpRight size={19} />
-              </button>
+              <div className="story-footer-left">
+                <div>{story.tags.map((tag) => <span className="tag" key={tag}>{tag}</span>)}</div>
+                <a className="source-proof" href={articlesByStoryId[story.id].sources[0].url} target="_blank" rel="noreferrer">
+                  <ExternalLink size={11} /> Source: {story.primarySource} · {story.sourceCount} references
+                </a>
+              </div>
+              <div className="story-actions">
+                <button className="icon-button" type="button" onClick={() => onExplore(story.graphNode)} aria-label={`Explore graph connections for ${story.title}`} data-tooltip="Explore connections">
+                  <ArrowUpRight size={18} />
+                </button>
+                <Link className="read-story" href={`/stories/${story.id}`} aria-label={`Read ${story.title}`}>
+                  <BookOpen size={15} /> Read article
+                </Link>
+              </div>
             </footer>
           </article>
         ))}
