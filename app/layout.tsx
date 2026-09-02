@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://siliconainews.pages.dev'),
+  metadataBase: new URL('https://siliconainews.com'),
   title: {
     default: 'Silicon AI News — Technology, Connected',
     template: '%s · Silicon AI News',
