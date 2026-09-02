@@ -23,8 +23,11 @@ export const metadata: Metadata = {
   keywords: ['artificial intelligence', 'technology news', 'AI agents', 'knowledge graph', 'tech metrics'],
   authors: [{ name: 'Silicon AI Newsroom' }],
   icons: {
-    icon: [{ url: '/favicon.svg', type: 'image/svg+xml', sizes: 'any' }],
-    shortcut: '/favicon.svg',
+    icon: [
+      { url: '/favicon-96.png', type: 'image/png', sizes: '96x96' },
+      { url: '/favicon.svg', type: 'image/svg+xml', sizes: 'any' },
+    ],
+    shortcut: '/favicon-96.png',
   },
   manifest: '/site.webmanifest',
   openGraph: {
