@@ -17,10 +17,13 @@ export function ThemeToggle({ className = '', showLabel = false }: ThemeTogglePr
   const [theme, setTheme] = useState<Theme>('dark');
 
   useEffect(() => {
-    const frame = window.requestAnimationFrame(() => {
-      setTheme(document.documentElement.dataset.theme === 'light' ? 'light' : 'dark');
-    });
-    return () => window.cancelAnimationFrame(frame);
+    const syncTheme = () => setTheme(document.documentElement.dataset.theme === 'light' ? 'light' : 'dark');
+    const frame = window.requestAnimationFrame(syncTheme);
+    window.addEventListener('silicon-theme-change', syncTheme);
+    return () => {
+      window.cancelAnimationFrame(frame);
+      window.removeEventListener('silicon-theme-change', syncTheme);
+    };
   }, []);
 
   const nextTheme = theme === 'dark' ? 'light' : 'dark';
