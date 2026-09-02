@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { ArrowLeft, ArrowUpRight, Clock3, ExternalLink, Quote, ShieldCheck } from 'lucide-react';
+import { ArticleVisual } from '@/components/ArticleVisual';
 import { ReadingProgress } from '@/components/ReadingProgress';
 import { articlesByStoryId } from '@/data/articles';
 import { stories } from '@/data/news';
@@ -74,6 +75,8 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
               <Quote size={21} aria-hidden="true" />
               <p>{story.summary}</p>
             </div>
+
+            <ArticleVisual storyId={story.id} />
 
             {article.sections.map((section, sectionIndex) => (
               <section key={section.heading}>
