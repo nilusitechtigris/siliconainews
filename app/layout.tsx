@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 
@@ -22,6 +22,11 @@ export const metadata: Metadata = {
   applicationName: 'Silicon AI News',
   keywords: ['artificial intelligence', 'technology news', 'AI agents', 'knowledge graph', 'tech metrics'],
   authors: [{ name: 'Silicon AI Newsroom' }],
+  icons: {
+    icon: [{ url: '/favicon.svg', type: 'image/svg+xml', sizes: 'any' }],
+    shortcut: '/favicon.svg',
+  },
+  manifest: '/site.webmanifest',
   openGraph: {
     type: 'website',
     title: 'Silicon AI News',
@@ -36,13 +41,29 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport: Viewport = {
+  colorScheme: 'dark light',
+  themeColor: '#0c0f0e',
+};
+
+const themeScript = `
+  try {
+    var savedTheme = localStorage.getItem('silicon-theme');
+    var theme = savedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+    document.documentElement.dataset.theme = theme;
+    document.documentElement.style.colorScheme = theme;
+    document.querySelector('meta[name="theme-color"]')?.setAttribute('content', theme === 'dark' ? '#0c0f0e' : '#f3f1ea');
+  } catch (error) {}
+`;
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
+      <head><script dangerouslySetInnerHTML={{ __html: themeScript }} /></head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import { ArrowLeft, ArrowUpRight, Clock3, ExternalLink, Quote, ShieldCheck } from 'lucide-react';
 import { ArticleVisual } from '@/components/ArticleVisual';
 import { ReadingProgress } from '@/components/ReadingProgress';
+import { ThemeToggle } from '@/components/ThemeToggle';
 import { articlesByStoryId } from '@/data/articles';
 import { stories } from '@/data/news';
 
@@ -43,7 +44,10 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
           <span className="brand-mark">S</span>
           <span>Silicon <em>AI</em> News</span>
         </Link>
-        <Link className="back-link" href="/#briefing"><ArrowLeft size={16} /> Back to briefing</Link>
+        <div className="article-topbar-tools">
+          <ThemeToggle className="article-theme-toggle" />
+          <Link className="back-link" href="/#briefing"><ArrowLeft size={16} /> Back to briefing</Link>
+        </div>
       </header>
 
       <article className="longform-article">

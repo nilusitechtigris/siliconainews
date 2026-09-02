@@ -30,6 +30,14 @@ export default function KnowledgeGraph({ selectedNode, onSelect, onTick, compact
   const [query, setQuery] = useState('');
   const [listView, setListView] = useState(false);
   const [hover, setHover] = useState<{ node: SimNode; x: number; y: number } | null>(null);
+  const [colorTheme, setColorTheme] = useState<'dark' | 'light'>('dark');
+
+  useEffect(() => {
+    const syncTheme = () => setColorTheme(document.documentElement.dataset.theme === 'light' ? 'light' : 'dark');
+    syncTheme();
+    window.addEventListener('silicon-theme-change', syncTheme);
+    return () => window.removeEventListener('silicon-theme-change', syncTheme);
+  }, []);
 
   useEffect(() => {
     const shell = shellRef.current;
@@ -89,7 +97,9 @@ export default function KnowledgeGraph({ selectedNode, onSelect, onTick, compact
       context.beginPath();
       context.moveTo(source.x, source.y);
       context.lineTo(target.x, target.y);
-      context.strokeStyle = emphasized ? 'rgba(122, 149, 132, .38)' : 'rgba(77, 91, 82, .13)';
+      context.strokeStyle = colorTheme === 'light'
+        ? (emphasized ? 'rgba(45, 75, 57, .42)' : 'rgba(65, 83, 71, .16)')
+        : (emphasized ? 'rgba(122, 149, 132, .38)' : 'rgba(77, 91, 82, .13)');
       context.lineWidth = emphasized ? 1 : .7;
       context.stroke();
     });
@@ -113,14 +123,14 @@ export default function KnowledgeGraph({ selectedNode, onSelect, onTick, compact
       context.shadowColor = colors[node.category];
       context.fill();
       context.shadowBlur = 0;
-      context.fillStyle = isSelected ? '#f5f7f1' : '#aab2aa';
+      context.fillStyle = colorTheme === 'light' ? (isSelected ? '#101914' : '#35463b') : (isSelected ? '#f5f7f1' : '#aab2aa');
       context.font = `${isSelected ? 600 : 500} ${isSelected ? 12 : 10}px ui-monospace, SFMono-Regular, Menlo, monospace`;
       context.textAlign = 'center';
       context.fillText(node.label, node.x, node.y + radius + 17);
     });
     context.restore();
     context.globalAlpha = 1;
-  }, [dimensions, listView, nodes, selectedNode, viewport, visibleNodes]);
+  }, [colorTheme, dimensions, listView, nodes, selectedNode, viewport, visibleNodes]);
 
   const nodeAt = (clientX: number, clientY: number) => {
     const rect = canvasRef.current?.getBoundingClientRect();

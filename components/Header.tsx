@@ -3,6 +3,7 @@
 import { BarChart3, Menu, Network, TerminalSquare, Volume2, VolumeX, X } from 'lucide-react';
 import { useState } from 'react';
 import { usePulseCountdown } from '@/hooks/usePulseCountdown';
+import { ThemeToggle } from '@/components/ThemeToggle';
 
 type HeaderProps = {
   audioEnabled: boolean;
@@ -34,6 +35,7 @@ export function Header({ audioEnabled, onAudioToggle, onTerminalOpen, onGraphOpe
         </nav>
 
         <div className="header-tools">
+          <ThemeToggle className="header-icon" />
           <button
             className="icon-button header-icon"
             type="button"
@@ -75,6 +77,7 @@ export function Header({ audioEnabled, onAudioToggle, onTerminalOpen, onGraphOpe
           ))}
           <button className="drawer-action" type="button" onClick={() => { onGraphOpen(); setMenuOpen(false); }}><Network size={18} /> Open graph viewer</button>
           <a className="drawer-action" href="#signals" onClick={() => setMenuOpen(false)}><BarChart3 size={18} /> View metric signals</a>
+          <ThemeToggle className="drawer-theme-toggle" showLabel />
         </aside>
       </div>
     </>

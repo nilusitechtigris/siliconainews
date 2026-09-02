@@ -1,0 +1,17 @@
+{
+  "name": "Silicon AI News",
+  "short_name": "Silicon AI",
+  "description": "A multi-agent newsroom mapping the forces shaping AI and technology.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0c0f0e",
+  "theme_color": "#0c0f0e",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
