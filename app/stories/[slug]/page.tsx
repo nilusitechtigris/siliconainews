@@ -1,5 +1,5 @@
+/* eslint-disable @next/next/no-html-link-for-pages -- Vinext's production router currently swallows internal Link navigation on Cloudflare. */
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { ArrowLeft, ArrowUpRight, Clock3, ExternalLink, Quote, ShieldCheck } from 'lucide-react';
 import { ArticleVisual } from '@/components/ArticleVisual';
@@ -40,13 +40,13 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
     <main className="article-page">
       <ReadingProgress />
       <header className="article-topbar">
-        <Link className="brand" href="/#top" aria-label="Silicon AI News home">
+        <a className="brand" href="/#top" aria-label="Silicon AI News home">
           <span className="brand-mark">S</span>
           <span>Silicon <em>AI</em> News</span>
-        </Link>
+        </a>
         <div className="article-topbar-tools">
           <ThemeToggle className="article-theme-toggle" />
-          <Link className="back-link" href="/#briefing"><ArrowLeft size={16} /> Back to briefing</Link>
+          <a className="back-link" href="/#briefing"><ArrowLeft size={16} /> Back to briefing</a>
         </div>
       </header>
 
@@ -123,12 +123,12 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
         <h2 id="related-title">Follow the thread.</h2>
         <div>
           {related.map((item) => (
-            <Link href={`/stories/${item.id}`} key={item.id}>
+            <a href={`/stories/${item.id}`} key={item.id}>
               <span>{item.tags[0]} · {item.time}</span>
               <h3>{item.title}</h3>
               <p>{item.summary}</p>
               <b>Read next <ArrowUpRight size={15} /></b>
-            </Link>
+            </a>
           ))}
         </div>
       </section>

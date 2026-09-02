@@ -1,7 +1,6 @@
 'use client';
 
 import { ArrowUpRight, BookOpen, ExternalLink, Network, Quote } from 'lucide-react';
-import Link from 'next/link';
 import type { Story } from '@/data/news';
 import { articlesByStoryId } from '@/data/articles';
 
@@ -54,9 +53,9 @@ export function NewsFeed({ stories, activeLabel, onClearFilter, onExplore }: New
                 <button className="icon-button" type="button" onClick={() => onExplore(story.graphNode)} aria-label={`Explore graph connections for ${story.title}`} data-tooltip="Explore connections">
                   <ArrowUpRight size={18} />
                 </button>
-                <Link className="read-story" href={`/stories/${story.id}`} aria-label={`Read ${story.title}`}>
+                <a className="read-story" href={`/stories/${story.id}`} aria-label={`Read ${story.title}`}>
                   <BookOpen size={15} /> Read article
-                </Link>
+                </a>
               </div>
             </footer>
           </article>
