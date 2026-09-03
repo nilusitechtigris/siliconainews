@@ -1,7 +1,7 @@
 'use client';
 
 import { ArrowRight, ArrowUpRight, BookOpen, ExternalLink, Network, Quote } from 'lucide-react';
-import type { Story } from '@/data/news';
+import { storyPublication, type Story } from '@/data/news';
 import { articlesByStoryId } from '@/data/articles';
 
 type NewsFeedProps = {
@@ -60,10 +60,10 @@ export function NewsFeed({
                 <b aria-hidden="true">{story.code}</b>
                 <span><i>{story.role}</i>{story.author}</span>
               </span>
-              <span className="read-time">{story.published} · {story.time}</span>
+              <span className="read-time">{storyPublication[story.id]?.shortLabel} · {story.published} · {story.time}</span>
             </div>
             <a className="story-title-link" href={`/stories/${story.id}`} aria-label={`Read ${story.title}`}>
-              <span>WHY THIS STORY NOW · 0{index + 1}</span>
+              <span>WHY THIS STORY NOW · {String(index + 1).padStart(2, '0')}</span>
               <h3>{story.title}</h3>
               <ArrowRight size={18} aria-hidden="true" />
             </a>

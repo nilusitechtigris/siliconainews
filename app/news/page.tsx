@@ -10,9 +10,9 @@ export default function NewsPage() {
     <SiteFrame>
       <section className="route-masthead route-mint" id="top">
         <a className="route-back" href="/"><ArrowLeft size={15} /> Back to switchboard</a>
-        <div><span>ALL REPORTING</span><Newspaper size={30} aria-hidden="true" /></div>
+        <div><span>COMPLETE ARCHIVE</span><Newspaper size={30} aria-hidden="true" /></div>
         <h1>The full newsroom.</h1>
-        <p>Every report from the latest agent run, arranged for scanning and backed by sources you can open.</p>
+        <p>Today’s reporting and every earlier edition, accumulated in one sourced, human-readable archive.</p>
       </section>
       <div className="signal-ticker" aria-label="Trending topics">
         <span className="ticker-label">SIGNAL WIRE</span>
@@ -27,7 +27,8 @@ export default function NewsPage() {
         onExplore={(nodeId) => window.location.assign(`/graph?node=${encodeURIComponent(nodeId)}`)}
         eyebrow="ALL NEWS"
         title="Every signal, one desk."
-        description="Browse the complete current edition or map any story into the knowledge graph."
+        description="Browse every published pulse—newest first—or map any story into the cumulative knowledge graph."
+        runLabel={`ARCHIVE · ${stories.length} STORIES`}
       />
     </SiteFrame>
   );

@@ -44,7 +44,7 @@ export default function GraphPage() {
             <a className="route-back" href="/"><ArrowLeft size={15} /> Back to switchboard</a>
             <div><span>KNOWLEDGE GRAPH</span><Network size={30} aria-hidden="true" /></div>
             <h1>Follow the connections.</h1>
-            <p>Search an entity, see why it connects, and reveal the reporting behind every relationship.</p>
+            <p>Search the accumulated archive, see why entities connect, and reveal the reporting behind every relationship.</p>
           </section>
           <section className="graph-section section-chapter" id="graph" aria-labelledby="graph-title">
             <div className="section-heading graph-heading section-heading-graph">
@@ -53,7 +53,7 @@ export default function GraphPage() {
                 <div>
                   <span className="section-index blue-text">LIVE ENTITY NETWORK</span>
                   <h2 id="graph-title">Nothing happens alone.</h2>
-                  <p className="section-description">Select an entity to label its lines, explain each relationship, and reveal its connected stories.</p>
+                  <p className="section-description">Select an entity to label its lines, explain each relationship, and reveal connected stories across every published pulse.</p>
                 </div>
               </div>
               <div className="section-command graph-command">

@@ -1,8 +1,6 @@
 import { ArrowDown, ArrowRight, BarChart3, BookOpen, Network, Newspaper } from 'lucide-react';
 import { SiteFrame } from '@/components/SiteFrame';
-import { graphNodes, stories } from '@/data/news';
-
-const agentDeskCount = new Set(stories.map((story) => story.author)).size;
+import { graphNodes, latestStories, stories } from '@/data/news';
 
 export default function Home() {
   return (
@@ -16,8 +14,8 @@ export default function Home() {
 
         <aside className="landing-status" aria-label="Current intelligence pulse summary">
           <span><i /> LATEST PULSE READY</span>
-          <b>{String(stories.length).padStart(2, '0')} reports</b>
-          <b>{String(agentDeskCount).padStart(2, '0')} agent desks</b>
+          <b>{String(latestStories.length).padStart(2, '0')} reports today</b>
+          <b>{String(stories.length).padStart(2, '0')} total reports</b>
           <b>{String(graphNodes.length).padStart(2, '0')} connected entities</b>
         </aside>
 
@@ -29,15 +27,15 @@ export default function Home() {
 
         <nav className="decision-grid landing-decisions" aria-label="Choose how to explore Silicon AI News">
           <a className="decision-card decision-all" href="/news">
-            <span className="decision-top"><b>01 · COMPLETE EDITION</b><Newspaper size={26} aria-hidden="true" /></span>
+            <span className="decision-top"><b>01 · FULL ARCHIVE</b><Newspaper size={26} aria-hidden="true" /></span>
             <strong>All news</strong>
-            <small>Scan all {stories.length} reports from every agent desk.</small>
+            <small>Scan all {stories.length} reports across every published pulse.</small>
             <span className="decision-cta">Open the newsroom <ArrowRight size={16} /></span>
           </a>
           <a className="decision-card decision-today" href="/today">
             <span className="decision-top"><b>02 · FASTEST ROUTE</b><BookOpen size={26} aria-hidden="true" /></span>
             <strong>Today&apos;s news</strong>
-            <small>Read the three signals leading the latest pulse.</small>
+            <small>Read all {latestStories.length} reports in the latest pulse.</small>
             <span className="decision-cta">Start with today <ArrowRight size={16} /></span>
           </a>
           <a className="decision-card decision-curve" href="/evolution">

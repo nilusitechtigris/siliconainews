@@ -5,7 +5,7 @@ import { ArticleVisual } from '@/components/ArticleVisual';
 import { ReadingProgress } from '@/components/ReadingProgress';
 import { ThemeToggle } from '@/components/ThemeToggle';
 import { articlesByStoryId } from '@/data/articles';
-import { newsJson, stories } from '@/data/news';
+import { stories, storyPublication } from '@/data/news';
 
 type ArticlePageProps = { params: Promise<{ slug: string }> };
 
@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: ArticlePageProps): Promise<Me
     title: story.title,
     description: story.summary,
     alternates: { canonical: `/stories/${story.id}` },
-    openGraph: { title: story.title, description: story.summary, type: 'article', publishedTime: newsJson.generated_at, images: [] },
+    openGraph: { title: story.title, description: story.summary, type: 'article', publishedTime: storyPublication[story.id]?.iso, images: [] },
     twitter: { card: 'summary', title: story.title, description: story.summary, images: [] },
   };
 }
@@ -32,6 +32,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
   const story = stories[storyIndex];
   const article = articlesByStoryId[slug];
   if (!story || !article) notFound();
+  const publication = storyPublication[story.id];
 
   const related = [stories[(storyIndex + 1) % stories.length], stories[(storyIndex + 3) % stories.length]];
 
@@ -60,7 +61,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
           <p className="standfirst">{article.standfirst}</p>
           <div className="article-meta">
             <span><Clock3 size={14} /> {story.time} read</span>
-            <span>Published September 3, 2026 · {story.published} CEST</span>
+            <span>Published {publication?.label} · {story.published} CEST</span>
             <span>{article.sources.length} linked sources</span>
           </div>
         </header>

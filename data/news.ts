@@ -1,3 +1,5 @@
+import { archivedEditions, archivedGraphLinks, archivedGraphNodes } from './archive';
+
 export type PersonaAccent = 'mint' | 'amber' | 'blue' | 'coral';
 
 export type Story = {
@@ -17,6 +19,13 @@ export type Story = {
   primarySource: string;
 };
 
+export type NewsEdition = {
+  pulse: string;
+  publishedDate: string;
+  publishedLabel: string;
+  stories: Story[];
+};
+
 export type NodeCategory = 'Hardware' | 'Models' | 'Policy' | 'Robotics';
 
 export type GraphNode = {
@@ -29,7 +38,7 @@ export type GraphNode = {
 
 export type GraphLink = { source: string; target: string; relation: string };
 
-export const stories: Story[] = [
+export const latestStories: Story[] = [
   {
     id: 'nvidia-huggingface-acquisition', code: 'OS', author: 'The Open Source Scout', role: 'MODELS & COMMUNITY', accent: 'mint',
     title: 'Nvidia is buying the AI commons. The $12.93B promise is that it stays open.',
@@ -67,7 +76,14 @@ export const stories: Story[] = [
   },
 ];
 
-export const graphNodes: GraphNode[] = [
+export const latestEdition: NewsEdition = {
+  pulse: 'NOON_RUN_03',
+  publishedDate: '2026-09-03',
+  publishedLabel: 'September 3, 2026',
+  stories: latestStories,
+};
+
+const latestGraphNodes: GraphNode[] = [
   { id: 'hugging-face-hub', label: 'Hugging Face Hub', category: 'Models', storyIds: ['nvidia-huggingface-acquisition'], weight: 10 },
   { id: 'open-ecosystem', label: 'Open Ecosystem', category: 'Policy', storyIds: ['nvidia-huggingface-acquisition', 'muse-spark-release'], weight: 9 },
   { id: 'hardware-platform', label: 'Hardware Neutrality', category: 'Hardware', storyIds: ['nvidia-huggingface-acquisition', 'broadcom-ai-revenue'], weight: 8 },
@@ -84,7 +100,7 @@ export const graphNodes: GraphNode[] = [
   { id: 'embodied-ai', label: 'Embodied AI', category: 'Robotics', storyIds: ['london-robotaxi-launch', 'muse-spark-release'], weight: 7 },
 ];
 
-export const graphLinks: GraphLink[] = [
+const latestGraphLinks: GraphLink[] = [
   { source: 'hugging-face-hub', target: 'open-ecosystem', relation: 'tests promised openness' },
   { source: 'open-ecosystem', target: 'hardware-platform', relation: 'requires rival support' },
   { source: 'hugging-face-hub', target: 'agent-workflows', relation: 'distributes open models' },
@@ -101,11 +117,42 @@ export const graphLinks: GraphLink[] = [
   { source: 'embodied-ai', target: 'agent-workflows', relation: 'acts in physical systems' },
 ];
 
+export const editions: NewsEdition[] = [latestEdition, ...archivedEditions];
+export const stories: Story[] = editions.flatMap((edition) => edition.stories);
+
+const archivedEmbodiedAi = archivedGraphNodes.find((node) => node.id === 'embodied-ai');
+
+export const graphNodes: GraphNode[] = [
+  ...latestGraphNodes.map((node) => node.id === 'embodied-ai'
+    ? {
+        ...node,
+        storyIds: [...new Set([...node.storyIds, ...(archivedEmbodiedAi?.storyIds ?? [])])],
+        weight: Math.max(node.weight, archivedEmbodiedAi?.weight ?? 0),
+      }
+    : node),
+  ...archivedGraphNodes.filter((node) => !latestGraphNodes.some((latestNode) => latestNode.id === node.id)),
+];
+
+export const graphLinks: GraphLink[] = [...latestGraphLinks, ...archivedGraphLinks];
+
+export const storyPublication: Record<string, { label: string; shortLabel: string; iso: string }> = Object.fromEntries(
+  editions.flatMap((edition) => edition.stories.map((story) => [story.id, {
+    label: edition.publishedLabel,
+    shortLabel: new Intl.DateTimeFormat('en', { month: 'short', day: '2-digit', timeZone: 'UTC' })
+      .format(new Date(`${edition.publishedDate}T00:00:00Z`))
+      .toUpperCase(),
+    iso: `${edition.publishedDate}T${story.published}:00+02:00`,
+  }])),
+);
+
 export const categories: NodeCategory[] = ['Hardware', 'Models', 'Policy', 'Robotics'];
 
 export const newsJson = {
-  pulse: 'NOON_RUN_03',
+  pulse: latestEdition.pulse,
   generated_at: '2026-09-03T16:38:21+02:00',
   status: 'complete',
-  stories: stories.map(({ id, author, title, tags }) => ({ id, author, title, tags })),
+  current_story_count: latestStories.length,
+  archive_story_count: stories.length,
+  archive_pulses: [...archivedEditions.map((edition) => edition.pulse), latestEdition.pulse],
+  stories: latestStories.map(({ id, author, title, tags }) => ({ id, author, title, tags })),
 };
