@@ -3,36 +3,36 @@
 import { ArrowDownRight, ArrowUpRight, Cpu, Database, Gauge } from 'lucide-react';
 import { useMemo, useState } from 'react';
 
-type Horizon = 'past' | 'now' | 'future';
+type Horizon = 'past' | 'future' | 'all';
 type MetricKey = 'tokens' | 'vram' | 'context';
 
 const metrics = {
   tokens: {
     label: 'Cost / 1M tokens', unit: '$', inverse: true, icon: Gauge,
-    values: { 2021: 28, 2023: 11.2, 2024: 4.8, 2025: 1.4, 2026: 0.62, 2027: 0.31, 2028: 0.18, 2029: 0.09 },
+    values: { 2021: 28, 2022: 19.6, 2023: 11.2, 2024: 4.8, 2025: 1.4, 2026: 0.62, 2027: 0.31, 2028: 0.18, 2029: 0.09, 2030: 0.05, 2031: 0.03 },
     current: '$0.62', change: '−95.6%', note: 'since 2021',
   },
   vram: {
     label: 'GPU VRAM / $100', unit: 'GB', inverse: false, icon: Cpu,
-    values: { 2021: 0.8, 2023: 1.2, 2024: 1.9, 2025: 2.8, 2026: 4.1, 2027: 5.7, 2028: 7.4, 2029: 10.2 },
+    values: { 2021: 0.8, 2022: 1, 2023: 1.2, 2024: 1.9, 2025: 2.8, 2026: 4.1, 2027: 5.7, 2028: 7.4, 2029: 10.2, 2030: 13.8, 2031: 18.3 },
     current: '4.1 GB', change: '+412%', note: 'since 2021',
   },
   context: {
     label: 'Context window', unit: 'M', inverse: false, icon: Database,
-    values: { 2021: 0.008, 2023: 0.1, 2024: 0.5, 2025: 1, 2026: 2, 2027: 4, 2028: 7, 2029: 12 },
+    values: { 2021: 0.008, 2022: 0.032, 2023: 0.1, 2024: 0.5, 2025: 1, 2026: 2, 2027: 4, 2028: 7, 2029: 12, 2030: 20, 2031: 32 },
     current: '2M', change: '+249×', note: 'since 2021',
   },
 } as const;
 
 const ranges: Record<Horizon, number[]> = {
-  past: [2021, 2023, 2024, 2025, 2026],
-  now: [2024, 2025, 2026],
-  future: [2026, 2027, 2028, 2029],
+  past: [2021, 2022, 2023, 2024, 2025, 2026],
+  future: [2026, 2027, 2028, 2029, 2030, 2031],
+  all: [2021, 2022, 2023, 2024, 2025, 2026, 2027, 2028, 2029, 2030, 2031],
 };
 
 export function MetricsWidget() {
   const [metric, setMetric] = useState<MetricKey>('tokens');
-  const [horizon, setHorizon] = useState<Horizon>('past');
+  const [horizon, setHorizon] = useState<Horizon>('all');
   const [hoveredYear, setHoveredYear] = useState<number | null>(null);
   const active = metrics[metric];
 
@@ -40,7 +40,8 @@ export function MetricsWidget() {
     year,
     value: active.values[year as keyof typeof active.values],
   })), [active, horizon]);
-  const max = Math.max(...points.map((point) => point.value));
+  const visualValues = points.map((point) => active.inverse ? 1 / point.value : point.value);
+  const visualMax = Math.max(...visualValues);
 
   return (
     <section className="signals-section section-chapter" id="signals" aria-labelledby="signals-title" data-reveal>
@@ -88,22 +89,21 @@ export function MetricsWidget() {
               <h3>{active.current} <small>{active.note}</small></h3>
             </div>
             <div className="horizon-tabs" role="group" aria-label="Time horizon">
-              <button type="button" className={horizon === 'past' ? 'active' : ''} onClick={() => setHorizon('past')}>PAST 5Y</button>
-              <button type="button" className={horizon === 'now' ? 'active' : ''} onClick={() => setHorizon('now')}>PRESENT</button>
-              <button type="button" className={horizon === 'future' ? 'active' : ''} onClick={() => setHorizon('future')}>NEXT 3Y</button>
+              <button type="button" aria-pressed={horizon === 'past'} className={horizon === 'past' ? 'active' : ''} onClick={() => setHorizon('past')}>PAST 5Y</button>
+              <button type="button" aria-pressed={horizon === 'future'} className={horizon === 'future' ? 'active' : ''} onClick={() => setHorizon('future')}>FUTURE 5Y</button>
+              <button type="button" aria-pressed={horizon === 'all'} className={horizon === 'all' ? 'active' : ''} onClick={() => setHorizon('all')}>ALL</button>
             </div>
           </div>
 
-          <div className="bar-chart" aria-label={`${active.label} over time`}>
+          <div className={`bar-chart range-${horizon}`} aria-label={`${active.label} over time`}>
             <div className="chart-rule rule-25" /><div className="chart-rule rule-50" /><div className="chart-rule rule-75" />
             {points.map((point) => {
-              const visualValue = active.inverse ? max / point.value : point.value;
-              const visualMax = active.inverse ? Math.max(...points.map((p) => max / p.value)) : max;
-              const height = 12 + (visualValue / visualMax) * 78;
+              const visualValue = active.inverse ? 1 / point.value : point.value;
+              const height = Math.max(3, (visualValue / visualMax) * 100);
               const projected = point.year > 2026;
               return (
                 <button
-                  className={`bar-column ${projected ? 'projected' : ''}`}
+                  className={`bar-column ${projected ? 'projected' : ''} ${point.year === 2026 ? 'current' : ''}`}
                   key={point.year}
                   style={{ '--bar-height': `${height}%` } as React.CSSProperties}
                   type="button"

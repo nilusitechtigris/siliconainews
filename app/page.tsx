@@ -1,7 +1,7 @@
 'use client';
 
 import dynamic from 'next/dynamic';
-import { ArrowDown, ArrowRight, Braces, Network, X } from 'lucide-react';
+import { ArrowRight, BarChart3, BookOpen, Braces, Network, Newspaper, X } from 'lucide-react';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { Header } from '@/components/Header';
 import { MetricsWidget } from '@/components/MetricsWidget';
@@ -88,14 +88,7 @@ export default function Home() {
         <div className="hero-copy">
           <div className="eyebrow"><span>DAILY INTELLIGENCE</span><i /> SEP 02, 2026</div>
           <h1>Technology moves fast.<br /><span>We connect the dots.</span></h1>
-          <p>A multi-agent newsroom mapping the forces, people, and machines shaping what comes next.</p>
-          <div className="hero-actions">
-            <a className="primary-action" href="#briefing">Read today&apos;s briefing <ArrowDown size={16} /></a>
-            <button className="secondary-action" type="button" onClick={() => {
-              if (window.matchMedia('(max-width: 760px)').matches) setMobileGraphOpen(true);
-              else document.getElementById('graph')?.scrollIntoView({ behavior: 'smooth' });
-            }}><Network size={16} /> Explore knowledge graph</button>
-          </div>
+          <p>Choose your way into the story: scan the newsroom, read today&apos;s lead, compare the technology curve, or explore the network behind it.</p>
         </div>
 
         <aside className="pulse-map" aria-label="Current intelligence pulse summary">
@@ -109,6 +102,39 @@ export default function Home() {
             <span><b>08</b> stories</span><span><b>05</b> agents</span><span><b>13</b> entities</span>
           </div>
         </aside>
+
+        <nav className="decision-grid" aria-label="Choose how to explore Silicon AI News">
+          <button className="decision-card decision-all" type="button" onClick={() => {
+            setSelectedNode(null);
+            document.getElementById('briefing')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }}>
+            <span className="decision-top"><b>01</b><Newspaper size={21} aria-hidden="true" /></span>
+            <strong>All news</strong>
+            <small>Scan all {stories.length} reports from every agent desk.</small>
+            <span className="decision-cta">Open newsroom <ArrowRight size={15} /></span>
+          </button>
+          <a className="decision-card decision-today" href={`/stories/${stories[0].id}`}>
+            <span className="decision-top"><b>02</b><BookOpen size={21} aria-hidden="true" /></span>
+            <strong>Today&apos;s news</strong>
+            <small>Start with the lead story selected from the latest pulse.</small>
+            <span className="decision-cta">Read the lead <ArrowRight size={15} /></span>
+          </a>
+          <a className="decision-card decision-curve" href="#signals">
+            <span className="decision-top"><b>03</b><BarChart3 size={21} aria-hidden="true" /></span>
+            <strong>The history curve</strong>
+            <small>Compare cost, memory value, and context over time.</small>
+            <span className="decision-cta">Open evolution <ArrowRight size={15} /></span>
+          </a>
+          <button className="decision-card decision-graph" type="button" onClick={() => {
+              if (window.matchMedia('(max-width: 760px)').matches) setMobileGraphOpen(true);
+              else document.getElementById('graph')?.scrollIntoView({ behavior: 'smooth' });
+            }}>
+            <span className="decision-top"><b>04</b><Network size={21} aria-hidden="true" /></span>
+            <strong>Knowledge graph</strong>
+            <small>Trace companies, models, hardware, and policy connections.</small>
+            <span className="decision-cta">Explore the map <ArrowRight size={15} /></span>
+          </button>
+        </nav>
       </section>
 
       <div className="signal-ticker" aria-label="Trending topics">
