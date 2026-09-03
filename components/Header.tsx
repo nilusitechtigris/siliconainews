@@ -31,7 +31,7 @@ export function Header({ audioEnabled, onAudioToggle, onTerminalOpen, onGraphOpe
         </a>
 
         <nav className="desktop-nav" aria-label="Primary navigation">
-          {navItems.map((item) => <a href={item.href} key={item.label}>{item.label}</a>)}
+          {navItems.map((item, index) => <a href={item.href} key={item.label}><span>0{index + 1}</span>{item.label}</a>)}
         </nav>
 
         <div className="header-tools">

@@ -2,7 +2,7 @@
 
 import dynamic from 'next/dynamic';
 import { ArrowDown, ArrowRight, Braces, Network, X } from 'lucide-react';
-import { useCallback, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { Header } from '@/components/Header';
 import { MetricsWidget } from '@/components/MetricsWidget';
 import { NewsFeed } from '@/components/NewsFeed';
@@ -20,6 +20,28 @@ export default function Home() {
   const [audioEnabled, setAudioEnabled] = useState(false);
   const [mobileGraphOpen, setMobileGraphOpen] = useState(false);
   const { terminalOpen, setTerminalOpen } = useTerminalMode();
+
+  useEffect(() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    const root = document.documentElement;
+    const sections = Array.from(document.querySelectorAll<HTMLElement>('[data-reveal]'));
+    root.classList.add('motion-ready');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: .12, rootMargin: '0px 0px -8% 0px' });
+
+    sections.forEach((section) => observer.observe(section));
+    return () => {
+      observer.disconnect();
+      root.classList.remove('motion-ready');
+    };
+  }, []);
 
   const activeNode = graphNodes.find((node) => node.id === selectedNode);
   const visibleStories = useMemo(() => activeNode
@@ -106,13 +128,20 @@ export default function Home() {
 
       <MetricsWidget />
 
-      <section className="graph-section" id="graph" aria-labelledby="graph-title">
-        <div className="section-heading graph-heading">
-          <div>
-            <span className="section-index blue-text">03 / KNOWLEDGE GRAPH</span>
-            <h2 id="graph-title">Nothing happens alone.</h2>
+      <section className="graph-section section-chapter" id="graph" aria-labelledby="graph-title" data-reveal>
+        <div className="section-heading graph-heading section-heading-graph">
+          <div className="section-identity">
+            <span className="chapter-number">03</span>
+            <div>
+              <span className="section-index blue-text">KNOWLEDGE GRAPH</span>
+              <h2 id="graph-title">Nothing happens alone.</h2>
+              <p className="section-description">Select an entity to reveal the stories around it. Every edge is a thread in today&apos;s briefing.</p>
+            </div>
           </div>
-          <p className="section-description">Select an entity to reveal the stories around it. Every edge is a thread in today&apos;s briefing.</p>
+          <div className="section-command graph-command">
+            <Network size={19} aria-hidden="true" />
+            <span><i>EXPLORE MODE</i><strong>Search or select an entity</strong><small>Filter the briefing through its connections.</small></span>
+          </div>
         </div>
         <KnowledgeGraph selectedNode={selectedNode} onSelect={handleNodeSelect} />
         {activeNode && (

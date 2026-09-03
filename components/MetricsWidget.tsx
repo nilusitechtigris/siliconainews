@@ -43,13 +43,26 @@ export function MetricsWidget() {
   const max = Math.max(...points.map((point) => point.value));
 
   return (
-    <section className="signals-section" id="signals" aria-labelledby="signals-title">
-      <div className="section-heading">
-        <div>
-          <span className="section-index amber-text">02 / TECH EVOLUTION</span>
-          <h2 id="signals-title">The curve is the story.</h2>
+    <section className="signals-section section-chapter" id="signals" aria-labelledby="signals-title" data-reveal>
+      <div className="section-heading section-heading-signals">
+        <div className="section-identity">
+          <span className="chapter-number">02</span>
+          <div>
+            <span className="section-index amber-text">TECH EVOLUTION</span>
+            <h2 id="signals-title">The curve is the story.</h2>
+            <p className="section-description">Follow the economics beneath the headlines—from scarce compute to abundant intelligence.</p>
+          </div>
         </div>
-        <p className="section-description">Follow the economics beneath the headlines—from scarce compute to abundant intelligence.</p>
+        <div className="section-command signals-command">
+          <Gauge size={19} aria-hidden="true" />
+          <span><i>COMPARE MODE</i><strong>Pick a signal and horizon</strong><small>Focus or hover the bars for exact values.</small></span>
+        </div>
+      </div>
+
+      <div className="metric-workflow" aria-label="How to use the technology comparison">
+        <span><b>01</b><i>SELECT</i> Metric</span>
+        <span><b>02</b><i>SET</i> Time horizon</span>
+        <span><b>03</b><i>INSPECT</i> Exact values</span>
       </div>
 
       <div className="metrics-shell">
