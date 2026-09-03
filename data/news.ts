@@ -27,7 +27,7 @@ export type GraphNode = {
   weight: number;
 };
 
-export type GraphLink = { source: string; target: string };
+export type GraphLink = { source: string; target: string; relation: string };
 
 export const stories: Story[] = [
   {
@@ -105,13 +105,20 @@ export const graphNodes: GraphNode[] = [
 ];
 
 export const graphLinks: GraphLink[] = [
-  { source: 'hbm4', target: 'chiplets' }, { source: 'hbm4', target: 'cxl' },
-  { source: 'hbm4', target: 'long-context' }, { source: 'chiplets', target: 'edge-ai' },
-  { source: 'long-context', target: 'agentic-systems' }, { source: 'agentic-systems', target: 'open-models' },
-  { source: 'agentic-systems', target: 'world-models' }, { source: 'open-models', target: 'model-audits' },
-  { source: 'model-audits', target: 'compute-policy' }, { source: 'compute-policy', target: 'power-grid' },
-  { source: 'power-grid', target: 'hbm4' }, { source: 'world-models', target: 'embodied-ai' },
-  { source: 'embodied-ai', target: 'tactile-data' }, { source: 'embodied-ai', target: 'edge-ai' },
+  { source: 'hbm4', target: 'chiplets', relation: 'shares memory fabric' },
+  { source: 'hbm4', target: 'cxl', relation: 'expands memory' },
+  { source: 'hbm4', target: 'long-context', relation: 'bounds context speed' },
+  { source: 'chiplets', target: 'edge-ai', relation: 'enables edge deployment' },
+  { source: 'long-context', target: 'agentic-systems', relation: 'provides working memory' },
+  { source: 'agentic-systems', target: 'open-models', relation: 'cuts hosting cost' },
+  { source: 'agentic-systems', target: 'world-models', relation: 'uses simulations' },
+  { source: 'open-models', target: 'model-audits', relation: 'needs auditability' },
+  { source: 'model-audits', target: 'compute-policy', relation: 'shapes compliance' },
+  { source: 'compute-policy', target: 'power-grid', relation: 'reports energy use' },
+  { source: 'power-grid', target: 'hbm4', relation: 'sets capacity ceiling' },
+  { source: 'world-models', target: 'embodied-ai', relation: 'trains physical reasoning' },
+  { source: 'embodied-ai', target: 'tactile-data', relation: 'learns from touch' },
+  { source: 'embodied-ai', target: 'edge-ai', relation: 'runs on-device' },
 ];
 
 export const categories: NodeCategory[] = ['Hardware', 'Models', 'Policy', 'Robotics'];

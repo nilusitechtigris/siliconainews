@@ -1,17 +1,17 @@
 'use client';
 
 import type { ReactNode } from 'react';
-import { useCallback, useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { Header } from '@/components/Header';
 import { TerminalMode } from '@/components/TerminalMode';
 import { useTerminalMode } from '@/hooks/useTerminalMode';
 
 type SiteFrameProps = {
-  children: ReactNode | ((controls: { playTick: () => void }) => ReactNode);
+  children: ReactNode;
+  minimalHeader?: boolean;
 };
 
-export function SiteFrame({ children }: SiteFrameProps) {
-  const [audioEnabled, setAudioEnabled] = useState(false);
+export function SiteFrame({ children, minimalHeader = false }: SiteFrameProps) {
   const { terminalOpen, setTerminalOpen } = useTerminalMode();
 
   useEffect(() => {
@@ -42,34 +42,14 @@ export function SiteFrame({ children }: SiteFrameProps) {
     };
   }, []);
 
-  const playTick = useCallback(() => {
-    if (!audioEnabled) return;
-    const AudioContextCtor = window.AudioContext || (window as typeof window & { webkitAudioContext?: typeof AudioContext }).webkitAudioContext;
-    if (!AudioContextCtor) return;
-
-    const context = new AudioContextCtor();
-    const oscillator = context.createOscillator();
-    const gain = context.createGain();
-    oscillator.type = 'sine';
-    oscillator.frequency.value = 690;
-    gain.gain.setValueAtTime(.025, context.currentTime);
-    gain.gain.exponentialRampToValueAtTime(.001, context.currentTime + .035);
-    oscillator.connect(gain);
-    gain.connect(context.destination);
-    oscillator.start();
-    oscillator.stop(context.currentTime + .04);
-    navigator.vibrate?.(8);
-  }, [audioEnabled]);
-
   return (
     <main>
       <Header
-        audioEnabled={audioEnabled}
-        onAudioToggle={() => setAudioEnabled((current) => !current)}
         onTerminalOpen={() => setTerminalOpen(true)}
         onGraphOpen={() => window.location.assign('/graph')}
+        minimal={minimalHeader}
       />
-      {typeof children === 'function' ? children({ playTick }) : children}
+      {children}
       <TerminalMode open={terminalOpen} onClose={() => setTerminalOpen(false)} />
     </main>
   );

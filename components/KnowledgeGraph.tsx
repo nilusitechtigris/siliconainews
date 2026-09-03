@@ -1,6 +1,6 @@
 'use client';
 
-import { Crosshair, List, Maximize2, Minus, Network, Plus, Search } from 'lucide-react';
+import { ArrowRight, Crosshair, List, Maximize2, Minus, Network, Plus, Search } from 'lucide-react';
 import { forceCenter, forceCollide, forceLink, forceManyBody, forceSimulation, type SimulationLinkDatum, type SimulationNodeDatum } from 'd3-force';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { categories, graphLinks, graphNodes, type GraphNode, type NodeCategory } from '@/data/news';
@@ -15,11 +15,10 @@ const colors: Record<NodeCategory, string> = {
 type KnowledgeGraphProps = {
   selectedNode: string | null;
   onSelect: (nodeId: string) => void;
-  onTick?: () => void;
   compact?: boolean;
 };
 
-export default function KnowledgeGraph({ selectedNode, onSelect, onTick, compact = false }: KnowledgeGraphProps) {
+export default function KnowledgeGraph({ selectedNode, onSelect, compact = false }: KnowledgeGraphProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const shellRef = useRef<HTMLDivElement>(null);
   const dragRef = useRef<{ x: number; y: number; originX: number; originY: number } | null>(null);
@@ -73,6 +72,14 @@ export default function KnowledgeGraph({ selectedNode, onSelect, onTick, compact
     return categoryMatch && queryMatch;
   }), [category, nodes, query]);
 
+  const selectedConnections = useMemo(() => selectedNode ? graphLinks
+    .filter((link) => link.source === selectedNode || link.target === selectedNode)
+    .map((link) => ({
+      ...link,
+      sourceNode: graphNodes.find((node) => node.id === link.source),
+      targetNode: graphNodes.find((node) => node.id === link.target),
+    })) : [], [selectedNode]);
+
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas || listView) return;
@@ -89,6 +96,7 @@ export default function KnowledgeGraph({ selectedNode, onSelect, onTick, compact
     context.translate(viewport.x, viewport.y);
     context.scale(viewport.k, viewport.k);
 
+    const focusedNode = selectedNode ?? hover?.node.id;
     graphLinks.forEach((link) => {
       const source = nodes.find((node) => node.id === link.source);
       const target = nodes.find((node) => node.id === link.target);
@@ -102,6 +110,21 @@ export default function KnowledgeGraph({ selectedNode, onSelect, onTick, compact
         : (emphasized ? 'rgba(122, 149, 132, .38)' : 'rgba(77, 91, 82, .13)');
       context.lineWidth = emphasized ? 1 : .7;
       context.stroke();
+
+      if (focusedNode && (source.id === focusedNode || target.id === focusedNode)) {
+        const midpointX = (source.x + target.x) / 2;
+        const midpointY = (source.y + target.y) / 2;
+        context.font = '600 8px ui-monospace, SFMono-Regular, Menlo, monospace';
+        context.textAlign = 'center';
+        const label = link.relation.toUpperCase();
+        const labelWidth = context.measureText(label).width + 12;
+        context.fillStyle = colorTheme === 'light' ? 'rgba(243, 241, 234, .94)' : 'rgba(8, 11, 9, .94)';
+        context.fillRect(midpointX - labelWidth / 2, midpointY - 9, labelWidth, 17);
+        context.strokeStyle = colorTheme === 'light' ? 'rgba(47, 103, 148, .35)' : 'rgba(134, 189, 248, .35)';
+        context.strokeRect(midpointX - labelWidth / 2, midpointY - 9, labelWidth, 17);
+        context.fillStyle = colorTheme === 'light' ? '#315b7d' : '#a9d1f7';
+        context.fillText(label, midpointX, midpointY + 3);
+      }
     });
 
     nodes.forEach((node) => {
@@ -130,7 +153,7 @@ export default function KnowledgeGraph({ selectedNode, onSelect, onTick, compact
     });
     context.restore();
     context.globalAlpha = 1;
-  }, [colorTheme, dimensions, listView, nodes, selectedNode, viewport, visibleNodes]);
+  }, [colorTheme, dimensions, hover, listView, nodes, selectedNode, viewport, visibleNodes]);
 
   const nodeAt = (clientX: number, clientY: number) => {
     const rect = canvasRef.current?.getBoundingClientRect();
@@ -140,7 +163,7 @@ export default function KnowledgeGraph({ selectedNode, onSelect, onTick, compact
     return nodes.find((node) => node.x !== undefined && node.y !== undefined && Math.hypot(node.x - x, node.y - y) < 21 / viewport.k) ?? null;
   };
 
-  const selectNode = (nodeId: string) => { onSelect(nodeId); onTick?.(); };
+  const selectNode = (nodeId: string) => { onSelect(nodeId); };
   const resetView = () => { setViewport({ x: 0, y: 0, k: 1 }); setQuery(''); setCategory('All'); };
 
   return (
@@ -203,7 +226,7 @@ export default function KnowledgeGraph({ selectedNode, onSelect, onTick, compact
               setViewport((current) => ({ ...current, k: Math.min(2.1, Math.max(.65, current.k + direction)) }));
             }}
           />
-          {hover && <div className="node-tooltip" style={{ left: hover.x, top: hover.y }}><b>{hover.node.label}</b><span>{hover.node.category} · {hover.node.storyIds.length} stories</span></div>}
+          {hover && <div className="node-tooltip" style={{ left: hover.x, top: hover.y }}><b>{hover.node.label}</b><span>{hover.node.category} · {hover.node.storyIds.length} stories · select to explain links</span></div>}
           <div className="graph-zoom" aria-label="Graph zoom controls">
             <button type="button" onClick={() => setViewport((current) => ({ ...current, k: Math.min(2.1, current.k + .18) }))} aria-label="Zoom in" data-tooltip="Zoom in"><Plus size={16} /></button>
             <button type="button" onClick={() => setViewport((current) => ({ ...current, k: Math.max(.65, current.k - .18) }))} aria-label="Zoom out" data-tooltip="Zoom out"><Minus size={16} /></button>
@@ -211,6 +234,26 @@ export default function KnowledgeGraph({ selectedNode, onSelect, onTick, compact
           </div>
         </div>
       )}
+      <section className={`connection-ledger ${selectedNode ? 'is-active' : ''}`} aria-live="polite" aria-label="Graph relationship details">
+        <div className="connection-ledger-heading">
+          <Network size={16} aria-hidden="true" />
+          <span>
+            <strong>{selectedNode ? 'Connections explained' : 'What connects these nodes?'}</strong>
+            <small>{selectedNode ? `${selectedConnections.length} direct relationships around ${graphNodes.find((node) => node.id === selectedNode)?.label}` : 'Select any node to reveal the meaning of every connecting line.'}</small>
+          </span>
+        </div>
+        {selectedConnections.length > 0 && (
+          <div className="connection-rows">
+            {selectedConnections.map((connection) => (
+              <div key={`${connection.source}-${connection.target}`}>
+                <b className={connection.source === selectedNode ? 'selected' : ''}>{connection.sourceNode?.label}</b>
+                <span>{connection.relation}<ArrowRight size={12} aria-hidden="true" /></span>
+                <b className={connection.target === selectedNode ? 'selected' : ''}>{connection.targetNode?.label}</b>
+              </div>
+            ))}
+          </div>
+        )}
+      </section>
       <footer className="graph-footer">
         <span><Maximize2 size={13} /> SCROLL TO ZOOM · DRAG TO PAN</span>
         <span>{visibleNodes.length} NODES · {graphLinks.length} CONNECTIONS</span>

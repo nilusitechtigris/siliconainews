@@ -39,13 +39,12 @@ export default function GraphPage() {
 
   return (
     <SiteFrame>
-      {({ playTick }) => (
-        <div className="graph-route">
+      <div className="graph-route">
           <section className="route-masthead route-blue" id="top">
             <a className="route-back" href="/"><ArrowLeft size={15} /> Back to switchboard</a>
             <div><span>KNOWLEDGE GRAPH</span><Network size={30} aria-hidden="true" /></div>
             <h1>Follow the connections.</h1>
-            <p>Search an entity, filter a cluster, and reveal the reporting connected to it.</p>
+            <p>Search an entity, see why it connects, and reveal the reporting behind every relationship.</p>
           </section>
           <section className="graph-section section-chapter" id="graph" aria-labelledby="graph-title">
             <div className="section-heading graph-heading section-heading-graph">
@@ -54,7 +53,7 @@ export default function GraphPage() {
                 <div>
                   <span className="section-index blue-text">LIVE ENTITY NETWORK</span>
                   <h2 id="graph-title">Nothing happens alone.</h2>
-                  <p className="section-description">Select an entity to reveal its connected stories directly below the map.</p>
+                  <p className="section-description">Select an entity to label its lines, explain each relationship, and reveal its connected stories.</p>
                 </div>
               </div>
               <div className="section-command graph-command">
@@ -62,7 +61,7 @@ export default function GraphPage() {
                 <span><i>EXPLORE MODE</i><strong>Search or select an entity</strong><small>Zoom, pan, or switch to accessible list view.</small></span>
               </div>
             </div>
-            <KnowledgeGraph selectedNode={selectedNode} onSelect={selectNode} onTick={playTick} />
+            <KnowledgeGraph selectedNode={selectedNode} onSelect={selectNode} />
             {activeNode && (
               <a className="graph-result-link" href="#briefing">
                 <span><Braces size={17} /> {activeNode.storyIds.length} connected {activeNode.storyIds.length === 1 ? 'story' : 'stories'} found</span>
@@ -83,8 +82,7 @@ export default function GraphPage() {
               runLabel={`${connectedStories.length} CONNECTED ${connectedStories.length === 1 ? 'STORY' : 'STORIES'}`}
             />
           )}
-        </div>
-      )}
+      </div>
     </SiteFrame>
   );
 }

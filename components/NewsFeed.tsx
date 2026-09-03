@@ -1,6 +1,6 @@
 'use client';
 
-import { ArrowUpRight, BookOpen, ExternalLink, Network, Quote } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, BookOpen, ExternalLink, Network, Quote } from 'lucide-react';
 import type { Story } from '@/data/news';
 import { articlesByStoryId } from '@/data/articles';
 
@@ -62,9 +62,13 @@ export function NewsFeed({
               </span>
               <span className="read-time">{story.published} · {story.time}</span>
             </div>
-            <h3>{story.title}</h3>
-            <p>{story.summary}</p>
-            <div className="key-point"><Quote size={14} aria-hidden="true" /><strong>THE SIGNAL</strong>{story.keyPoint}</div>
+            <a className="story-title-link" href={`/stories/${story.id}`} aria-label={`Read ${story.title}`}>
+              <span>WHY THIS STORY NOW · 0{index + 1}</span>
+              <h3>{story.title}</h3>
+              <ArrowRight size={18} aria-hidden="true" />
+            </a>
+            <p className="story-summary">{story.summary}</p>
+            <div className="key-point"><Quote size={14} aria-hidden="true" /><strong>WHY IT MATTERS</strong><span>{story.keyPoint}</span></div>
             <footer>
               <div className="story-footer-left">
                 <div>{story.tags.map((tag) => <span className="tag" key={tag}>{tag}</span>)}</div>
@@ -74,10 +78,10 @@ export function NewsFeed({
               </div>
               <div className="story-actions">
                 <button className="connection-action" type="button" onClick={() => onExplore(story.graphNode)} aria-label={`Explore graph connections for ${story.title}`}>
-                  <Network size={15} /> Map connections
+                  <Network size={15} /> Map
                 </button>
                 <a className="read-story" href={`/stories/${story.id}`} aria-label={`Read ${story.title}`}>
-                  Read article <ArrowUpRight size={15} />
+                  Read full take · {story.time} <ArrowUpRight size={15} />
                 </a>
               </div>
             </footer>
