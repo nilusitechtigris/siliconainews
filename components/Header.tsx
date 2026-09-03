@@ -13,9 +13,10 @@ type HeaderProps = {
 };
 
 const navItems = [
-  { label: 'Briefing', href: '#briefing' },
-  { label: 'Signals', href: '#signals' },
-  { label: 'Graph', href: '#graph' },
+  { label: 'Today', href: '/today' },
+  { label: 'All news', href: '/news' },
+  { label: 'Evolution', href: '/evolution' },
+  { label: 'Graph', href: '/graph' },
 ];
 
 export function Header({ audioEnabled, onAudioToggle, onTerminalOpen, onGraphOpen }: HeaderProps) {
@@ -25,7 +26,7 @@ export function Header({ audioEnabled, onAudioToggle, onTerminalOpen, onGraphOpe
   return (
     <>
       <header className="topbar">
-        <a className="brand" href="#top" aria-label="Silicon AI News home">
+        <a className="brand" href="/" aria-label="Silicon AI News home">
           <span className="brand-mark">S</span>
           <span>Silicon <em>AI</em> News</span>
         </a>
@@ -76,7 +77,7 @@ export function Header({ audioEnabled, onAudioToggle, onTerminalOpen, onGraphOpe
             <a href={item.href} key={item.label} onClick={() => setMenuOpen(false)}><span>0{index + 1}</span>{item.label}</a>
           ))}
           <button className="drawer-action" type="button" onClick={() => { onGraphOpen(); setMenuOpen(false); }}><Network size={18} /> Open graph viewer</button>
-          <a className="drawer-action" href="#signals" onClick={() => setMenuOpen(false)}><BarChart3 size={18} /> View metric signals</a>
+          <a className="drawer-action" href="/evolution" onClick={() => setMenuOpen(false)}><BarChart3 size={18} /> View metric signals</a>
           <ThemeToggle className="drawer-theme-toggle" showLabel />
         </aside>
       </div>

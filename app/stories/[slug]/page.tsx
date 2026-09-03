@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-html-link-for-pages -- Vinext's production router currently swallows internal Link navigation on Cloudflare. */
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { ArrowLeft, ArrowUpRight, Clock3, ExternalLink, Quote, ShieldCheck } from 'lucide-react';
@@ -46,7 +45,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
         </a>
         <div className="article-topbar-tools">
           <ThemeToggle className="article-theme-toggle" />
-          <a className="back-link" href="/#briefing"><ArrowLeft size={16} /> Back to briefing</a>
+          <a className="back-link" href="/news#briefing"><ArrowLeft size={16} /> Back to briefing</a>
         </div>
       </header>
 

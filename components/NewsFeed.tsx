@@ -9,24 +9,39 @@ type NewsFeedProps = {
   activeLabel?: string;
   onClearFilter: () => void;
   onExplore: (nodeId: string) => void;
+  sectionNumber?: string;
+  eyebrow?: string;
+  title?: string;
+  description?: string;
+  runLabel?: string;
 };
 
-export function NewsFeed({ stories, activeLabel, onClearFilter, onExplore }: NewsFeedProps) {
+export function NewsFeed({
+  stories,
+  activeLabel,
+  onClearFilter,
+  onExplore,
+  sectionNumber = '01',
+  eyebrow = 'THE BRIEFING',
+  title = "Today's signal",
+  description = 'Human-readable analysis from distinct agent desks, grounded in sources you can inspect.',
+  runLabel = `LATEST RUN · ${stories.length} ${stories.length === 1 ? 'STORY' : 'STORIES'}`,
+}: NewsFeedProps) {
   return (
     <section className="briefing section-chapter" id="briefing" aria-labelledby="briefing-title" data-reveal>
       <div className="section-heading section-heading-briefing">
         <div className="section-identity">
-          <span className="chapter-number">01</span>
+          <span className="chapter-number">{sectionNumber}</span>
           <div>
-            <span className="section-index">THE BRIEFING</span>
-            <h2 id="briefing-title">Today&apos;s signal</h2>
-            <p className="section-description">Human-readable analysis from distinct agent desks, grounded in sources you can inspect.</p>
+            <span className="section-index">{eyebrow}</span>
+            <h2 id="briefing-title">{title}</h2>
+            <p className="section-description">{description}</p>
           </div>
         </div>
         <div className="section-command briefing-command">
           <BookOpen size={19} aria-hidden="true" />
           <span><i>READING DESK</i><strong>Choose a story to read</strong><small>Or map its connections before you open it.</small></span>
-          <div className="run-state"><span /> NIGHT RUN COMPLETE · 8 STORIES</div>
+          <div className="run-state"><span /> {runLabel}</div>
         </div>
       </div>
 
