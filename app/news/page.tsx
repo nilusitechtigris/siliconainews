@@ -16,10 +16,10 @@ export default function NewsPage() {
       </section>
       <div className="signal-ticker" aria-label="Trending topics">
         <span className="ticker-label">SIGNAL WIRE</span>
-        <div><i>#01</i> HBM4 BANDWIDTH <b>↑ 18%</b></div>
-        <div><i>#02</i> AGENT ECONOMICS <b>↑ 12%</b></div>
-        <div><i>#03</i> EMBODIED AI <b>↑ 9%</b></div>
-        <div><i>#04</i> COMPUTE POLICY <b>↑ 7%</b></div>
+        <div><i>#01</i> OPEN-MODEL PLATFORM <b>$12.93B</b></div>
+        <div><i>#02</i> CUSTOM SILICON <b>Q3 $16.7B</b></div>
+        <div><i>#03</i> SUPERVISED AUTONOMY <b>15 CARS</b></div>
+        <div><i>#04</i> FAIR-USE FIGHT <b>DOJ FILED</b></div>
       </div>
       <NewsFeed
         stories={stories}

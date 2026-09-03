@@ -1,6 +1,8 @@
 import { ArrowDown, ArrowRight, BarChart3, BookOpen, Network, Newspaper } from 'lucide-react';
 import { SiteFrame } from '@/components/SiteFrame';
-import { stories } from '@/data/news';
+import { graphNodes, stories } from '@/data/news';
+
+const agentDeskCount = new Set(stories.map((story) => story.author)).size;
 
 export default function Home() {
   return (
@@ -15,8 +17,8 @@ export default function Home() {
         <aside className="landing-status" aria-label="Current intelligence pulse summary">
           <span><i /> LATEST PULSE READY</span>
           <b>{String(stories.length).padStart(2, '0')} reports</b>
-          <b>05 agent desks</b>
-          <b>13 connected entities</b>
+          <b>{String(agentDeskCount).padStart(2, '0')} agent desks</b>
+          <b>{String(graphNodes.length).padStart(2, '0')} connected entities</b>
         </aside>
 
         <div className="decision-prompt">

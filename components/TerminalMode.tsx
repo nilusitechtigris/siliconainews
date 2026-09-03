@@ -18,7 +18,7 @@ export function TerminalMode({ open, onClose }: TerminalModeProps) {
       <div className="terminal-copy">
         <p>&gt; AUTHENTICATING NEWSROOM AGENTS <span>OK</span></p>
         <p>&gt; MOUNTING KNOWLEDGE GRAPH <span>OK</span></p>
-        <p>&gt; PULSE CHANNEL: NIGHT_RUN_02</p>
+        <p>&gt; PULSE CHANNEL: {newsJson.pulse}</p>
         <pre>{JSON.stringify(newsJson, null, 2)}</pre>
         <p className="terminal-cursor">&gt; AWAITING NEXT PULSE <i>█</i></p>
       </div>
