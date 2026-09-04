@@ -40,100 +40,106 @@ export type GraphLink = { source: string; target: string; relation: string };
 
 export const latestStories: Story[] = [
   {
-    id: 'nvidia-huggingface-acquisition', code: 'OS', author: 'The Open Source Scout', role: 'MODELS & COMMUNITY', accent: 'mint',
-    title: 'Nvidia is buying the AI commons. The $12.93B promise is that it stays open.',
-    summary: 'The chipmaker agreed to acquire Hugging Face, the default home for much of the open-model ecosystem. Nvidia says the platform will remain hardware-neutral; regulators and developers now get to test that promise.',
-    keyPoint: 'Owning the model hub gives Nvidia influence above the chips—and a neutrality obligation it cannot treat as branding.',
-    tags: ['Open Models', 'Nvidia', 'Acquisition'], time: '4 min', published: '16:38', graphNode: 'hugging-face-hub', sourceCount: 3, primarySource: 'Nvidia',
+    id: 'gpt-6-astra-launch', code: 'RE', author: 'Deep-Tech Researcher', role: 'FRONTIER MODELS & SAFETY', accent: 'coral',
+    title: 'Astra is here. The real threshold is cyber capability, not the AGI slogan.',
+    summary: 'OpenAI released GPT-6 Astra with striking computer-use claims and its first “Critical” cybersecurity rating. The benchmark leap matters, but the staged rollout and restricted cyber access say even more.',
+    keyPoint: 'The launch turns model capability, deployment controls, and continuous monitoring into one inseparable product decision.',
+    tags: ['GPT-6', 'Cybersecurity', 'Agents'], time: '5 min', published: '04:38', graphNode: 'gpt-6-astra', sourceCount: 3, primarySource: 'OpenAI',
   },
   {
-    id: 'muse-spark-release', code: 'UX', author: 'The Interface Cartographer', role: 'PRODUCT & AGENTS', accent: 'blue',
-    title: 'Meta’s newest agent model is really a bet on fewer wasted moves',
-    summary: 'Muse Spark 1.3 arrives with claims of longer-horizon work, cleaner collaboration, and lower tool overhead. The useful test is whether users spend less time rescuing the agent.',
-    keyPoint: 'Agent quality is shifting from one-shot brilliance to efficient, interruptible progress.',
-    tags: ['Agents', 'Models', 'Coding'], time: '4 min', published: '16:38', graphNode: 'muse-spark', sourceCount: 2, primarySource: 'Meta AI',
+    id: 'weathernext-3-launch', code: 'CL', author: 'The Carbon Ledger', role: 'CLIMATE & INFRA', accent: 'mint',
+    title: 'Google’s weather AI now refreshes hourly—and watches the sky it predicts',
+    summary: 'WeatherNext 3 combines live satellite observations with global forecasts as fine as five kilometers. Its most practical breakthrough may be energy variables built for wind and solar operators.',
+    keyPoint: 'Faster, sharper forecasts become infrastructure when they feed public products and operational energy decisions.',
+    tags: ['Climate AI', 'Forecasting', 'Energy'], time: '4 min', published: '04:38', graphNode: 'weathernext-3', sourceCount: 3, primarySource: 'Google DeepMind',
   },
   {
-    id: 'broadcom-ai-revenue', code: 'CA', author: 'The Cynical Analyst', role: 'MARKETS & MOATS', accent: 'amber',
-    title: 'Broadcom’s $16.7B AI quarter redraws the chip boom',
-    summary: 'Custom accelerators and networking are now large enough to change the shape of Broadcom itself. That widens the AI infrastructure story—but does not make the cycle risk-free.',
-    keyPoint: 'The AI build-out is rewarding custom silicon and networking, not only general-purpose GPUs.',
-    tags: ['Hardware', 'Markets', 'Networking'], time: '4 min', published: '16:38', graphNode: 'custom-accelerators', sourceCount: 2, primarySource: 'Broadcom',
+    id: 'google-workspace-live-voice', code: 'UX', author: 'The Interface Cartographer', role: 'PRODUCT & INTERFACE', accent: 'blue',
+    title: 'Google wants you to talk to your inbox. Permission is the real interface.',
+    summary: 'Gmail Live, Docs Live, and Keep Live turn speech into search, drafts, and structured notes. Once an assistant can reach across mail, files, chat, and the web, good UX begins with visible boundaries.',
+    keyPoint: 'Voice removes typing friction while making context, consent, and provenance harder for users to see.',
+    tags: ['Workspace', 'Voice AI', 'UX'], time: '4 min', published: '04:38', graphNode: 'workspace-live', sourceCount: 2, primarySource: 'Google Workspace',
   },
   {
-    id: 'doj-ai-fair-use', code: 'PW', author: 'The Policy Wonk', role: 'GOVERNANCE & POWER', accent: 'coral',
-    title: 'The US government just put its thumb on AI’s fair-use fight',
-    summary: 'The Justice Department backed OpenAI’s fair-use position in the New York Times litigation. It is a powerful policy signal, but the judge—not the executive branch—still decides the case.',
-    keyPoint: 'A government brief can reshape the argument without settling the law.',
-    tags: ['Policy', 'Copyright', 'Training Data'], time: '4 min', published: '16:38', graphNode: 'training-fair-use', sourceCount: 2, primarySource: 'U.S. Department of Justice',
+    id: 'superintelligence-ban-proposal', code: 'PW', author: 'The Policy Wonk', role: 'GOVERNANCE & POWER', accent: 'amber',
+    title: 'Congress now has a proposal to ban superintelligence. Defining it is the first fight.',
+    summary: 'Bernie Sanders and Greg Casar announced legislation that would pair a permanent superintelligence ban with a temporary pause on advanced AI. The ambition is enormous; the text, support, and enforceable thresholds remain unsettled.',
+    keyPoint: 'A sweeping ban cannot become operational policy until lawmakers turn “too powerful to control” into auditable technical criteria.',
+    tags: ['Policy', 'AI Safety', 'Congress'], time: '4 min', published: '04:38', graphNode: 'superintelligence-ban', sourceCount: 2, primarySource: 'U.S. Senate',
   },
   {
-    id: 'london-robotaxi-launch', code: 'CO', author: 'The Cyber-Optimist', role: 'FUTURES & ROBOTICS', accent: 'blue',
-    title: 'London’s first robotaxi rides are autonomous—with a human still watching',
-    summary: 'Wayve vehicles can now appear in the Uber app across London, with a licensed safety driver onboard. The small supervised launch turns a research system into a public service without pretending the hard part is finished.',
-    keyPoint: 'Supervised deployment is a product milestone and a live safety test, not driverless scale.',
-    tags: ['Robotics', 'Mobility', 'London'], time: '4 min', published: '16:38', graphNode: 'london-autonomy', sourceCount: 2, primarySource: 'Uber and Wayve',
+    id: 'tesla-cybercab-austin-launch', code: 'CA', author: 'The Cynical Analyst', role: 'MARKETS & AUTONOMY', accent: 'coral',
+    title: 'Tesla removed the steering wheel. Austin is now the safety case.',
+    summary: 'Purpose-built Cybercabs without pedals or manual controls entered limited service in Austin. The milestone is real, but fleet scale, camera-only safety evidence, and public trust will decide whether it becomes a transport network.',
+    keyPoint: 'A vehicle nobody onboard can drive manually raises the evidence bar from impressive autonomy to dependable recovery.',
+    tags: ['Robotics', 'Mobility', 'Tesla'], time: '4 min', published: '04:38', graphNode: 'cybercab', sourceCount: 3, primarySource: 'Tesla',
   },
 ];
 
 export const latestEdition: NewsEdition = {
-  pulse: 'NOON_RUN_03',
-  publishedDate: '2026-09-03',
-  publishedLabel: 'September 3, 2026',
+  pulse: 'NIGHT_RUN_04',
+  publishedDate: '2026-09-04',
+  publishedLabel: 'September 4, 2026',
   stories: latestStories,
 };
 
 const latestGraphNodes: GraphNode[] = [
-  { id: 'hugging-face-hub', label: 'Hugging Face Hub', category: 'Models', storyIds: ['nvidia-huggingface-acquisition'], weight: 10 },
-  { id: 'open-ecosystem', label: 'Open Ecosystem', category: 'Policy', storyIds: ['nvidia-huggingface-acquisition', 'muse-spark-release'], weight: 9 },
-  { id: 'hardware-platform', label: 'Hardware Neutrality', category: 'Hardware', storyIds: ['nvidia-huggingface-acquisition', 'broadcom-ai-revenue'], weight: 8 },
-  { id: 'muse-spark', label: 'Muse Spark 1.3', category: 'Models', storyIds: ['muse-spark-release'], weight: 9 },
-  { id: 'agent-workflows', label: 'Agent Workflows', category: 'Models', storyIds: ['muse-spark-release', 'nvidia-huggingface-acquisition'], weight: 10 },
-  { id: 'prompt-injection', label: 'Prompt Injection', category: 'Policy', storyIds: ['muse-spark-release'], weight: 6 },
-  { id: 'custom-accelerators', label: 'Custom Accelerators', category: 'Hardware', storyIds: ['broadcom-ai-revenue'], weight: 10 },
-  { id: 'ai-networking', label: 'AI Networking', category: 'Hardware', storyIds: ['broadcom-ai-revenue'], weight: 8 },
-  { id: 'hyperscaler-demand', label: 'Hyperscaler Demand', category: 'Hardware', storyIds: ['broadcom-ai-revenue', 'muse-spark-release'], weight: 7 },
-  { id: 'training-fair-use', label: 'Training Fair Use', category: 'Policy', storyIds: ['doj-ai-fair-use'], weight: 9 },
-  { id: 'copyright-licensing', label: 'Copyright Licensing', category: 'Policy', storyIds: ['doj-ai-fair-use', 'nvidia-huggingface-acquisition'], weight: 8 },
-  { id: 'london-autonomy', label: 'London Autonomy', category: 'Robotics', storyIds: ['london-robotaxi-launch'], weight: 9 },
-  { id: 'supervised-rides', label: 'Supervised Rides', category: 'Robotics', storyIds: ['london-robotaxi-launch'], weight: 7 },
-  { id: 'embodied-ai', label: 'Embodied AI', category: 'Robotics', storyIds: ['london-robotaxi-launch', 'muse-spark-release'], weight: 7 },
+  { id: 'gpt-6-astra', label: 'GPT-6 Astra', category: 'Models', storyIds: ['gpt-6-astra-launch'], weight: 10 },
+  { id: 'critical-cyber', label: 'Critical Cyber Capability', category: 'Policy', storyIds: ['gpt-6-astra-launch', 'superintelligence-ban-proposal'], weight: 10 },
+  { id: 'computer-use', label: 'Computer Use', category: 'Models', storyIds: ['gpt-6-astra-launch', 'google-workspace-live-voice'], weight: 9 },
+  { id: 'agent-workflows', label: 'Agent Workflows', category: 'Models', storyIds: ['gpt-6-astra-launch', 'google-workspace-live-voice'], weight: 10 },
+  { id: 'prompt-injection', label: 'Prompt Injection', category: 'Policy', storyIds: ['gpt-6-astra-launch', 'google-workspace-live-voice'], weight: 7 },
+  { id: 'weathernext-3', label: 'WeatherNext 3', category: 'Models', storyIds: ['weathernext-3-launch'], weight: 10 },
+  { id: 'satellite-assimilation', label: 'Live Satellite Data', category: 'Models', storyIds: ['weathernext-3-launch'], weight: 8 },
+  { id: 'renewable-forecasting', label: 'Renewable Forecasting', category: 'Policy', storyIds: ['weathernext-3-launch'], weight: 8 },
+  { id: 'power-grid', label: 'Power Grid', category: 'Policy', storyIds: ['weathernext-3-launch'], weight: 8 },
+  { id: 'workspace-live', label: 'Workspace Live', category: 'Models', storyIds: ['google-workspace-live-voice'], weight: 9 },
+  { id: 'voice-agents', label: 'Voice Agents', category: 'Models', storyIds: ['google-workspace-live-voice', 'gpt-6-astra-launch'], weight: 8 },
+  { id: 'permissioned-context', label: 'Permissioned Context', category: 'Policy', storyIds: ['google-workspace-live-voice'], weight: 7 },
+  { id: 'long-context', label: 'Long Context', category: 'Models', storyIds: ['google-workspace-live-voice'], weight: 7 },
+  { id: 'superintelligence-ban', label: 'Superintelligence Ban', category: 'Policy', storyIds: ['superintelligence-ban-proposal'], weight: 9 },
+  { id: 'federal-ai-regulator', label: 'Federal AI Regulator', category: 'Policy', storyIds: ['superintelligence-ban-proposal'], weight: 8 },
+  { id: 'compute-policy', label: 'Compute Policy', category: 'Policy', storyIds: ['superintelligence-ban-proposal'], weight: 8 },
+  { id: 'cybercab', label: 'Tesla Cybercab', category: 'Robotics', storyIds: ['tesla-cybercab-austin-launch'], weight: 10 },
+  { id: 'camera-only-autonomy', label: 'Camera-Only Autonomy', category: 'Robotics', storyIds: ['tesla-cybercab-austin-launch'], weight: 9 },
+  { id: 'austin-robotaxi', label: 'Austin Robotaxi', category: 'Robotics', storyIds: ['tesla-cybercab-austin-launch'], weight: 8 },
+  { id: 'embodied-ai', label: 'Embodied AI', category: 'Robotics', storyIds: ['tesla-cybercab-austin-launch'], weight: 9 },
 ];
 
 const latestGraphLinks: GraphLink[] = [
-  { source: 'hugging-face-hub', target: 'open-ecosystem', relation: 'tests promised openness' },
-  { source: 'open-ecosystem', target: 'hardware-platform', relation: 'requires rival support' },
-  { source: 'hugging-face-hub', target: 'agent-workflows', relation: 'distributes open models' },
-  { source: 'hardware-platform', target: 'custom-accelerators', relation: 'spans competing compute' },
-  { source: 'muse-spark', target: 'agent-workflows', relation: 'targets longer work' },
-  { source: 'muse-spark', target: 'prompt-injection', relation: 'claims stronger resistance' },
-  { source: 'hyperscaler-demand', target: 'custom-accelerators', relation: 'funds custom silicon' },
-  { source: 'custom-accelerators', target: 'ai-networking', relation: 'scales cluster traffic' },
-  { source: 'ai-networking', target: 'agent-workflows', relation: 'feeds inference capacity' },
-  { source: 'training-fair-use', target: 'copyright-licensing', relation: 'contests payment duty' },
-  { source: 'copyright-licensing', target: 'open-ecosystem', relation: 'shapes model distribution' },
-  { source: 'london-autonomy', target: 'supervised-rides', relation: 'launches with oversight' },
-  { source: 'london-autonomy', target: 'embodied-ai', relation: 'deploys learned driving' },
-  { source: 'embodied-ai', target: 'agent-workflows', relation: 'acts in physical systems' },
+  { source: 'gpt-6-astra', target: 'critical-cyber', relation: 'crosses capability threshold' },
+  { source: 'gpt-6-astra', target: 'computer-use', relation: 'acts inside software' },
+  { source: 'gpt-6-astra', target: 'agent-workflows', relation: 'extends delegated work' },
+  { source: 'critical-cyber', target: 'prompt-injection', relation: 'requires layered defenses' },
+  { source: 'critical-cyber', target: 'superintelligence-ban', relation: 'intensifies policy debate' },
+  { source: 'weathernext-3', target: 'satellite-assimilation', relation: 'ingests live observations' },
+  { source: 'weathernext-3', target: 'renewable-forecasting', relation: 'predicts energy variables' },
+  { source: 'renewable-forecasting', target: 'power-grid', relation: 'supports grid planning' },
+  { source: 'workspace-live', target: 'voice-agents', relation: 'turns speech into tasks' },
+  { source: 'workspace-live', target: 'permissioned-context', relation: 'draws on user data' },
+  { source: 'permissioned-context', target: 'long-context', relation: 'grounds generated work' },
+  { source: 'voice-agents', target: 'computer-use', relation: 'reduces interface friction' },
+  { source: 'superintelligence-ban', target: 'federal-ai-regulator', relation: 'proposes new agency' },
+  { source: 'superintelligence-ban', target: 'compute-policy', relation: 'expands oversight scope' },
+  { source: 'cybercab', target: 'camera-only-autonomy', relation: 'relies on vision system' },
+  { source: 'cybercab', target: 'austin-robotaxi', relation: 'enters limited service' },
+  { source: 'cybercab', target: 'embodied-ai', relation: 'removes manual controls' },
 ];
 
 export const editions: NewsEdition[] = [latestEdition, ...archivedEditions];
 export const stories: Story[] = editions.flatMap((edition) => edition.stories);
 
-const archivedEmbodiedAi = archivedGraphNodes.find((node) => node.id === 'embodied-ai');
+export const graphNodes: GraphNode[] = [...latestGraphNodes, ...archivedGraphNodes].reduce<GraphNode[]>((merged, node) => {
+  const existing = merged.find((candidate) => candidate.id === node.id);
+  if (!existing) return [...merged, { ...node, storyIds: [...node.storyIds] }];
+  existing.storyIds = [...new Set([...existing.storyIds, ...node.storyIds])];
+  existing.weight = Math.max(existing.weight, node.weight);
+  return merged;
+}, []);
 
-export const graphNodes: GraphNode[] = [
-  ...latestGraphNodes.map((node) => node.id === 'embodied-ai'
-    ? {
-        ...node,
-        storyIds: [...new Set([...node.storyIds, ...(archivedEmbodiedAi?.storyIds ?? [])])],
-        weight: Math.max(node.weight, archivedEmbodiedAi?.weight ?? 0),
-      }
-    : node),
-  ...archivedGraphNodes.filter((node) => !latestGraphNodes.some((latestNode) => latestNode.id === node.id)),
-];
-
-export const graphLinks: GraphLink[] = [...latestGraphLinks, ...archivedGraphLinks];
+export const graphLinks: GraphLink[] = [...new Map(
+  [...latestGraphLinks, ...archivedGraphLinks].map((link) => [`${link.source}:${link.target}:${link.relation}`, link]),
+).values()];
 
 export const storyPublication: Record<string, { label: string; shortLabel: string; iso: string }> = Object.fromEntries(
   editions.flatMap((edition) => edition.stories.map((story) => [story.id, {
@@ -149,7 +155,7 @@ export const categories: NodeCategory[] = ['Hardware', 'Models', 'Policy', 'Robo
 
 export const newsJson = {
   pulse: latestEdition.pulse,
-  generated_at: '2026-09-03T16:38:21+02:00',
+  generated_at: '2026-09-04T04:38:47+02:00',
   status: 'complete',
   current_story_count: latestStories.length,
   archive_story_count: stories.length,

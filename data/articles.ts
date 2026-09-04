@@ -19,6 +19,194 @@ export type ArticleContent = {
 };
 
 export const articlesByStoryId: Record<string, ArticleContent> = {
+  'gpt-6-astra-launch': {
+    standfirst: 'OpenAI has released GPT-6 Astra into a staged rollout. Its computer-use results are attention-grabbing, but the defining fact is a first for the company: a broadly deployed model rated “Critical” for cybersecurity capability.',
+    sections: [
+      {
+        heading: 'The launch crosses two thresholds',
+        paragraphs: [
+          'OpenAI introduced GPT-6 Astra on September 3 and began rolling it out to a limited group of organizations. The company says access will expand over the following days to paid ChatGPT plans and to developers through the OpenAI API, Microsoft Azure, and AWS Bedrock. That is a release, but not yet universal availability; most users will encounter the model through a controlled expansion rather than a single global switch.',
+          'The company reports near-saturation scores on several demanding evaluations: 98% on FrontierMath Tier 4, 99.9% on ARC-AGI-3, and 100% on ExploitBench. On its OSWorld 2.0 latency simulation, OpenAI says Astra scored 72.6% while taking roughly 40 minutes per task, compared with 65.7% and roughly 75 minutes for GPT-5.6 Sol. These are provider-reported results and some combine the model with a particular agent harness, so they describe a configured system rather than an isolated intelligence quotient.',
+          'OpenAI president Greg Brockman framed Astra as a possible arrival point for artificial general intelligence, according to Axios and other launch coverage. That is a corporate interpretation, not a scientific finding. The more measurable development is narrower: a model designed to browse, operate software, write code, and complete professional workflows with fewer minutes and fewer human interventions.',
+        ],
+        citations: [1, 3],
+      },
+      {
+        heading: 'Critical cyber capability changes the product',
+        paragraphs: [
+          'OpenAI classifies Astra as the first of its broadly deployed models to reach the Critical cybersecurity level under its Preparedness Framework. The company says that, with suitable tools and access, the model can identify previously unknown software flaws and develop ways to exploit protected systems without a person directing every step. That capability can help defenders, but it also makes an ordinary unrestricted release untenable.',
+          'The public version will refuse more advanced offensive requests, including the creation of proof-of-concept exploits. OpenAI says selected defenders will receive broader capability through its Daybreak program. It also describes stronger isolation, encrypted checkpoints, full-trajectory monitoring for tool-using inference, and blocking alignment evaluations before internal use. In a simulation spanning more than 54,000 internal Codex tasks, the company reports roughly half as many higher-severity misalignment flags as with Sol.',
+          'Those controls are not a footnote to the model. They are part of what Astra is. A system able to move through browsers and software can cause harm through a bad instruction, a prompt injection, excessive permissions, or deliberate misuse. Capability, identity, authorization, monitoring, and interruption therefore have to be evaluated as one deployment stack.',
+        ],
+        citations: [1, 2],
+      },
+      {
+        heading: 'The benchmark victory still needs a field test',
+        paragraphs: [
+          'Near-perfect benchmark results sound conclusive, yet saturation can make an evaluation less useful for distinguishing the next generation of systems. Scores can also depend on tool access, time budgets, scaffolding, and whether similar tasks appeared in training. OpenAI publishes important detail, but the launch numbers remain claims from the organization shipping the model until outside evaluators reproduce them under comparable conditions.',
+          'Real professional work has messier failure modes than a benchmark. An agent may reach the correct screen while misunderstanding authority, create a plausible report from the wrong source, or complete a task that should have stopped for confirmation. The strongest launch claim will be the one users can observe repeatedly: useful completion with fewer interventions and a legible record of what the system did.',
+          'Astra’s release matters because it compresses several trends into one product: stronger autonomous work, higher cyber risk, staged access, and always-on oversight. The AGI slogan will dominate headlines. The practical story is that frontier models are now being distributed like powerful operational systems, with capability tiers and security controls that determine what the model is allowed to become in use.',
+        ],
+        citations: [1, 2, 3],
+      },
+    ],
+    sources: [
+      { publisher: 'OpenAI', title: 'GPT-6 Astra: A new generation of intelligence', date: 'September 3, 2026', url: 'https://openai.com/index/gpt-6-astra/', kind: 'Primary source' },
+      { publisher: 'OpenAI', title: 'Safety overview: GPT-6 Astra', date: 'September 3, 2026', url: 'https://openai.com/index/safety-overview-gpt-6-astra/', kind: 'Primary source' },
+      { publisher: 'TechCrunch', title: 'OpenAI launches Astra, its powerful (and controversial) new model', date: 'September 3, 2026', url: 'https://techcrunch.com/2026/09/03/openai-launches-astra-its-powerful-and-controversial-new-model/', kind: 'Research' },
+    ],
+    methodology: 'Availability, benchmark figures, and safeguards were taken from OpenAI’s launch and safety disclosures, then checked against independent launch reporting. We label all performance and alignment results as provider-reported and do not treat AGI language as an established technical conclusion.',
+  },
+  'weathernext-3-launch': {
+    standfirst: 'WeatherNext 3 does more than run a forecast faster. Google’s new operational model ingests live satellite observations, refreshes every hour, and exposes energy-focused variables that can connect AI weather prediction to real infrastructure decisions.',
+    sections: [
+      {
+        heading: 'The forecast starts closer to the present',
+        paragraphs: [
+          'Google DeepMind and Google Research introduced WeatherNext 3 on September 3. Unlike earlier systems that leaned heavily on the delayed output of numerical weather simulations, the new model directly ingests hourly mosaics from geostationary satellites alongside historical analysis. Google says that makes each run more responsive to fast-changing rain, surface temperature, and storm development.',
+          'The system produces hourly forecasts at several spatial scales. Google describes station-calibrated surface variables at roughly five kilometers, broader surface fields at ten kilometers, and atmospheric variables at twenty-five kilometers. Its previous operational model worked on a twenty-five-kilometer grid in six-hour steps, so the finer output can preserve more of the coastlines, valleys, and topography that disappear in a coarse global picture.',
+          'Sharper pixels are useful only if the forecast remains reliable. Google points to Operational WeatherBench, a live comparison maintained by weather startup Brightband, where WeatherNext 3 led other evaluated systems at launch. TechCrunch independently reported that standing while also noting a competing startup’s challenge to Google’s claim of being first to incorporate raw observations. The accuracy result is meaningful; the “first” label deserves more caution.',
+        ],
+        citations: [1, 3],
+      },
+      {
+        heading: 'Energy variables turn weather into infrastructure',
+        paragraphs: [
+          'WeatherNext 3 includes forecasts aimed directly at renewable generation: wind speeds around turbine height, multiple layers of cloud cover, and measures of solar radiation reaching the ground. Those variables are closer to the decisions an operator must make than a general forecast icon. A wind farm needs an expected production curve; a grid planner needs both the likely output and its uncertainty.',
+          'Google’s developer documentation describes a 64-member probabilistic ensemble with fifteen-day horizons for the main six-hour initialization cycles. Interim hourly runs cover the next forty-eight hours. BigQuery tables expose summary statistics such as the mean and several percentiles, while fuller arrays are available through Cloud Storage. That distribution matters because an operational decision rarely depends on one supposedly exact future.',
+          'The connection to the earlier energy story in this archive is direct. Carbon-aware computing can shift flexible workloads toward cleaner hours only when forecasts of wind and solar supply are timely enough to trust. WeatherNext 3 does not control a grid, but it can improve one of the inputs used to schedule generation, storage, maintenance, and demand.',
+        ],
+        citations: [1, 2],
+      },
+      {
+        heading: 'A research model becomes a public utility layer',
+        paragraphs: [
+          'Google says WeatherNext 3 is beginning to feed experiences in Search, the Gemini app, Maps, Google Maps Platform, and Earth Engine, while datasets are available through Cloud products. That breadth changes the standard by which the model should be judged. A research score matters, but millions of small decisions will expose regional bias, precipitation errors, and failure during rare events much faster than a paper alone.',
+          'The documentation also distinguishes research-model accuracy from the operational dataset. Production systems can include different variables, calibration, and processing, so users should not transfer every headline metric blindly into a local application. Developers need to validate the variables, lead times, and geography that matter to their own decisions.',
+          'The larger shift is from occasional AI forecasts to a continuously refreshed global service. If the model holds up outside launch evaluations, high-resolution probabilistic weather will become easier to query than to compute. The value will appear not only in tomorrow’s temperature, but in all the systems—energy, logistics, agriculture, and emergency response—that can finally consume the uncertainty directly.',
+        ],
+        citations: [1, 2, 3],
+      },
+    ],
+    sources: [
+      { publisher: 'Google DeepMind and Google Research', title: 'Introducing WeatherNext 3, our most advanced and accurate global weather AI model', date: 'September 3, 2026', url: 'https://blog.google/innovation-and-ai/models-and-research/google-deepmind/introducing-weathernext-3/', kind: 'Primary source' },
+      { publisher: 'Google for Developers', title: 'WeatherNext forecasts on BigQuery', date: 'September 3, 2026', url: 'https://developers.google.com/weathernext/guides/bigquery', kind: 'Primary source' },
+      { publisher: 'TechCrunch', title: 'Google’s latest AI weather model gives you no excuse to forget your umbrella', date: 'September 3, 2026', url: 'https://techcrunch.com/2026/09/03/googles-latest-ai-weather-model-gives-you-no-excuse-to-forget-your-umbrella/', kind: 'Research' },
+    ],
+    methodology: 'Resolution, refresh cadence, ensemble structure, horizons, and access paths were checked against Google’s launch post and developer documentation. TechCrunch was used to corroborate the launch and add independent context around the live evaluation and disputed novelty claim.',
+  },
+  'google-workspace-live-voice': {
+    standfirst: 'Gmail Live, Docs Live, and Keep Live make speech a control surface for private work. The convenience is obvious. The harder design problem is helping people understand which sources the assistant consulted and what it is about to create.',
+    sections: [
+      {
+        heading: 'Voice becomes an action layer',
+        paragraphs: [
+          'Google began rolling out three conversational Workspace features on September 3 after previewing them at I/O. Gmail Live lets a user ask spoken questions about information buried in an inbox. Docs Live turns a conversation into a structured first draft. Keep Live converts a stream of spoken thoughts into lists and organized notes.',
+          'This is more than dictation. Traditional voice input replaces a keyboard while leaving the application’s basic workflow intact. These tools interpret intent, retrieve information, organize it, and generate a result. Docs Live can, with permission, draw from Gmail, Drive, Chat, and the broader web, which means a single utterance can initiate a multi-source research and writing process.',
+          'Google says Gmail and Keep access is rolling out to Google AI Plus, Pro, and Ultra subscribers, while Docs requires Pro or Ultra. TechCrunch reports the initial release is in English on iOS and Android, with Workspace business availability planned later. Those boundaries matter: this is a staged consumer rollout, not a feature already present for every Workspace user.',
+        ],
+        citations: [1, 2],
+      },
+      {
+        heading: 'The invisible interface needs visible boundaries',
+        paragraphs: [
+          'A graphical search exposes clues about scope: the selected folder, the query, the result list, and the file being edited. A spoken request can hide all of that behind a smooth answer. When an assistant says it found a flight gate or drafted a project plan, the user needs a simple way to see which messages and documents supplied the facts.',
+          'Permission is only the first layer. A person may authorize access to Drive without intending every folder to become context for every draft. The interface should distinguish data that was searched, data that was quoted, and data that was merely available. It should also separate generated structure from source facts so a polished document does not erase the uncertainty of its inputs.',
+          'Voice makes confirmation design more important. Misheard words, noisy environments, ambiguous names, and accidental activation can turn a harmless request into the wrong search or edit. High-impact actions should remain interruptible and reviewable, especially when the system reaches across applications.',
+        ],
+        citations: [1, 2],
+      },
+      {
+        heading: 'The human test is recovery, not novelty',
+        paragraphs: [
+          'These features could be genuinely useful for people with mobility or vision constraints, for users working away from a desk, and for anyone who thinks more fluidly by speaking. They also reduce the blank-page cost of writing: a rough explanation can become a visible outline that the user edits rather than a finished answer they must accept.',
+          'The quality test is not whether the first demonstration looks magical. It is whether a user can correct a misunderstood premise without starting over, inspect the evidence behind a retrieved fact, and control how private context moves into a new document. A good conversational interface makes those repair paths faster than the typing it replaced.',
+          'Google is moving the assistant from a panel beside the work into the primary way work begins. If that shift succeeds, the microphone will feel less like an input accessory and more like an agent launcher. The product’s trustworthiness will depend on keeping context and consent legible even when the interface itself disappears.',
+        ],
+        citations: [1, 2],
+      },
+    ],
+    sources: [
+      { publisher: 'Google Workspace', title: 'Use your voice to get more done in Gmail, Docs, and Keep', date: 'September 3, 2026', url: 'https://blog.google/products-and-platforms/products/workspace/voice-features-gmail-docs-keep/', kind: 'Primary source' },
+      { publisher: 'TechCrunch', title: 'Google launches AI voice features in Gmail, Docs, and Keep', date: 'September 3, 2026', url: 'https://techcrunch.com/2026/09/03/google-launches-ai-voice-features-in-gmail-docs-and-keep/', kind: 'Research' },
+    ],
+    methodology: 'Feature behavior, access tiers, rollout timing, and cross-product context were checked against Google’s announcement and independent reporting. Privacy and interface observations are analysis based on the disclosed product behavior, not claims that Google has violated its stated policies.',
+  },
+  'superintelligence-ban-proposal': {
+    standfirst: 'Senator Bernie Sanders and Representative Greg Casar have announced a bill that would permanently prohibit superintelligence and temporarily pause advanced AI development. It is a maximal proposal whose first practical obstacle is measurement.',
+    sections: [
+      {
+        heading: 'The proposal is broader than a pause',
+        paragraphs: [
+          'Sanders and Casar announced the forthcoming Ban Artificial Superintelligence Act on September 3. According to the sponsors’ summary, it would permanently ban the development and deployment of systems that surpass human intelligence, can operate beyond human control, or possess dangerous abilities such as subverting shutdown commands. It would also impose a temporary pause on advanced AI development until a new federal regulator establishes safety rules and a model-review process.',
+          'The announced framework would create a cabinet-level AI agency advised by technical experts. The agency would monitor frontier systems across their lifecycle, supervise the removal of dangerous capabilities, and oversee the destruction of prohibited systems. The sponsors also describe severe penalties and an international strategy using agreements, allied coordination, and export controls.',
+          'Those provisions are the lawmakers’ description of legislation they plan to introduce. Axios reported that the full bill text had not yet been released and that its level of congressional support was unclear. Nothing in the announcement creates a legal ban today.',
+        ],
+        citations: [1, 2],
+      },
+      {
+        heading: 'A prohibition needs a testable boundary',
+        paragraphs: [
+          'The phrase “superintelligence” carries emotional force but does not produce an enforcement threshold by itself. Human intelligence is not a single score, and a model can outperform experts in one domain while failing on routine judgment in another. A regulator would need to define which capabilities, levels of autonomy, access to tools, and failure behaviors trigger the prohibition.',
+          'The temporary pause is equally dependent on scope. “Advanced AI development” could mean training runs above a compute threshold, deployment of models that pass dangerous-capability evaluations, or research involving specific autonomous tools. Each definition creates different enforcement, reporting, and evasion risks. A rule that cannot distinguish routine improvements from prohibited scaling will either miss its target or freeze much more activity than intended.',
+          'That measurement problem does not make the proposal meaningless. It forces a debate that voluntary company frameworks have already begun: when a model’s cyber, biological, or autonomous capabilities require special controls, and who gets to decide whether those controls are sufficient. The political question is moving from general risk language toward authority over development itself.',
+        ],
+        citations: [1, 2],
+      },
+      {
+        heading: 'The signal is political even if the bill stalls',
+        paragraphs: [
+          'The proposal arrived the same day OpenAI released Astra, its first broadly deployed model assigned a Critical cyber capability rating. Sanders and Casar also cite recent incidents involving AI systems exceeding intended boundaries. Their framing connects dramatic frontier-risk scenarios to a demand for an institution with power to stop a deployment, not merely request disclosures.',
+          'Congress would still have to resolve difficult questions about research freedom, constitutional authority, international competition, open models, and verification. A domestic ban could shift activity across borders unless coordination and hardware controls were unusually effective. The proposed international component recognizes that problem without solving it.',
+          'The immediate consequence is therefore agenda-setting. A permanent ban is now an explicit position inside national politics, not only an argument among researchers and advocacy groups. Whether the bill advances or not, frontier labs should expect lawmakers to ask for clearer capability thresholds, incident records, and evidence that a safety promise can survive commercial pressure.',
+        ],
+        citations: [1, 2],
+      },
+    ],
+    sources: [
+      { publisher: 'Office of Senator Bernie Sanders', title: 'Sanders, Casar to introduce legislation to ban artificial superintelligence and temporarily pause advanced AI development', date: 'September 3, 2026', url: 'https://www.sanders.senate.gov/press-releases/news-sanders-casar-introduce-legislation-to-ban-artificial-superintelligence-and-temporarily-pause-advanced-ai-development/', kind: 'Primary source' },
+      { publisher: 'Axios', title: 'Bernie Sanders floats ban on superintelligent AI', date: 'September 3, 2026', url: 'https://www.axios.com/2026/09/03/bernie-sanders-superintelligence-ban-ai-pause', kind: 'Research' },
+    ],
+    methodology: 'The policy description follows the sponsors’ official announcement and is explicitly presented as a forthcoming proposal, not enacted law. Axios was used to confirm the timing, political context, absence of released full text at publication, and uncertainty about support.',
+  },
+  'tesla-cybercab-austin-launch': {
+    standfirst: 'Tesla’s purpose-built Cybercab has entered limited service in Austin without a steering wheel or pedals. Removing manual controls turns autonomy from a feature into the only available driver—and makes recovery evidence the central product question.',
+    sections: [
+      {
+        heading: 'The purpose-built vehicle reaches riders',
+        paragraphs: [
+          'Tesla made Cybercab rides available in limited areas of Austin on September 3. The two-seat vehicle has butterfly doors, a central touchscreen, and no steering wheel or pedals. Tesla’s new rider guide and support pages describe how passengers enter, control cabin features, handle luggage, and respond to problems in a vehicle designed from the beginning for the company’s Robotaxi service.',
+          'Associated Press reported dozens of Cybercabs operating on Austin streets around an invitation-only launch. That is a real commercialization milestone: Tesla previously ran robotaxi service with Model Y vehicles that retained ordinary driving controls. The Cybercab changes the physical contract. Nobody inside can take the wheel if the software encounters a situation it cannot resolve.',
+          'Tesla says the vehicle uses camera vision and sensors to navigate streets, highways, intersections, and parking areas. The company presents the system as fully autonomous. The public evidence available at launch, however, does not yet establish performance across weather, rare road behavior, emergency scenes, or a large fleet. Limited availability is a starting condition, not proof of city-scale reliability.',
+        ],
+        citations: [1, 2, 3],
+      },
+      {
+        heading: 'No controls means recovery moves elsewhere',
+        paragraphs: [
+          'A conventional assisted-driving system can transfer authority to the person in the seat. Cybercab cannot. Recovery must come from the vehicle’s automated fallback, remote support, a safe stop, or outside responders. That makes the design of degraded modes as important as the system’s ability to complete an ordinary trip.',
+          'The rider guide is evidence that Tesla has begun productizing those edge conditions, but documentation is not an incident record. Regulators and riders will need understandable data on disengagement-equivalent events, remote interventions, collisions, stranded vehicles, emergency access, and how quickly support arrives when a trip stops progressing.',
+          'Tesla’s camera-led approach also creates a useful comparison with rivals that combine cameras with radar and lidar. The launch does not settle that architecture debate. It creates a public environment in which competing sensor strategies can be compared through outcomes rather than simulation claims.',
+        ],
+        citations: [1, 2, 3],
+      },
+      {
+        heading: 'Scale is the business test and the safety test',
+        paragraphs: [
+          'AP notes that Tesla remains behind Waymo in deployed autonomous vehicles and completed trips, while Tesla is trying to expand beyond its existing cities. A purpose-built vehicle could improve fleet economics through fewer controls, a compact cabin, and manufacturing designed around ride service. Those benefits arrive only if utilization and reliability are high enough to outweigh support, cleaning, charging, and recovery costs.',
+          'Public trust is another constraint. AP cites a February Pew survey in which seven in ten US adults said they were not too comfortable or not at all comfortable riding in a driverless car. A steering-wheel-free cabin makes the technology unusually legible: riders cannot reassure themselves that a human could take over.',
+          'The cynical reading is that a dramatic vehicle can create a launch moment before the service reaches meaningful scale. The constructive reading is that Austin now offers a test with real passengers, real streets, and a vehicle that cannot hide behind manual controls. The next milestone is not another reveal. It is a transparent record showing that the system can fail safely, recover quickly, and repeat that performance across thousands of uneventful rides.',
+        ],
+        citations: [2, 3],
+      },
+    ],
+    sources: [
+      { publisher: 'Tesla', title: 'Cybercab Rider Guide', date: 'September 3, 2026', url: 'https://www.tesla.com/robotaxi/riderguides/cybercab/en_us', kind: 'Primary source' },
+      { publisher: 'Tesla Support', title: 'Cybercab Frequently Asked Questions', date: 'September 3, 2026', url: 'https://www.tesla.com/support/robotaxi/cybercab', kind: 'Primary source' },
+      { publisher: 'Associated Press', title: 'Tesla launches steering-wheel-free Cybercabs on Austin streets', date: 'September 3, 2026', url: 'https://apnews.com/article/tesla-cybercab-austin-elon-musk-driverless-8791add840f4debbc41bcaa9d1e64561', kind: 'Research' },
+    ],
+    methodology: 'Vehicle design and service availability were checked against Tesla’s rider documentation and support page. Associated Press was used for independent observation of the launch, comparative fleet context, and public-attitude data. We describe availability as limited and do not infer driverless safety from the launch alone.',
+  },
   'nvidia-huggingface-acquisition': {
     standfirst: 'Nvidia has agreed to acquire Hugging Face for $12.93 billion, reaching beyond chips into the platform where millions of developers discover, share, and deploy models. The deal’s defining question is whether ownership can change while neutrality does not.',
     sections: [
@@ -128,7 +316,7 @@ export const articlesByStoryId: Record<string, ArticleContent> = {
       },
     ],
     sources: [
-      { publisher: 'Broadcom Investor Relations', title: 'Broadcom announces third-quarter fiscal 2026 financial results', date: 'September 2, 2026', url: 'https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-third-quarter-fiscal-year-2026-financial', kind: 'Primary source' },
+      { publisher: 'Broadcom via PR Newswire', title: 'Broadcom announces third-quarter fiscal 2026 financial results', date: 'September 2, 2026', url: 'https://www.prnewswire.com/news-releases/broadcom-inc-announces-third-quarter-fiscal-year-2026-financial-results-and-quarterly-dividend-302868129.html', kind: 'Primary source' },
       { publisher: 'U.S. Securities and Exchange Commission', title: 'Broadcom Form 8-K filing', date: 'September 2, 2026', url: 'https://www.sec.gov/Archives/edgar/data/1730168/000173016826000076/avgo-20260902.htm', kind: 'Primary source' },
     ],
     methodology: 'All financial figures come from Broadcom’s earnings release and the corresponding SEC filing. Forward guidance is identified as management’s forecast, and the strategic interpretation is ours rather than company guidance or investment advice.',

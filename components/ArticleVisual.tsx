@@ -3,6 +3,36 @@ import type { CSSProperties } from 'react';
 type ArticleVisualProps = { storyId: string };
 
 const visualCopy: Record<string, { kicker: string; title: string; description: string; aria: string }> = {
+  'gpt-6-astra-launch': {
+    kicker: 'CAPABILITY GATE 01',
+    title: 'Performance and access now move through the same security gate.',
+    description: 'OpenAI reports near-saturated benchmark scores while classifying Astra at its Critical cyber threshold; the measurements are provider-reported.',
+    aria: 'Three bars rising from zero to show OpenAI reported scores of 98 percent on FrontierMath Tier 4, 99.9 percent on ARC-AGI-3, and 100 percent on ExploitBench, followed by a restricted cyber access marker.',
+  },
+  'weathernext-3-launch': {
+    kicker: 'FORECAST PIPELINE 02',
+    title: 'Fresh observations become a new global forecast every hour.',
+    description: 'Live satellite mosaics feed resolutions from 5 to 25 kilometers; the longest operational ensemble horizon is 15 days.',
+    aria: 'Weather forecasting flow from live satellite observations through an hourly model refresh to multi-resolution output and a 15-day main forecast horizon.',
+  },
+  'google-workspace-live-voice': {
+    kicker: 'CONTEXT PATH 03',
+    title: 'A spoken request can now cross several private work surfaces.',
+    description: 'The useful path is voice to permissioned retrieval to a generated result—with source review still visible before the user acts.',
+    aria: 'Voice agent flow from spoken request through a permission checkpoint, retrieval from mail files and chat, generated work, and user review.',
+  },
+  'superintelligence-ban-proposal': {
+    kicker: 'POLICY STACK 04',
+    title: 'The announced framework moves from pause to permanent prohibition.',
+    description: 'The sponsors propose a temporary development pause, a federal regulator, a superintelligence ban, and international coordination; it is not current law.',
+    aria: 'Four-stage policy diagram showing a temporary pause, rules from a proposed federal regulator, a permanent superintelligence ban, and international coordination.',
+  },
+  'tesla-cybercab-austin-launch': {
+    kicker: 'RECOVERY PATH 05',
+    title: 'Removing the wheel moves every fallback outside manual driving.',
+    description: 'Cybercab’s camera-led autonomy must resolve the trip, stop safely, or reach support because no passenger can take control.',
+    aria: 'Cybercab control diagram from camera sensing through autonomous driving to a checkpoint with either completed ride, safe stop, or remote support and no manual takeover.',
+  },
   'nvidia-huggingface-acquisition': {
     kicker: 'DEAL PATH 01',
     title: 'A platform acquisition arrives with a testable neutrality promise.',
@@ -85,6 +115,16 @@ const visualCopy: Record<string, { kicker: string; title: string; description: s
 
 function Diagram({ storyId }: ArticleVisualProps) {
   switch (storyId) {
+    case 'gpt-6-astra-launch':
+      return <div className="visual-lanes"><div><span>FRONTIERMATH · 98%</span><i style={{ '--fill': '98%' } as CSSProperties} /></div><div><span>ARC-AGI-3 · 99.9%</span><i style={{ '--fill': '99.9%' } as CSSProperties} /></div><div><span>EXPLOITBENCH · 100%</span><i className="striped" style={{ '--fill': '100%' } as CSSProperties} /></div><b>OPENAI-REPORTED · CRITICAL CYBER ACCESS GATED</b></div>;
+    case 'weathernext-3-launch':
+      return <div className="visual-flow"><span>LIVE SATELLITE</span><i>→</i><span>HOURLY REFRESH</span><i>→</i><span className="checkpoint">5–25 KM OUTPUT</span><i>→</i><span>15-DAY HORIZON</span><div className="cost-line">64-MEMBER PROBABILISTIC ENSEMBLE</div></div>;
+    case 'google-workspace-live-voice':
+      return <div className="visual-flow"><span>VOICE</span><i>→</i><span className="checkpoint">PERMISSION</span><i>→</i><span>MAIL · FILES · CHAT</span><i>→</i><span>DRAFT</span><div className="cost-line">SOURCES VISIBLE · USER REVIEWS</div></div>;
+    case 'superintelligence-ban-proposal':
+      return <div className="visual-ledger">{[['01', 'TEMPORARY PAUSE', 'PROPOSED'], ['02', 'FEDERAL RULES', 'NOT CREATED'], ['03', 'PERMANENT BAN', 'PROPOSED'], ['04', 'GLOBAL COORDINATION', 'SOUGHT']].map(([index, label, state]) => <div key={index}><span>{index}</span><b>{label}</b><i>{state}</i></div>)}</div>;
+    case 'tesla-cybercab-austin-launch':
+      return <div className="visual-flow"><span>CAMERAS</span><i>→</i><span>AUTONOMY</span><i>→</i><span className="checkpoint">ROAD EVENT</span><i>→</i><span>RIDE · STOP · SUPPORT</span><div className="cost-line">NO STEERING WHEEL · NO MANUAL TAKEOVER</div></div>;
     case 'nvidia-huggingface-acquisition':
       return <div className="visual-flow"><span>$11.9B DEAL</span><i>+</i><span>UP TO $1B RETENTION</span><i>→</i><span className="checkpoint">REGULATORY REVIEW</span><i>→</i><span>H1 2027 TARGET</span><div className="cost-line">OPEN MODELS · RIVAL CLOUDS · RIVAL SILICON</div></div>;
     case 'muse-spark-release':
