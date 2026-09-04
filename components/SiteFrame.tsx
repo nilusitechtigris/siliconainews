@@ -18,7 +18,6 @@ export function SiteFrame({ children, minimalHeader = false }: SiteFrameProps) {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
     const root = document.documentElement;
-    const sections = Array.from(document.querySelectorAll<HTMLElement>('[data-reveal]'));
     root.classList.add('motion-ready');
 
     const observer = new IntersectionObserver((entries) => {
@@ -27,12 +26,25 @@ export function SiteFrame({ children, minimalHeader = false }: SiteFrameProps) {
         entry.target.classList.add('is-visible');
         observer.unobserve(entry.target);
       });
-    }, { threshold: .12, rootMargin: '0px 0px -8% 0px' });
+    }, { threshold: .01, rootMargin: '0px 0px -6% 0px' });
+
+    const revealOrObserve = (section: HTMLElement) => {
+      const bounds = section.getBoundingClientRect();
+      const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+
+      if (bounds.top < viewportHeight * .94 && bounds.bottom > 0) {
+        section.classList.add('is-visible');
+        observer.unobserve(section);
+        return;
+      }
+
+      observer.observe(section);
+    };
 
     const observeNewSections = () => {
-      document.querySelectorAll<HTMLElement>('[data-reveal]:not(.is-visible)').forEach((section) => observer.observe(section));
+      document.querySelectorAll<HTMLElement>('[data-reveal]:not(.is-visible)').forEach(revealOrObserve);
     };
-    sections.forEach((section) => observer.observe(section));
+    document.querySelectorAll<HTMLElement>('[data-reveal]:not(.is-visible)').forEach(revealOrObserve);
     const mutationObserver = new MutationObserver(observeNewSections);
     mutationObserver.observe(document.body, { childList: true, subtree: true });
     return () => {
