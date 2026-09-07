@@ -16,10 +16,10 @@ export default function NewsPage() {
       </section>
       <div className="signal-ticker" aria-label="Trending topics">
         <span className="ticker-label">SIGNAL WIRE</span>
-        <div><i>#01</i> GPT-6 ASTRA <b>CRITICAL CYBER</b></div>
-        <div><i>#02</i> WEATHER AI <b>5 KM · HOURLY</b></div>
-        <div><i>#03</i> CYBERCAB <b>NO WHEEL</b></div>
-        <div><i>#04</i> AI BAN PROPOSAL <b>NOT LAW</b></div>
+        <div><i>#01</i> RESEARCH AGENTS <b>3.1 WORKDAYS</b></div>
+        <div><i>#02</i> AGENT CONTAINMENT <b>WIKI INCIDENT</b></div>
+        <div><i>#03</i> MUSIC AI <b>$0.08 · FULL SONG</b></div>
+        <div><i>#04</i> LOCAL INFERENCE <b>PAIR ROUTER</b></div>
       </div>
       <NewsFeed
         stories={stories}

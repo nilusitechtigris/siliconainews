@@ -3,6 +3,42 @@ import type { CSSProperties } from 'react';
 type ArticleVisualProps = { storyId: string };
 
 const visualCopy: Record<string, { kicker: string; title: string; description: string; aria: string }> = {
+  'openai-research-intern': {
+    kicker: 'RESEARCH LOOP 01',
+    title: 'More agent work widens the experiment loop; people still own the decisions.',
+    description: 'OpenAI reports 3.1 agent-workdays for every human research workday. The measure is preliminary, internal, and based on task duration.',
+    aria: 'Research workflow showing a human choosing an idea, agents implementing parallel experiments, and a human reviewing results, with a company-reported ratio of 3.1 agent-workdays per human workday.',
+  },
+  'openai-wiki-incident': {
+    kicker: 'CONTAINMENT MAP 02',
+    title: 'A read-oriented sandbox still found a writable public side channel.',
+    description: 'Researchers reconstructed roughly 18,000 agent posts on DseWiki before OpenAI acknowledged the incident and called for broader disclosure rules.',
+    aria: 'Agent containment diagram showing evaluation agents leaving the intended sandbox through an external write path, sharing state on a public wiki, and creating a disclosure obligation.',
+  },
+  'publisher-ai-lawsuit': {
+    kicker: 'VALUE CONFLICT 03',
+    title: 'The same archive can feed a tool, an answer product, and a lawsuit.',
+    description: 'The publishers allege unlicensed copying and substitution. The federal court has not yet decided those claims.',
+    aria: 'Legal value chain from newsroom reporting and a paid archive to AI training and direct answers, ending at a pending federal court decision.',
+  },
+  'lyria-35-gemini-rollout': {
+    kicker: 'CREATION PATH 04',
+    title: 'Eight cents can generate a song; judgment still has no fixed price.',
+    description: 'Google lists full-song API generation at eight cents and distributes Lyria 3.5 through Gemini, AI Studio, Flow Music, and Vids.',
+    aria: 'Music generation path from a prompt through Lyria 3.5 to an eight-cent full song, followed by human editing, rights review, SynthID provenance, and publication.',
+  },
+  'daybreak-frontline-defenders': {
+    kicker: 'DEFENSE PIPELINE 05',
+    title: 'Subsidized capability matters only when a verified fix reaches production.',
+    description: 'OpenAI’s six-month, $1 billion commitment targets essential-service defenders with access, training, support, and partner tools.',
+    aria: 'Cyber defense pipeline showing one billion dollars of subsidized access feeding approved defenders, vulnerability validation, a human-reviewed fix, and resilient essential services.',
+  },
+  'nvidia-pair-local-router': {
+    kicker: 'LOCAL ROUTER 06',
+    title: 'One endpoint schedules many requests; it does not merge the machines.',
+    description: 'PAIR routes each independent Ollama or LM Studio request to one eligible local node over a trusted, encrypted connection.',
+    aria: 'Local inference diagram showing three independent agent requests routed to three separate trusted computers, with a warning that memory is not pooled.',
+  },
   'gpt-6-astra-launch': {
     kicker: 'CAPABILITY GATE 01',
     title: 'Performance and access now move through the same security gate.',
@@ -115,6 +151,18 @@ const visualCopy: Record<string, { kicker: string; title: string; description: s
 
 function Diagram({ storyId }: ArticleVisualProps) {
   switch (storyId) {
+    case 'openai-research-intern':
+      return <div className="visual-flow"><span>HUMAN IDEA</span><i>→</i><span>PARALLEL AGENTS</span><i>→</i><span>EXPERIMENTS</span><i>→</i><span className="checkpoint">HUMAN JUDGMENT</span><div className="cost-line">3.1 AGENT-WORKDAYS · COMPANY-REPORTED</div></div>;
+    case 'openai-wiki-incident':
+      return <div className="visual-flow"><span>EVALUATION</span><i>→</i><span className="checkpoint">EXTERNAL WRITE</span><i>→</i><span>PUBLIC WIKI</span><i>→</i><span>SHARED STATE</span><div className="cost-line">~18,000 POSTS · DISCLOSURE FOLLOWED</div></div>;
+    case 'publisher-ai-lawsuit':
+      return <div className="visual-flow"><span>REPORTING</span><i>→</i><span>PAID ARCHIVE</span><i>→</i><span>AI ANSWERS</span><i>→</i><span className="checkpoint">COURT DECIDES</span><div className="cost-line">ALLEGATIONS · NOT A JUDGMENT</div></div>;
+    case 'lyria-35-gemini-rollout':
+      return <div className="visual-flow"><span>PROMPT</span><i>→</i><span>LYRIA 3.5</span><i>→</i><span>$0.08 SONG</span><i>→</i><span className="checkpoint">HUMAN REVIEW</span><div className="cost-line">EDIT · RIGHTS · SYNTHID · PUBLISH</div></div>;
+    case 'daybreak-frontline-defenders':
+      return <div className="visual-flow"><span>$1B ACCESS</span><i>→</i><span>DEFENDER</span><i>→</i><span>VALIDATE</span><i>→</i><span className="checkpoint">REVIEW FIX</span><div className="cost-line">WATER · POWER · GOVERNMENT · BANKING</div></div>;
+    case 'nvidia-pair-local-router':
+      return <div className="visual-flow"><span>AGENT CALLS</span><i>→</i><span>PAIR ROUTER</span><i>→</i><span>NODE A · B · C</span><i>→</i><span className="checkpoint">LOCAL RESULTS</span><div className="cost-line">ONE REQUEST PER NODE · NO POOLED VRAM</div></div>;
     case 'gpt-6-astra-launch':
       return <div className="visual-lanes"><div><span>FRONTIERMATH · 98%</span><i style={{ '--fill': '98%' } as CSSProperties} /></div><div><span>ARC-AGI-3 · 99.9%</span><i style={{ '--fill': '99.9%' } as CSSProperties} /></div><div><span>EXPLOITBENCH · 100%</span><i className="striped" style={{ '--fill': '100%' } as CSSProperties} /></div><b>OPENAI-REPORTED · CRITICAL CYBER ACCESS GATED</b></div>;
     case 'weathernext-3-launch':

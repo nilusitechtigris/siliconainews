@@ -99,7 +99,51 @@ const september3Stories: Story[] = [
   },
 ];
 
+const september4Stories: Story[] = [
+  {
+    id: 'gpt-6-astra-launch', code: 'RE', author: 'Deep-Tech Researcher', role: 'FRONTIER MODELS & SAFETY', accent: 'coral',
+    title: 'Astra is here. The real threshold is cyber capability, not the AGI slogan.',
+    summary: 'OpenAI released GPT-6 Astra with striking computer-use claims and its first “Critical” cybersecurity rating. The benchmark leap matters, but the staged rollout and restricted cyber access say even more.',
+    keyPoint: 'The launch turns model capability, deployment controls, and continuous monitoring into one inseparable product decision.',
+    tags: ['GPT-6', 'Cybersecurity', 'Agents'], time: '5 min', published: '04:38', graphNode: 'gpt-6-astra', sourceCount: 3, primarySource: 'OpenAI',
+  },
+  {
+    id: 'weathernext-3-launch', code: 'CL', author: 'The Carbon Ledger', role: 'CLIMATE & INFRA', accent: 'mint',
+    title: 'Google’s weather AI now refreshes hourly—and watches the sky it predicts',
+    summary: 'WeatherNext 3 combines live satellite observations with global forecasts as fine as five kilometers. Its most practical breakthrough may be energy variables built for wind and solar operators.',
+    keyPoint: 'Faster, sharper forecasts become infrastructure when they feed public products and operational energy decisions.',
+    tags: ['Climate AI', 'Forecasting', 'Energy'], time: '4 min', published: '04:38', graphNode: 'weathernext-3', sourceCount: 3, primarySource: 'Google DeepMind',
+  },
+  {
+    id: 'google-workspace-live-voice', code: 'UX', author: 'The Interface Cartographer', role: 'PRODUCT & INTERFACE', accent: 'blue',
+    title: 'Google wants you to talk to your inbox. Permission is the real interface.',
+    summary: 'Gmail Live, Docs Live, and Keep Live turn speech into search, drafts, and structured notes. Once an assistant can reach across mail, files, chat, and the web, good UX begins with visible boundaries.',
+    keyPoint: 'Voice removes typing friction while making context, consent, and provenance harder for users to see.',
+    tags: ['Workspace', 'Voice AI', 'UX'], time: '4 min', published: '04:38', graphNode: 'workspace-live', sourceCount: 2, primarySource: 'Google Workspace',
+  },
+  {
+    id: 'superintelligence-ban-proposal', code: 'PW', author: 'The Policy Wonk', role: 'GOVERNANCE & POWER', accent: 'amber',
+    title: 'Congress now has a proposal to ban superintelligence. Defining it is the first fight.',
+    summary: 'Bernie Sanders and Greg Casar announced legislation that would pair a permanent superintelligence ban with a temporary pause on advanced AI. The ambition is enormous; the text, support, and enforceable thresholds remain unsettled.',
+    keyPoint: 'A sweeping ban cannot become operational policy until lawmakers turn “too powerful to control” into auditable technical criteria.',
+    tags: ['Policy', 'AI Safety', 'Congress'], time: '4 min', published: '04:38', graphNode: 'superintelligence-ban', sourceCount: 2, primarySource: 'U.S. Senate',
+  },
+  {
+    id: 'tesla-cybercab-austin-launch', code: 'CA', author: 'The Cynical Analyst', role: 'MARKETS & AUTONOMY', accent: 'coral',
+    title: 'Tesla removed the steering wheel. Austin is now the safety case.',
+    summary: 'Purpose-built Cybercabs without pedals or manual controls entered limited service in Austin. The milestone is real, but fleet scale, camera-only safety evidence, and public trust will decide whether it becomes a transport network.',
+    keyPoint: 'A vehicle nobody onboard can drive manually raises the evidence bar from impressive autonomy to dependable recovery.',
+    tags: ['Robotics', 'Mobility', 'Tesla'], time: '4 min', published: '04:38', graphNode: 'cybercab', sourceCount: 3, primarySource: 'Tesla',
+  },
+];
+
 export const archivedEditions = [
+  {
+    pulse: 'NIGHT_RUN_04',
+    publishedDate: '2026-09-04',
+    publishedLabel: 'September 4, 2026',
+    stories: september4Stories,
+  },
   {
     pulse: 'NOON_RUN_03',
     publishedDate: '2026-09-03',
@@ -147,6 +191,29 @@ const september3GraphNodes: GraphNode[] = [
   { id: 'embodied-ai', label: 'Embodied AI', category: 'Robotics', storyIds: ['london-robotaxi-launch', 'muse-spark-release'], weight: 7 },
 ];
 
+const september4GraphNodes: GraphNode[] = [
+  { id: 'gpt-6-astra', label: 'GPT-6 Astra', category: 'Models', storyIds: ['gpt-6-astra-launch'], weight: 10 },
+  { id: 'critical-cyber', label: 'Critical Cyber Capability', category: 'Policy', storyIds: ['gpt-6-astra-launch', 'superintelligence-ban-proposal'], weight: 10 },
+  { id: 'computer-use', label: 'Computer Use', category: 'Models', storyIds: ['gpt-6-astra-launch', 'google-workspace-live-voice'], weight: 9 },
+  { id: 'agent-workflows', label: 'Agent Workflows', category: 'Models', storyIds: ['gpt-6-astra-launch', 'google-workspace-live-voice'], weight: 10 },
+  { id: 'prompt-injection', label: 'Prompt Injection', category: 'Policy', storyIds: ['gpt-6-astra-launch', 'google-workspace-live-voice'], weight: 7 },
+  { id: 'weathernext-3', label: 'WeatherNext 3', category: 'Models', storyIds: ['weathernext-3-launch'], weight: 10 },
+  { id: 'satellite-assimilation', label: 'Live Satellite Data', category: 'Models', storyIds: ['weathernext-3-launch'], weight: 8 },
+  { id: 'renewable-forecasting', label: 'Renewable Forecasting', category: 'Policy', storyIds: ['weathernext-3-launch'], weight: 8 },
+  { id: 'power-grid', label: 'Power Grid', category: 'Policy', storyIds: ['weathernext-3-launch'], weight: 8 },
+  { id: 'workspace-live', label: 'Workspace Live', category: 'Models', storyIds: ['google-workspace-live-voice'], weight: 9 },
+  { id: 'voice-agents', label: 'Voice Agents', category: 'Models', storyIds: ['google-workspace-live-voice', 'gpt-6-astra-launch'], weight: 8 },
+  { id: 'permissioned-context', label: 'Permissioned Context', category: 'Policy', storyIds: ['google-workspace-live-voice'], weight: 7 },
+  { id: 'long-context', label: 'Long Context', category: 'Models', storyIds: ['google-workspace-live-voice'], weight: 7 },
+  { id: 'superintelligence-ban', label: 'Superintelligence Ban', category: 'Policy', storyIds: ['superintelligence-ban-proposal'], weight: 9 },
+  { id: 'federal-ai-regulator', label: 'Federal AI Regulator', category: 'Policy', storyIds: ['superintelligence-ban-proposal'], weight: 8 },
+  { id: 'compute-policy', label: 'Compute Policy', category: 'Policy', storyIds: ['superintelligence-ban-proposal'], weight: 8 },
+  { id: 'cybercab', label: 'Tesla Cybercab', category: 'Robotics', storyIds: ['tesla-cybercab-austin-launch'], weight: 10 },
+  { id: 'camera-only-autonomy', label: 'Camera-Only Autonomy', category: 'Robotics', storyIds: ['tesla-cybercab-austin-launch'], weight: 9 },
+  { id: 'austin-robotaxi', label: 'Austin Robotaxi', category: 'Robotics', storyIds: ['tesla-cybercab-austin-launch'], weight: 8 },
+  { id: 'embodied-ai', label: 'Embodied AI', category: 'Robotics', storyIds: ['tesla-cybercab-austin-launch'], weight: 9 },
+];
+
 const september2GraphLinks: GraphLink[] = [
   { source: 'hbm4', target: 'chiplets', relation: 'shares memory fabric' },
   { source: 'hbm4', target: 'cxl', relation: 'expands memory' },
@@ -181,5 +248,25 @@ const september3GraphLinks: GraphLink[] = [
   { source: 'embodied-ai', target: 'agent-workflows', relation: 'acts in physical systems' },
 ];
 
-export const archivedGraphNodes: GraphNode[] = [...september3GraphNodes, ...september2GraphNodes];
-export const archivedGraphLinks: GraphLink[] = [...september3GraphLinks, ...september2GraphLinks];
+const september4GraphLinks: GraphLink[] = [
+  { source: 'gpt-6-astra', target: 'critical-cyber', relation: 'crosses capability threshold' },
+  { source: 'gpt-6-astra', target: 'computer-use', relation: 'acts inside software' },
+  { source: 'gpt-6-astra', target: 'agent-workflows', relation: 'extends delegated work' },
+  { source: 'critical-cyber', target: 'prompt-injection', relation: 'requires layered defenses' },
+  { source: 'critical-cyber', target: 'superintelligence-ban', relation: 'intensifies policy debate' },
+  { source: 'weathernext-3', target: 'satellite-assimilation', relation: 'ingests live observations' },
+  { source: 'weathernext-3', target: 'renewable-forecasting', relation: 'predicts energy variables' },
+  { source: 'renewable-forecasting', target: 'power-grid', relation: 'supports grid planning' },
+  { source: 'workspace-live', target: 'voice-agents', relation: 'turns speech into tasks' },
+  { source: 'workspace-live', target: 'permissioned-context', relation: 'draws on user data' },
+  { source: 'permissioned-context', target: 'long-context', relation: 'grounds generated work' },
+  { source: 'voice-agents', target: 'computer-use', relation: 'reduces interface friction' },
+  { source: 'superintelligence-ban', target: 'federal-ai-regulator', relation: 'proposes new agency' },
+  { source: 'superintelligence-ban', target: 'compute-policy', relation: 'expands oversight scope' },
+  { source: 'cybercab', target: 'camera-only-autonomy', relation: 'relies on vision system' },
+  { source: 'cybercab', target: 'austin-robotaxi', relation: 'enters limited service' },
+  { source: 'cybercab', target: 'embodied-ai', relation: 'removes manual controls' },
+];
+
+export const archivedGraphNodes: GraphNode[] = [...september4GraphNodes, ...september3GraphNodes, ...september2GraphNodes];
+export const archivedGraphLinks: GraphLink[] = [...september4GraphLinks, ...september3GraphLinks, ...september2GraphLinks];
