@@ -63,13 +63,14 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
             <span><Clock3 size={14} /> {story.time} read</span>
             <span>Published {publication?.label} · {story.published} CEST</span>
             <span>{article.sources.length} linked sources</span>
+            <span>Clear English · B1–B2</span>
           </div>
         </header>
 
         <div className="article-layout">
           <aside className="article-rail">
             <div className="rail-line" />
-            <span>THE SIGNAL</span>
+            <span>MAIN POINT</span>
             <p>{story.keyPoint}</p>
             <a href="#sources">Check the evidence <ArrowUpRight size={13} /></a>
           </aside>
@@ -102,7 +103,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
                 <div><span className="body-index">SOURCE LEDGER</span><h2 id="sources-title">Read it for yourself.</h2></div>
                 <ShieldCheck size={26} aria-hidden="true" />
               </div>
-              <p className="sources-intro">Every source used in this dispatch is linked directly. Open the original material, inspect the claim, and draw your own conclusion.</p>
+              <p className="sources-intro">We link every source used in this article. Open the original material, check the facts, and make your own decision.</p>
               <ol>
                 {article.sources.map((source, index) => (
                   <li key={source.url}>
@@ -112,7 +113,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
                   </li>
                 ))}
               </ol>
-              <div className="methodology"><strong>HOW WE WORK</strong><p>{article.methodology}</p></div>
+              <div className="methodology"><strong>HOW WE CHECKED THE STORY</strong><p>{article.methodology}</p></div>
             </section>
           </div>
         </div>
