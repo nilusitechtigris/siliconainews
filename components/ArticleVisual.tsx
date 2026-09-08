@@ -3,6 +3,42 @@ import type { CSSProperties } from 'react';
 type ArticleVisualProps = { storyId: string };
 
 const visualCopy: Record<string, { kicker: string; title: string; description: string; aria: string }> = {
+  'mistral-series-d': {
+    kicker: 'CAPITAL PATH 01',
+    title: 'A record funding round can buy compute, but it cannot guarantee useful products.',
+    description: 'Mistral raised €3 billion at a value above €21 billion. It plans to spend the money on research, computing power, infrastructure, and growth.',
+    aria: 'Funding flow showing three billion euros moving into research, computing power, infrastructure, and growth, followed by customer tests of quality, price, and control.',
+  },
+  'eu-neuro-ai-governance': {
+    kicker: 'DATA PATH 02',
+    title: 'Brain data can move through many systems after it leaves one device.',
+    description: 'EU ethics experts want protection across the full path from collection and storage to shared models and important decisions.',
+    aria: 'Neuro-AI data flow from a brain device through storage and a shared AI model to health research and important decisions, with rights checks at each step.',
+  },
+  'axa-global-ai-hub': {
+    kicker: 'CONTROL HUB 03',
+    title: 'One shared platform can support many teams when each team keeps clear limits.',
+    description: 'Five AXA businesses use the first hub version for tasks such as claims, email, and company knowledge.',
+    aria: 'Enterprise AI diagram showing five AXA businesses connected to one shared hub with model choice, cost control, security, and human review.',
+  },
+  'minicpm5-2b-release': {
+    kicker: 'MODEL PACKAGE 04',
+    title: 'A 2.52-billion-parameter model now ships with local formats and open data.',
+    description: 'MiniCPM5-2B supports 131,072 input tokens. Its maker and an outside test use different score systems.',
+    aria: 'Model package diagram showing 2.52 billion parameters, a 131,072-token input window, local runtime formats, released training data, and two separate test score systems.',
+  },
+  'cathay-contrail-trial': {
+    kicker: 'FLIGHT PATH 05',
+    title: 'AI forecasts can guide a small route change around contrail-forming air.',
+    description: 'Google estimates about 40% less contrail warming across more than 80 trial flights. This is not a 40% cut in total emissions.',
+    aria: 'Flight path diagram showing an AI weather forecast, a pilot decision, a small height change, and lower estimated contrail warming, with total emissions measured separately.',
+  },
+  'goldman-open-model-controls': {
+    kicker: 'SAFETY STACK 06',
+    title: 'Four separate controls stand between an open model and important bank systems.',
+    description: 'The proposal covers model testing, a secure running area, limited agent permissions, and controlled data access.',
+    aria: 'Four-layer safety diagram showing model testing, a secure running area, limited agent permissions, and controlled company data access.',
+  },
   'openai-research-intern': {
     kicker: 'RESEARCH LOOP 01',
     title: 'AI agents can run more experiments, but people still make the decisions.',
@@ -151,6 +187,18 @@ const visualCopy: Record<string, { kicker: string; title: string; description: s
 
 function Diagram({ storyId }: ArticleVisualProps) {
   switch (storyId) {
+    case 'mistral-series-d':
+      return <div className="visual-flow"><span>€3B ROUND</span><i>→</i><span>RESEARCH · COMPUTE</span><i>→</i><span>PRODUCTS</span><i>→</i><span className="checkpoint">CUSTOMER PROOF</span><div className="cost-line">VALUE ABOVE €21B · NOT REVENUE</div></div>;
+    case 'eu-neuro-ai-governance':
+      return <div className="visual-flow"><span>BRAIN DATA</span><i>→</i><span>STORAGE</span><i>→</i><span>SHARED MODEL</span><i>→</i><span className="checkpoint">RIGHTS CHECK</span><div className="cost-line">DEVICE · INFRASTRUCTURE · LATER USES</div></div>;
+    case 'axa-global-ai-hub':
+      return <div className="visual-flow"><span>5 AXA TEAMS</span><i>→</i><span>GLOBAL AI HUB</span><i>→</i><span>CLAIMS · EMAIL · SEARCH</span><i>→</i><span className="checkpoint">HUMAN REVIEW</span><div className="cost-line">MODEL CHOICE · COST · SAFETY · ACCESS</div></div>;
+    case 'minicpm5-2b-release':
+      return <div className="visual-lanes"><div><span>PARAMETERS · 2.52B</span><i style={{ '--fill': '62%' } as CSSProperties} /></div><div><span>CONTEXT · 131,072</span><i style={{ '--fill': '100%' } as CSSProperties} /></div><div><span>OPEN DATA · RELEASED</span><i className="striped" style={{ '--fill': '84%' } as CSSProperties} /></div><b>APACHE 2.0 · LOCAL FORMATS</b></div>;
+    case 'cathay-contrail-trial':
+      return <div className="visual-flow"><span>AI FORECAST</span><i>→</i><span>PILOT CHECK</span><i>→</i><span>SMALL ROUTE CHANGE</span><i>→</i><span className="checkpoint">~40% LESS CONTRAIL WARMING</span><div className="cost-line">80+ TEST FLIGHTS · TOTAL EMISSIONS SEPARATE</div></div>;
+    case 'goldman-open-model-controls':
+      return <div className="visual-ledger">{[['01', 'MODEL TEST', 'CERTIFY'], ['02', 'SECURE RUNTIME', 'ISOLATE'], ['03', 'AGENT RIGHTS', 'LIMIT'], ['04', 'DATA ACCESS', 'CONTROL']].map(([index, label, state]) => <div key={index}><span>{index}</span><b>{label}</b><i>{state}</i></div>)}</div>;
     case 'openai-research-intern':
       return <div className="visual-flow"><span>HUMAN IDEA</span><i>→</i><span>PARALLEL AGENTS</span><i>→</i><span>EXPERIMENTS</span><i>→</i><span className="checkpoint">HUMAN JUDGMENT</span><div className="cost-line">3.1 AGENT-WORKDAYS · COMPANY-REPORTED</div></div>;
     case 'openai-wiki-incident':

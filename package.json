@@ -10,7 +10,8 @@
     "build": "vinext build",
     "start": "vinext start",
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next",
-    "check:readability": "node scripts/check-readability.mjs"
+    "check:readability": "node scripts/check-readability.mjs",
+    "check:links": "node scripts/check-source-links.mjs"
   },
   "dependencies": {
     "d3-force": "^3.0.0",

@@ -19,6 +19,231 @@ export type ArticleContent = {
 };
 
 export const articlesByStoryId: Record<string, ArticleContent> = {
+  'mistral-series-d': {
+    standfirst: 'Mistral has raised €3 billion in a Series D funding round. The French company is now valued above €21 billion. The money gives Mistral more power to train models, but investors still need useful products and paying customers.',
+    sections: [
+      {
+        heading: 'What the new funding changes',
+        paragraphs: [
+          'Samsung Electronics led the round. The Scaleup Europe Fund and PSG Equity were also main investors. Mistral says this is the largest private funding round for a European technology company. Reuters reported the same funding amount and a value of about €21 billion.',
+          'Mistral says it will spend the money on research, computing power, infrastructure, and international growth. Training a strong model needs many expensive AI chips. A large round can help the company reserve more machines and run more tests at the same time.',
+          'The company says it works in 20 countries and supports more than 125 large customers. These figures come from Mistral. The new round does not tell us how much revenue each customer brings or how long each contract will last.',
+        ],
+        citations: [1, 2],
+      },
+      {
+        heading: 'Why European control is part of the product',
+        paragraphs: [
+          'Mistral describes its offer as sovereign AI. In simple words, a customer can keep more control over its data, models, computers, and software. This can matter to governments, banks, factories, and other groups with strict security rules.',
+          'Some Mistral models have open weights. This means a customer can download and change the trained model files. Open weights can reduce dependence on one cloud provider, but they do not remove every limit. A team still needs skilled staff, secure computers, updates, and support.',
+          'Europe wants more local choices in a market led by large US and Chinese companies. A European address can help Mistral win trust. It is not enough by itself. Customers will compare quality, speed, price, safety, and support with many other models.',
+        ],
+        citations: [1, 2, 3],
+      },
+      {
+        heading: 'The hard work starts after the headline',
+        paragraphs: [
+          'A value above €21 billion is what investors agreed for this funding round. It is not the same as cash in the bank or yearly sales. It also does not prove that Mistral has the best model. It shows that investors expect strong future growth.',
+          'The useful questions are now practical. Can Mistral improve its main models? Can it keep enough computing power? Can it offer clear prices and dependable service? Can customers move their work if they later choose another provider?',
+          'This round gives Mistral time and options. It also raises expectations. A record European funding story will matter only if the company turns the money into products that people can use, control, and afford.',
+        ],
+        citations: [1, 2, 3],
+      },
+    ],
+    sources: [
+      { publisher: 'Mistral', title: 'Mistral raises €3B to make sovereign, open-weight AI the technology frontier', date: 'September 8, 2026', url: 'https://mistral.ai/news/mistral-makes-sovereign-open-weight-ai-to-frontier/', kind: 'Primary source' },
+      { publisher: 'Reuters via Euronext', title: 'French AI company Mistral hits $24 billion valuation in funding round', date: 'September 8, 2026', url: 'https://live.euronext.com/en/financial-news/french-ai-company-mistral-hits-24-billion-valuation-funding-round', kind: 'Research' },
+      { publisher: 'Le Monde', title: 'Mistral AI raises €3 billion in response to doubts over its strategic direction', date: 'September 8, 2026', url: 'https://www.lemonde.fr/en/economy/article/2026/09/08/mistral-ai-raises-3-billion-in-response-to-doubts-over-its-strategic-direction_6757278_19.html', kind: 'Research' },
+    ],
+    methodology: 'We used Mistral for the deal details and planned use of the money. We checked the main figures with Reuters and Le Monde. We label company statements as claims and do not treat the funding value as revenue or proof of model quality.',
+  },
+  'eu-neuro-ai-governance': {
+    standfirst: 'European ethics experts want policy to cover the full system behind brain-data AI. Their new statement asks for stronger data rights, careful model design, public oversight, and a review of current EU rules. It is expert advice, not law.',
+    sections: [
+      {
+        heading: 'Brain data can travel further than one device',
+        paragraphs: [
+          'Neurotechnology collects information from the brain or nervous system. AI can study this information to find patterns. The tools may help with medical research, treatment, or rehabilitation. They may also be used in work, insurance, education, or security.',
+          'The European Group on Ethics says policy should not focus only on one headset or medical device. Brain data may move through storage systems, research databases, AI models, and services. New results can also be guessed from old data later.',
+          'This wider path is what the group calls a neuro-AI infrastructure. A problem in one part can affect many later uses. For example, a model trained for health research might later support a decision that changes a person\'s job or insurance.',
+        ],
+        citations: [1, 2],
+      },
+      {
+        heading: 'The experts give five main recommendations',
+        paragraphs: [
+          'First, the group wants stronger protection for brain data and for facts that AI guesses from it. Second, it wants responsible work on large Brain Foundation Models. These models could learn from many brain-data sources and support many different tools.',
+          'Third, people should be protected from unfair control when these systems affect important decisions. Fourth, Europe should build public-interest skills and services to oversee the infrastructure. Fifth, the EU should check whether its current laws cover the new risks.',
+          'These points are recommendations from an independent expert group. They do not create a new duty today. The European Commission and lawmakers would need to decide whether to turn any idea into guidance or law.',
+        ],
+        citations: [1, 2],
+      },
+      {
+        heading: 'Good rules need control over later uses',
+        paragraphs: [
+          'A person may agree to share brain data for one medical study. That does not mean they agreed to every future use. Clear rules should say who can reuse the data, which models can learn from it, and when the data must be deleted.',
+          'People also need a way to challenge an important decision based on brain data or an AI guess. A system should keep records of the data source, model version, purpose, and people who approved the use.',
+          'The statement arrives before Brain Foundation Models become common. That is useful because policy is easier to build before one system becomes too large to change. The next step is a public test of which rights and technical controls can work in real projects.',
+        ],
+        citations: [1, 2],
+      },
+    ],
+    sources: [
+      { publisher: 'European Commission', title: 'Experts call for a new approach to Neuro-AI governance', date: 'September 8, 2026', url: 'https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/experts-call-new-approach-neuro-ai-governance-2026-09-08_en', kind: 'Primary source' },
+      { publisher: 'Ethics Advice Mechanism', title: 'Governing neuro-AI: towards an infrastructure approach', date: 'September 2, 2026', url: 'https://ethicsadvice.eu/outputs/', kind: 'Primary source' },
+    ],
+    methodology: 'We used the European Commission summary and the official ethics publication list. We explain the recommendations in plain English. We clearly state that the expert statement is advice and does not change EU law by itself.',
+  },
+  'axa-global-ai-hub': {
+    standfirst: 'AXA and Publicis Sapient are expanding a shared platform for AI agents. Five AXA businesses already use its first version. A common platform can reduce repeated work, but it also becomes one important place for security, costs, and human control.',
+    sections: [
+      {
+        heading: 'One platform for many insurance teams',
+        paragraphs: [
+          'AXA calls the system its Global AI Hub. The first version arrived in July and is used by teams in Germany, France, Switzerland, the United Kingdom, and AXA XL. Publicis Sapient will help AXA develop and run it at a larger scale.',
+          'The hub gives teams shared tools for choosing models, running AI agents, checking costs, and applying safety rules. AXA says it is not tied to one model provider. This can let a team choose a smaller or more suitable model for each job.',
+          'Current projects include motor claims, customer email, and company knowledge. These are areas with private data and important decisions. AXA says people will still oversee business decisions with high impact.',
+        ],
+        citations: [1, 2],
+      },
+      {
+        heading: 'Shared foundations can remove repeated work',
+        paragraphs: [
+          'Without a common platform, each country team may build its own login system, model connection, safety check, and cost report. This takes time and can create different rules. A shared hub can provide those parts once.',
+          'The design may also make changes easier to track. A central record can show which model handled a task, which data it could reach, and which person approved the result. That record is important when a customer asks why something happened.',
+          'However, a central hub can spread a mistake. A weak permission or unsafe model setting may affect several teams. The platform needs separate access areas, clear limits, strong testing, and a quick way to stop one tool without stopping everything.',
+        ],
+        citations: [1, 2],
+      },
+      {
+        heading: 'The announcement needs real results next',
+        paragraphs: [
+          'AXA says the hub should reduce cost and time to market. The announcement does not give measured savings, error rates, or customer results. It also does not list the models that are already used. Those facts will matter when the project grows.',
+          'A useful scorecard could show how many tasks reach production, how often people change an AI result, and how many safety events appear. It should also show cost per finished task, not only cost per model request.',
+          'The hub is a serious move from small AI tests to shared company infrastructure. Its success will depend on ordinary details: safe access, understandable records, clear human responsibility, and honest measures of value.',
+        ],
+        citations: [1, 2],
+      },
+    ],
+    sources: [
+      { publisher: 'AXA', title: 'AXA and Publicis Sapient collaborate to deploy Global AI Hub at scale', date: 'September 8, 2026', url: 'https://www.axa.com/en/press/press-releases/axa-and-publicis-sapient-collaborate-to-deploy-global-ai-hub-at-scale', kind: 'Primary source' },
+      { publisher: 'Reuters via Boursorama', title: 'AXA announces a strategic partnership with Publicis Sapient', date: 'September 8, 2026', url: 'https://www.boursorama.com/bourse/actualites/axa-annonce-un-partenariat-strategique-avec-publicis-sapient-5582c45081386470c83caa8085aaf075', kind: 'Research' },
+    ],
+    methodology: 'We used AXA\'s release for the platform design, locations, and planned uses. We checked the partnership announcement with a Reuters brief. The release gives no measured savings, so we do not claim that the hub has already cut cost or errors.',
+  },
+  'minicpm5-2b-release': {
+    standfirst: 'OpenBMB has released MiniCPM5-2B under the Apache 2.0 licence. The small model supports a 131,072-token context window and several local tools. OpenBMB also released training data, while an outside test gives a separate early result.',
+    sections: [
+      {
+        heading: 'A small model with a long input window',
+        paragraphs: [
+          'MiniCPM5-2B has about 2.52 billion parameters. Parameters are the learned numbers inside a model. This is small compared with many cloud models. OpenBMB designed it for local assistants, coding tools, and devices with limited computing power.',
+          'The model card lists a native context length of 131,072 tokens. This means the model can receive a large amount of text in one request. A long window does not guarantee that the model will remember every detail correctly.',
+          'The release works with common tools such as Transformers, vLLM, SGLang, llama.cpp, Ollama, LM Studio, and MLX. Ready-made formats can make testing easier on Linux computers, local servers, and Apple Silicon machines.',
+        ],
+        citations: [1, 2],
+      },
+      {
+        heading: 'OpenBMB shared more than model weights',
+        paragraphs: [
+          'The group released the final model, earlier checkpoints, smaller formats, and parts of the training data. One agent dataset has 500,000 samples. Another has more than 80,000 examples for reinforcement learning in maths, code, knowledge, and long-context work.',
+          'This wider release helps researchers study how the model was built. It can also help teams train a version for their own task. Open data does not remove every question about quality, rights, or missing material, but it gives outsiders more to inspect.',
+          'The Apache 2.0 licence allows broad use. Teams still need to read the licence and check the data rules for their own product. They also need security tests before an agent can call tools or reach private files.',
+        ],
+        citations: [1, 2],
+      },
+      {
+        heading: 'Separate maker claims from outside tests',
+        paragraphs: [
+          'OpenBMB reports an average score of 53.9 across its own comparison table. It says the model leads other open models of a similar size. Most results in that table were produced by OpenBMB, so teams should not treat them as a final answer.',
+          'Artificial Analysis ran a separate test and gave the model 15 on its current Intelligence Index. It says this is the highest result among open-weight models below four billion total parameters. Its test uses a different set of tasks, so the two scores cannot be compared directly.',
+          'The best next step is a small local trial. Teams should measure answer quality, speed, memory use, power use, and tool safety on real work. A compact model is valuable when it fits the device and completes the task, not only when it wins a table.',
+        ],
+        citations: [1, 3],
+      },
+    ],
+    sources: [
+      { publisher: 'OpenBMB on Hugging Face', title: 'MiniCPM5-2B model card', date: 'September 7, 2026', url: 'https://huggingface.co/openbmb/MiniCPM5-2B', kind: 'Primary source' },
+      { publisher: 'OpenBMB on GitHub', title: 'MiniCPM model repository and release log', date: 'September 7, 2026', url: 'https://github.com/OpenBMB/MiniCPM', kind: 'Primary source' },
+      { publisher: 'Artificial Analysis', title: 'OpenBMB releases MiniCPM5-2B', date: 'September 7, 2026', url: 'https://artificialanalysis.ai/articles/openbmb-releases-minicpm5-2b', kind: 'Research' },
+    ],
+    methodology: 'We used the model card and official code repository for size, licence, formats, data, and maker test results. We used Artificial Analysis for a separate score. We keep the two test systems separate because they use different tasks and scales.',
+  },
+  'cathay-contrail-trial': {
+    standfirst: 'Cathay Pacific and Google are expanding an AI trial that helps pilots avoid areas where warming contrails may form. Google estimates that the first test cut contrail warming by about 40%. The result does not mean total flight emissions fell by 40%.',
+    sections: [
+      {
+        heading: 'How the flight trial works',
+        paragraphs: [
+          'Contrails are the white lines that sometimes form behind an aircraft. They can appear in very cold and wet air. Some disappear quickly, while others spread into thin clouds that keep heat in the atmosphere.',
+          'Google combines weather data, AI forecasts, and satellite tools to find areas where a warming contrail may form. Cathay puts the forecast into its digital flight system. Dispatchers and pilots can then consider a small change in height or route.',
+          'Pilots already make route changes for weather and traffic. A contrail change must also fit airspace rules, fuel needs, aircraft weight, and safety. The first trial could not change every planned flight because some flights had operating limits.',
+        ],
+        citations: [1, 2, 3],
+      },
+      {
+        heading: 'What the 40% number means',
+        paragraphs: [
+          'The first trial began in late 2025 and planned more than 100 flights. More than 80 flights followed contrail-avoidance routes. Google estimates that these flights reduced the warming effect of their contrails by about 40%.',
+          'This is not a 40% cut in fuel use or carbon dioxide. An aircraft may use a little more fuel when it changes height or route. The trial is studying whether the lower contrail warming is larger than any extra warming from fuel.',
+          'The Hong Kong to Singapore route produced more than half of the measured climate benefit in the first trial. That result shows why local weather and route conditions matter. It does not mean every route will have the same benefit.',
+        ],
+        citations: [1, 2],
+      },
+      {
+        heading: 'The next phase needs broader evidence',
+        paragraphs: [
+          'Cathay and Google now plan more tests across routes within Asia, across the Pacific, and near the poles. Cathay is the first Google airline partner in Asia-Pacific and the first to test this method on very long flights.',
+          'A larger test can show how often pilots can use the forecast, how much extra fuel is needed, and whether the result stays strong in different seasons. It can also help air-traffic teams decide how several airlines should share the same airspace.',
+          'Avoiding contrails cannot replace lower carbon dioxide emissions, cleaner fuel, or better aircraft. It may become one faster tool that works with those changes. The early result is hopeful, but the larger trial must show the full cost and climate effect.',
+        ],
+        citations: [1, 2, 3],
+      },
+    ],
+    sources: [
+      { publisher: 'Cathay Pacific', title: 'Cathay Pacific and Google partner to research and trial AI-powered contrail avoidance', date: 'September 8, 2026', url: 'https://news.cathaypacific.com/cathay-pacific-and-google-partner-to-research-and-trial-ai-powered-contrail-avoidance-cju8h2', kind: 'Primary source' },
+      { publisher: 'Reuters via MarketScreener', title: 'Cathay Pacific, Google expand AI trials to cut climate-warming aircraft contrails', date: 'September 7, 2026', url: 'https://www.marketscreener.com/news/cathay-pacific-google-expand-ai-trials-to-cut-climate-warming-aircraft-contrails-ce785bdbdf8af02d', kind: 'Research' },
+      { publisher: 'Google', title: 'Operation Blue Skies: Reducing aviation climate impact with AI', date: 'August 18, 2026', url: 'https://blog.google/innovation-and-ai/models-and-research/google-research/blue-skies/', kind: 'Primary source' },
+    ],
+    methodology: 'We used the Cathay announcement for the flight count, routes, and early estimate. We checked the main facts with Reuters and used Google\'s separate project page to understand the forecast method. We do not turn contrail warming into a claim about total emissions.',
+  },
+  'goldman-open-model-controls': {
+    standfirst: 'Goldman Sachs CIO Marco Argenti says companies should not ban open-weight models before testing them. He proposes four safety layers. His idea borrows from computer security, but it is not a public banking rule or a full technical standard.',
+    sections: [
+      {
+        heading: 'Four layers between a model and the bank',
+        paragraphs: [
+          'Argenti gave his proposal in an interview with Axios. The first layer is model testing and approval. The second is a protected place to run the model. The third gives AI agents only the permissions they need. The fourth controls access to company data.',
+          'The approach uses two computer-security ideas. Zero trust means a company should not trust a model only because of its name or source. Defense in depth means that several different controls should protect the system at the same time.',
+          'Goldman already keeps its AI tools away from direct access to the original data systems, Argenti said. Requests go through the bank\'s data platform, which checks access rights. This can limit what a model sees even if another safety layer fails.',
+        ],
+        citations: [1, 2],
+      },
+      {
+        heading: 'Why open models create choice and work',
+        paragraphs: [
+          'An open-weight model lets a company inspect and change the trained model files. It may run the model on computers that the company controls. This can support privacy, custom work, and a choice between several providers.',
+          'Open weights do not make a model safe. A model may contain weak code, hidden behavior, or training problems. It may also follow a harmful instruction from a document. The company must test the model and control every tool it can use.',
+          'Argenti says Goldman has tested several US open models and uses some for business work. He says the bank\'s current open-model use is mostly or only from the United States. The interview does not list the models or the business tasks.',
+        ],
+        citations: [1],
+      },
+      {
+        heading: 'A useful proposal still needs clear tests',
+        paragraphs: [
+          'The four layers are a strong starting map, but each layer needs a clear pass or fail test. Teams must know which model behavior blocks a release. They also need records of permissions, data requests, human approvals, and unusual events.',
+          'Separate controls should fail in different ways. If one mistake can turn off every layer, the system does not have true defense in depth. Regular exercises can show whether staff can find a problem, stop the agent, and recover safely.',
+          'Argenti\'s main point is about choice: a company can consider more models without accepting every risk. That is a useful goal. Banks and regulators will still need detailed evidence before they agree that the controls are enough.',
+        ],
+        citations: [1, 2],
+      },
+    ],
+    sources: [
+      { publisher: 'Axios', title: 'Goldman CIO: Don\'t rule out open models', date: 'September 8, 2026', url: 'https://www.axios.com/2026/09/08/goldman-cio-dont-rule-out-open-models', kind: 'Research' },
+      { publisher: 'U.S. National Institute of Standards and Technology', title: 'Zero Trust Architecture', date: 'August 2020', url: 'https://csrc.nist.gov/pubs/sp/800/207/final', kind: 'Primary source' },
+    ],
+    methodology: 'Axios is the direct source for Argenti\'s proposal and Goldman\'s current practice. We used the NIST standard only to explain zero trust. We do not describe the proposal as a Goldman policy, a government rule, or proof that every open model is safe.',
+  },
   'openai-research-intern': {
     standfirst: 'OpenAI says it has built an AI “research intern.” The system can do clear research tasks under human guidance. It can help with work that may take a skilled researcher several days, but it does not choose the main research goals.',
     sections: [
@@ -82,11 +307,11 @@ export const articlesByStoryId: Record<string, ArticleContent> = {
       },
     ],
     sources: [
-      { publisher: 'Collusion.wiki researchers', title: 'Discovery of a new OpenAI agent message board', date: 'September 4, 2026', url: 'https://collusion.wiki/', kind: 'Primary source' },
+      { publisher: 'AI/TLDR', title: 'A second OpenAI agent message board — 18,000 posts on a German wiki', date: 'September 4, 2026', url: 'https://ai-tldr.dev/releases/collusion-openai-agent-wiki/', kind: 'Research' },
       { publisher: 'TechCrunch', title: 'Another swarm of OpenAI agents reached the open internet without the frontier lab’s knowledge', date: 'September 4, 2026', url: 'https://techcrunch.com/2026/09/04/another-swarm-of-openai-agents-reached-the-open-internet-without-the-frontier-labs-knowledge/', kind: 'Research' },
       { publisher: 'TechCrunch', title: 'OpenAI confirms “wiki incident,” says it is working on a framework for more disclosure', date: 'September 5, 2026', url: 'https://techcrunch.com/2026/09/05/openai-confirms-wiki-incident-says-its-working-on-a-framework-for-more-disclosure/', kind: 'Research' },
     ],
-    methodology: 'We checked the researchers’ public report and two independent news reports. One report covered the first discovery, and the other covered OpenAI’s later confirmation. We use “linked to OpenAI” when the claim comes from technical evidence and “confirmed” only for OpenAI’s own statement.',
+    methodology: 'The researchers’ website now has a broken security certificate, so we replaced that link with an accessible technical summary of their report. We also used two independent news reports. We say “linked to OpenAI” for the first technical evidence and “confirmed” only for OpenAI’s later statement.',
   },
   'publisher-ai-lawsuit': {
     standfirst: 'The Seattle Times and Newsday have sued OpenAI and Microsoft in a US court. The newspapers say the companies copied paid news articles without permission. These are claims in a new case, and the court has not decided if they are true.',
