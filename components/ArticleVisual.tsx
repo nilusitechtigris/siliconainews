@@ -3,6 +3,42 @@ import type { CSSProperties } from 'react';
 type ArticleVisualProps = { storyId: string };
 
 const visualCopy: Record<string, { kicker: string; title: string; description: string; aria: string }> = {
+  'chatgpt-images-25': {
+    kicker: 'CREATIVE LOOP 01',
+    title: 'A rough idea can become a focused edit without restarting the whole image.',
+    description: 'OpenAI reports up to 50% lower waiting time. Stable details and clear human control remain the more useful test.',
+    aria: 'Creative workflow from a sketch or photo through the image model to a focused edit and a final human check. OpenAI reports up to 50 percent lower waiting time.',
+  },
+  'meta-muse-agent': {
+    kicker: 'ACTION GATE 02',
+    title: 'A separate safety agent checks important actions before they leave the secure computer.',
+    description: 'Meta says Muse works in an isolated virtual machine and asks for approval before actions such as sending email or making a purchase.',
+    aria: 'Personal agent flow from a user goal to Muse in a secure virtual machine, then a Sentinel safety check and user approval before an outside action.',
+  },
+  'alphagenome-atlas': {
+    kicker: 'EVIDENCE PATH 03',
+    title: 'Nine billion predictions can narrow the search, but the last step is still a real experiment.',
+    description: 'The Atlas ranks possible one-letter DNA changes. Laboratory and clinical evidence must confirm any important result.',
+    aria: 'Research flow from nine billion possible DNA changes through AI predictions and a ranking score to laboratory checks and clinical evidence.',
+  },
+  'missouri-google-ai-training': {
+    kicker: 'ACCESS MAP 04',
+    title: 'Statewide access reaches schools, colleges, and job centers.',
+    description: 'The plan covers nearly 100,000 educators and more than 1.1 million students, plus free career training for residents.',
+    aria: 'Three-row access map showing nearly 100,000 educators, more than 1.1 million students, and Missouri residents using job centers for free AI training.',
+  },
+  'us-ai-distillation-advisory': {
+    kicker: 'DEFENSE PATH 05',
+    title: 'One service may see a normal request while several services see a campaign.',
+    description: 'US agencies recommend stronger detection, focused responses, and careful information sharing. Their accusations remain government findings.',
+    aria: 'Security flow from many API requests through pattern detection and cross-provider warning signals to a careful response and evidence review.',
+  },
+  'astra-amazon-bedrock': {
+    kicker: 'CLOUD CONTROL 06',
+    title: 'Cloud access is only safe when data, permissions, and approval stay connected.',
+    description: 'AWS says Astra supports up to one million input tokens. Customers still need to review retention and tool permissions.',
+    aria: 'Enterprise flow from Amazon Bedrock access to GPT-6 Astra, approved company data, limited tool rights, and a human-checked result.',
+  },
   'mistral-series-d': {
     kicker: 'CAPITAL PATH 01',
     title: 'A record funding round can buy compute, but it cannot guarantee useful products.',
@@ -187,6 +223,18 @@ const visualCopy: Record<string, { kicker: string; title: string; description: s
 
 function Diagram({ storyId }: ArticleVisualProps) {
   switch (storyId) {
+    case 'chatgpt-images-25':
+      return <div className="visual-flow"><span>SKETCH · PHOTO</span><i>→</i><span>IMAGES 2.5</span><i>→</i><span>FOCUSED EDIT</span><i>→</i><span className="checkpoint">HUMAN CHECK</span><div className="cost-line">UP TO 50% LOWER LATENCY · OPENAI CLAIM</div></div>;
+    case 'meta-muse-agent':
+      return <div className="visual-flow"><span>USER GOAL</span><i>→</i><span>MUSE SECURE VM</span><i>→</i><span>SENTINEL</span><i>→</i><span className="checkpoint">APPROVE ACTION</span><div className="cost-line">EMAIL · BOOKING · PURCHASE</div></div>;
+    case 'alphagenome-atlas':
+      return <div className="visual-flow"><span>9B DNA CHANGES</span><i>→</i><span>AI PREDICTIONS</span><i>→</i><span>AVI RANK</span><i>→</i><span className="checkpoint">LAB CHECK</span><div className="cost-line">PREDICTION ≠ DIAGNOSIS</div></div>;
+    case 'missouri-google-ai-training':
+      return <div className="visual-ledger">{[['01', 'EDUCATORS', 'NEARLY 100K'], ['02', 'STUDENTS', 'MORE THAN 1.1M'], ['03', 'STATE RESIDENTS', 'JOB CENTERS'], ['04', 'OUTCOMES', 'MEASURE NEXT']].map(([index, label, state]) => <div key={index}><span>{index}</span><b>{label}</b><i>{state}</i></div>)}</div>;
+    case 'us-ai-distillation-advisory':
+      return <div className="visual-flow"><span>API REQUESTS</span><i>→</i><span>PATTERN CHECK</span><i>→</i><span>CROSS-PROVIDER SIGNAL</span><i>→</i><span className="checkpoint">EVIDENCE REVIEW</span><div className="cost-line">US GOVERNMENT ALLEGATIONS · NOT A JUDGMENT</div></div>;
+    case 'astra-amazon-bedrock':
+      return <div className="visual-flow"><span>BEDROCK API</span><i>→</i><span>ASTRA</span><i>→</i><span>LIMITED TOOLS</span><i>→</i><span className="checkpoint">HUMAN REVIEW</span><div className="cost-line">UP TO 1M INPUT TOKENS · CHECK RETENTION</div></div>;
     case 'mistral-series-d':
       return <div className="visual-flow"><span>€3B ROUND</span><i>→</i><span>RESEARCH · COMPUTE</span><i>→</i><span>PRODUCTS</span><i>→</i><span className="checkpoint">CUSTOMER PROOF</span><div className="cost-line">VALUE ABOVE €21B · NOT REVENUE</div></div>;
     case 'eu-neuro-ai-governance':

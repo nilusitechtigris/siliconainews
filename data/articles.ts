@@ -19,6 +19,232 @@ export type ArticleContent = {
 };
 
 export const articlesByStoryId: Record<string, ArticleContent> = {
+  'chatgpt-images-25': {
+    standfirst: 'OpenAI has released ChatGPT Images 2.5 with faster generation and more exact editing. New sketch, comment, and template tools may help people guide the result. The main question is whether the model keeps important details when a user asks for many changes.',
+    sections: [
+      {
+        heading: 'Editing is the important change',
+        paragraphs: [
+          'OpenAI says Images 2.5 creates sharper details and follows editing instructions more closely. It should change only the part a user asks to change. The rest of the subject, layout, and style should remain stable.',
+          'This matters during a long creative session. Older image tools could slowly change a face, product, or background after several edits. OpenAI says the new model keeps earlier changes more often and loses less quality over time.',
+          'The company also reports up to 50% lower waiting time than Images 2.0. This is an OpenAI measure, not a promise for every request. A complex image can still take longer than a simple one.',
+        ],
+        citations: [1, 2],
+      },
+      {
+        heading: 'People get more ways to show an idea',
+        paragraphs: [
+          'A new Sketch tool lets a person draw a rough shape inside ChatGPT. The model can use that drawing as a guide. This can be easier than writing a long description of where every object should go.',
+          'Users can also place comments on one part of an image. Templates offer a starting point for work such as posters and product pictures. Prompt sharing lets another person reuse the main idea with different images or details.',
+          'These tools move the product closer to a simple design workspace. They do not replace careful review. Text inside an image, real-world facts, hands, logos, and small details can still be wrong or misleading.',
+        ],
+        citations: [1, 2, 3],
+      },
+      {
+        heading: 'Origin signals still need support',
+        paragraphs: [
+          'Images 2.5 is rolling out in ChatGPT, ChatGPT Work, and Codex. Developers can use two API models. Flare focuses on speed, while Sunburst offers more control for detailed work and takes longer.',
+          'OpenAI says generated images include C2PA information and an invisible watermark. These signals can help identify the tool that made an image. They are useful only when websites and viewers keep and show that information.',
+          'The practical test is simple. Can a user reach the wanted result with fewer full restarts? Faster output is helpful, but stable edits and clear human control can save more time than speed alone.',
+        ],
+        citations: [1, 2, 3],
+      },
+    ],
+    sources: [
+      { publisher: 'OpenAI', title: 'Introducing ChatGPT Images 2.5', date: 'September 8, 2026', url: 'https://openai.com/index/introducing-chatgpt-images-2-5/', kind: 'Primary source' },
+      { publisher: 'OpenAI', title: 'ChatGPT release notes', date: 'September 8, 2026', url: 'https://help.openai.com/en/articles/6825453', kind: 'Primary source' },
+      { publisher: 'Axios', title: 'Hands-on with ChatGPT’s new image editor', date: 'September 8, 2026', url: 'https://www.axios.com/2026/09/08/exclusive-hands-on-with-chatgpts-new-image-editor', kind: 'Research' },
+    ],
+    methodology: 'We used OpenAI for features, access, safety tools, and its speed claim. We checked the early product experience with Axios. We label OpenAI measurements as company reports and do not treat a short test as proof for every image task.',
+  },
+  'meta-muse-agent': {
+    standfirst: 'Meta has launched Muse, a personal AI agent for adults in the United States. It can use websites, send email, book travel, and make purchases. These actions make approval, privacy, and a clear record more important than a clever answer.',
+    sections: [
+      {
+        heading: 'Muse moves from advice to action',
+        paragraphs: [
+          'A person can talk to Muse in its own app, on the web, or through WhatsApp. The agent can open a browser, fill in forms, and continue a task after the user closes the app.',
+          'Meta gives examples such as booking travel, lowering a bill, selling a car, and planning a dinner. Muse can ask for approval before it sends a message or buys something. It can also remember details that a person shared earlier.',
+          'The service is for people aged 18 or older in the United States. Meta offers a free level and paid plans. TechCrunch reports prices of $20 and $100 per month, with different limits and features.',
+        ],
+        citations: [1, 2, 3],
+      },
+      {
+        heading: 'A separate system checks risky steps',
+        paragraphs: [
+          'Muse works inside a special virtual computer called Muse Secure VM. This area keeps the agent and a person’s data separate from other users. Credentials are stored outside the agent, according to Meta.',
+          'Meta says another agent, called Sentinel, reviews actions that use the internet or another service. Sentinel can approve a normal step, block it, or ask the person. This separation may stop one mistake from becoming a real action.',
+          'The design sounds careful, but it needs outside testing. A harmful page can try to change an agent’s instructions. A wrong booking or payment can also cause damage even when the computer itself is secure.',
+        ],
+        citations: [1, 2, 3],
+      },
+      {
+        heading: 'Trust depends on visible control',
+        paragraphs: [
+          'Meta says users decide which accounts Muse can reach. It also says people can review an action history and disconnect a service. The company says Muse data is not shared with its advertising systems.',
+          'A useful approval screen should explain the exact action, price, receiver, and data being shared. A simple yes button is not enough. People also need a fast stop button and a clear way to correct mistakes.',
+          'Muse is an important test of personal agents. Its value will not come from how many websites it can open. It will come from whether normal people understand, control, and trust each important action.',
+        ],
+        citations: [1, 2, 3],
+      },
+    ],
+    sources: [
+      { publisher: 'Meta', title: 'Introducing Muse: The World’s First Personal AI Agent Built for Everyone', date: 'September 8, 2026', url: 'https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/', kind: 'Primary source' },
+      { publisher: 'Meta AI Research', title: 'Security and safety for AI agents: Our approach with Muse', date: 'September 8, 2026', url: 'https://research.meta.ai/blog/security-and-safety-for-ai-agents-our-approach-with-muse', kind: 'Primary source' },
+      { publisher: 'TechCrunch', title: 'Meta debuts its Muse AI agent. Will consumers trust it?', date: 'September 8, 2026', url: 'https://techcrunch.com/2026/09/08/meta-debuts-its-muse-ai-agent-will-consumers-trust-it/', kind: 'Research' },
+    ],
+    methodology: 'We used Meta for the product design, launch limits, and privacy claims. We used TechCrunch for prices and outside questions about trust. We describe safety features as Meta claims because the new system has not yet faced broad independent testing.',
+  },
+  'alphagenome-atlas': {
+    standfirst: 'Google DeepMind has published AlphaGenome Atlas, a map of predictions for about 9 billion possible one-letter DNA changes. It can help researchers choose useful experiments. It cannot show by itself that a change causes a disease.',
+    sections: [
+      {
+        heading: 'A very large map of small changes',
+        paragraphs: [
+          'Human DNA has about 3 billion letters. At each place, one letter can change into three other letters. AlphaGenome Atlas stores predictions for almost all 9 billion possible single-letter changes.',
+          'The dataset is about one petabyte. Google DeepMind says this is more than 30 times the size of the AlphaFold database. Researchers can explore it on a free website instead of running every prediction themselves.',
+          'Most human DNA does not directly write proteins. Changes in this large non-coding area can still affect when a gene turns on or off. This makes their effects hard and expensive to study one at a time.',
+        ],
+        citations: [1, 2, 3],
+      },
+      {
+        heading: 'The atlas can help choose what to test',
+        paragraphs: [
+          'AlphaGenome predicts how a DNA change may affect several biological processes. The Atlas also includes an AVI score. This score combines signals from AlphaGenome and AlphaMissense to rank changes that may deserve attention.',
+          'A researcher can begin with a gene, a DNA area, or a possible condition. The tool can show which changes may affect gene activity or proteins. This can reduce a huge list before laboratory work begins.',
+          'Nature reports that outside scientists see value in the broad map, especially for rare changes. However, a useful ranking is not the same as knowing the real effect inside one person or one type of cell.',
+        ],
+        citations: [1, 2, 3],
+      },
+      {
+        heading: 'Prediction must lead to evidence',
+        paragraphs: [
+          'The model learned from existing biological data. Gaps or bias in that data can shape its predictions. A score may also miss effects that depend on age, environment, ancestry, or several DNA changes working together.',
+          'Scientists should use the Atlas to form a question, not to close one. Laboratory tests, patient data, and clinical review are still needed. Doctors should not use a prediction alone to diagnose or treat a person.',
+          'The release is important because it makes a difficult first step much faster. Its value will grow when researchers publish both successful checks and clear cases where the model was wrong.',
+        ],
+        citations: [1, 2, 3],
+      },
+    ],
+    sources: [
+      { publisher: 'Google DeepMind', title: 'AlphaGenome Atlas: Molecular predictions for 9 billion human DNA variants', date: 'September 8, 2026', url: 'https://deepmind.google/blog/alphagenome-atlas-a-predictive-map-of-every-possible-dna-letter-change-in-the-human-genome/', kind: 'Primary source' },
+      { publisher: 'Nature', title: 'Google DeepMind releases map of 9 billion possible human DNA changes', date: 'September 8, 2026', url: 'https://www.nature.com/articles/d41586-026-02835-4', kind: 'Research' },
+      { publisher: 'Scientific American', title: 'New AlphaGenome Atlas could transform our understanding of genetic diseases', date: 'September 8, 2026', url: 'https://www.scientificamerican.com/article/new-google-deepmind-alphagenome-atlas-could-transform-our-understanding-of-genetic-diseases/', kind: 'Research' },
+    ],
+    methodology: 'We used Google DeepMind for the dataset size, access, and model design. We checked the meaning and limits with Nature and Scientific American. We clearly separate an AI prediction from laboratory evidence, diagnosis, or treatment advice.',
+  },
+  'missouri-google-ai-training': {
+    standfirst: 'Missouri education agencies and Google have announced free AI tools and training for schools and residents. The plan can reach nearly 100,000 educators and more than 1.1 million students. Good access still needs good rules and measured results.',
+    sections: [
+      {
+        heading: 'The agreement reaches across the state',
+        paragraphs: [
+          'Public schools and colleges in Missouri can receive Google AI tools, training lessons, and career certificates at no cost. The state says the offer covers nearly 100,000 educators and more than 1.1 million students.',
+          'Residents outside school can also take AI courses through Missouri Job Centers. This connects classroom learning with work skills. It may help adults who do not have time or money for a full college program.',
+          'The agreement includes enterprise versions of Google tools. Enterprise access can offer stronger account controls than a public consumer service. Each school still needs to choose which tools, ages, and tasks are suitable.',
+        ],
+        citations: [1, 2],
+      },
+      {
+        heading: 'Training matters more than a free login',
+        paragraphs: [
+          'A student needs to understand when AI can help and when it can be wrong. Teachers also need examples that fit their subject. A general lesson about prompts will not solve every classroom problem.',
+          'Good training should cover fact checking, source use, private data, bias, and honest disclosure. It should also show how to learn without asking a tool to do all the thinking. These skills remain useful when products change.',
+          'Teachers need time to test new lessons and share what works. School leaders should not measure success only by the number of accounts created. Better measures include student understanding, teacher time, access, and reported problems.',
+        ],
+        citations: [1, 2],
+      },
+      {
+        heading: 'Public access needs public checks',
+        paragraphs: [
+          'Children and schools hold sensitive information. Clear rules should say what data may enter an AI tool, how long it stays, and who can see it. Parents and students need simple explanations of these rules.',
+          'Schools should keep a useful option for students who cannot or do not want to use an AI tool. They should also watch for unequal access to devices, fast internet, teacher support, and help for students with disabilities.',
+          'Missouri can become a helpful test for statewide AI education. The strongest result would not be the largest rollout. It would be clear evidence that people gained useful skills without losing privacy, fairness, or teacher control.',
+        ],
+        citations: [1, 2],
+      },
+    ],
+    sources: [
+      { publisher: 'Missouri Department of Higher Education and Workforce Development', title: 'Missouri education agencies partner with Google to provide free AI training', date: 'September 8, 2026', url: 'https://dhewd.mo.gov/news/missouri-education-agencies-partner-google-provide-free-ai-training', kind: 'Primary source' },
+      { publisher: 'Google', title: 'Missouri partners with Google for statewide AI training', date: 'September 8, 2026', url: 'https://blog.google/products-and-platforms/products/education/missouri-state-education-partnership/', kind: 'Primary source' },
+    ],
+    methodology: 'We used the Missouri announcement to confirm the public scope and Google to confirm the tools and training. Both partners support the project, so we do not treat access figures as proof of learning. We highlight the outcomes that schools should measure.',
+  },
+  'us-ai-distillation-advisory': {
+    standfirst: 'US security agencies say six China-based AI companies used hidden accounts and very large numbers of requests to copy skills from frontier models. The notice gives practical defenses. Its claims are government findings, not a court decision.',
+    sections: [
+      {
+        heading: 'What the agencies say happened',
+        paragraphs: [
+          'The NSA, FBI, CISA, and partners released a joint security notice. They say several companies tried to learn from outputs made by US frontier models. The notice names DeepSeek, Moonshot AI, Alibaba, MiniMax, StepFun, and Z.AI.',
+          'The agencies call the method malicious distillation. Normal distillation can teach a smaller model from a stronger model with permission. The concern here is a hidden effort to avoid limits and copy useful behavior without permission.',
+          'The notice alleges billions of tokens across millions of requests since late 2024. It says traffic moved through many accounts, cloud services, providers, and brokers. These details come from the joint investigation and have not been tested in court.',
+        ],
+        citations: [1, 2],
+      },
+      {
+        heading: 'Unusual behavior can appear across services',
+        paragraphs: [
+          'One request may look normal. A much larger pattern can be different. Signals may include repeated questions about one skill, shared accounts, changing network addresses, and the same work spread across several providers.',
+          'This creates a hard balance. Providers want to stop abuse without blocking researchers, startups, or heavy business users. A warning sign should start a careful review. It should not become automatic proof of who sent the traffic.',
+          'The advisory says companies should share useful threat information. Shared signals can reveal one campaign across many services. That sharing also needs privacy limits, clear evidence rules, and safe handling of customer information.',
+        ],
+        citations: [1, 2],
+      },
+      {
+        heading: 'The response should protect evidence and users',
+        paragraphs: [
+          'The notice recommends stronger detection, focused changes to model responses, and wider information sharing. Providers can also rate-limit suspicious traffic and require stronger checks when a request pattern becomes risky.',
+          'A provider should keep enough records to explain a decision. Customers need a path to appeal if a normal use is blocked. Investigators also need to separate technical evidence from political claims about a company or country.',
+          'The advisory matters because one provider may see only a small piece of a campaign. The strongest defense combines several pieces while keeping uncertainty visible. Security improves when evidence is shared carefully, not when an allegation becomes a fact by repetition.',
+        ],
+        citations: [1, 2],
+      },
+    ],
+    sources: [
+      { publisher: 'US National Security Agency', title: 'NSA and others warn China-based AI companies are distilling US frontier AI models', date: 'September 8, 2026', url: 'https://www.nsa.gov/Press-Room/Press-Releases-Statements/Press-Release-View/Article/4592113/nsa-and-others-warn-china-based-ai-companies-are-distilling-us-frontier-ai-mode/', kind: 'Primary source' },
+      { publisher: 'NSA, FBI, CISA and partners', title: 'China-based AI companies conduct malicious distillation against US frontier AI models', date: 'September 8, 2026', url: 'https://media.defense.gov/2026/Sep/08/2003992823/-1/-1/1/CSA_CHINA_BASED_AI_COMPANIES_MALICIOUS_DISTILLATION_AGAINST_US.PDF', kind: 'Primary source' },
+    ],
+    methodology: 'We used the official release and full joint advisory. We describe every accusation as a US government allegation because no court has decided it and we did not find timely independent proof before publication. We separate normal distillation from hidden abuse.',
+  },
+  'astra-amazon-bedrock': {
+    standfirst: 'Amazon has made GPT-6 Astra generally available through Amazon Bedrock. Companies can call it through Bedrock or connect it to work tools. The easier setup does not remove questions about permissions, stored data, cost, and human approval.',
+    sections: [
+      {
+        heading: 'Astra enters an existing cloud system',
+        paragraphs: [
+          'AWS customers can now use GPT-6 Astra through Amazon Bedrock APIs. They can also configure ChatGPT Work and Codex to use Astra on Bedrock. This lets some companies keep model access near their existing cloud controls.',
+          'Amazon says Astra supports up to one million input tokens. A large window can hold long documents, code, or business records. It does not mean every part receives equal attention or that a long answer is always correct.',
+          'The model can support agents that use tools and finish several steps. Bedrock adds familiar controls for identity, network access, logs, and costs. Teams still need to set those controls correctly for each real task.',
+        ],
+        citations: [1, 2, 3],
+      },
+      {
+        heading: 'Permissions follow the connected account',
+        paragraphs: [
+          'Amazon also describes enterprise plugins for services such as Workday, Navan, and Avalara. A plugin can use the accounts and permissions that a worker already has. This can make setup quick, but it can also copy access that is too broad.',
+          'A good agent should receive the smallest set of rights needed for one job. Reading a report is different from changing payroll or buying travel. Important actions should have a clear human approval step.',
+          'Teams should test what happens when a tool fails, a page gives harmful instructions, or a request is unclear. A safe workflow needs a stop point, an action record, and a person who owns the result.',
+        ],
+        citations: [1, 2, 3],
+      },
+      {
+        heading: 'Data promises need exact settings',
+        paragraphs: [
+          'Amazon says inference data is not used to train the model and does not need to be shared with OpenAI. That can matter to companies with strict data rules. Buyers should confirm which service, region, and account settings support the promise.',
+          'AWS documentation says traffic flagged for possible abuse may be kept for up to 30 days. Eligible customers can ask their account team about zero retention. This detail deserves review before sensitive work begins.',
+          'Bedrock makes Astra easier to buy and connect. The useful question is not only whether the model is strong. It is whether one complete workflow has the right data limits, permissions, checks, cost controls, and recovery plan.',
+        ],
+        citations: [1, 2, 3],
+      },
+    ],
+    sources: [
+      { publisher: 'AWS', title: 'Take on your most ambitious work with GPT-6 Astra on Amazon Bedrock', date: 'September 8, 2026', url: 'https://aws.amazon.com/blogs/machine-learning/take-on-your-most-ambitious-work-with-gpt-6-astra-on-amazon-bedrock/', kind: 'Primary source' },
+      { publisher: 'Amazon', title: 'OpenAI’s GPT-6 Astra is now available on Amazon Bedrock', date: 'September 8, 2026', url: 'https://www.aboutamazon.com/news/aws/bedrock-openai-models', kind: 'Primary source' },
+      { publisher: 'AWS Documentation', title: 'GPT-6 Astra model card', date: 'Accessed September 9, 2026', url: 'https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-6-astra.html', kind: 'Primary source' },
+    ],
+    methodology: 'We used AWS and Amazon for availability, context size, plugins, and data claims. We used the AWS model card for retention details. We treat privacy and performance statements as provider claims and tell buyers to check their exact region and settings.',
+  },
   'mistral-series-d': {
     standfirst: 'Mistral has raised €3 billion in a Series D funding round. The French company is now valued above €21 billion. The money gives Mistral more power to train models, but investors still need useful products and paying customers.',
     sections: [

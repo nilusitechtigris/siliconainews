@@ -14,6 +14,7 @@ async function check(url) {
       headers: { 'user-agent': 'SiliconAI-News-Link-Check/1.0' },
     });
     if (response.status >= 500) failures.push({ url, result: `HTTP ${response.status}` });
+    await response.body?.cancel();
     return `${response.status} ${url}`;
   } catch (error) {
     const result = error instanceof Error ? error.message : String(error);
