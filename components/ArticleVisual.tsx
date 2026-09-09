@@ -3,6 +3,42 @@ import type { CSSProperties } from 'react';
 type ArticleVisualProps = { storyId: string };
 
 const visualCopy: Record<string, { kicker: string; title: string; description: string; aria: string }> = {
+  'adi-alif-edge-ai-deal': {
+    kicker: 'EDGE PATH 01',
+    title: 'Small processors can turn several sensor signals into one local decision.',
+    description: 'Analog Devices plans to combine its sensors with Alif’s low-power AI chips after the $1.35 billion deal passes legal review.',
+    aria: 'Machine data from motion, sound, and heat sensors flows into an Alif edge AI processor and then to a fast local decision without a required cloud connection.',
+  },
+  'iphone-duo-launch': {
+    kicker: 'DEVICE TEST 02',
+    title: 'The larger screen creates value only when software, battery, and durability work together.',
+    description: 'iPhone Duo opens from a 5.4-inch outer screen to a 7.6-inch inner screen and starts at 1,999 dollars.',
+    aria: 'Foldable phone comparison showing a 5.4-inch closed screen, a 7.6-inch open screen, two apps side by side, and a final daily-use test.',
+  },
+  'apple-health-intelligence': {
+    kicker: 'HEALTH PATH 03',
+    title: 'Personal signals become a daily score, but medical judgment stays separate.',
+    description: 'Activity, sleep, and heart data feed a readiness score. Apple says the result supports wellness and is not medical advice.',
+    aria: 'Health flow from activity, sleep, and heart signals through Apple Intelligence to a readiness score, followed by a clear boundary before medical advice.',
+  },
+  'apple-reference-image': {
+    kicker: 'PROOF CHAIN 04',
+    title: 'A signed camera record can reveal an edit without proving the whole story.',
+    description: 'Reference Image keeps an unchanged comparison from signed sensor data. Time, place, caption, and events outside the frame still need other evidence.',
+    aria: 'Image evidence chain from camera sensor data to a signed reference image, an edited copy, and separate checks for time, place, and caption.',
+  },
+  'openai-christiano-board': {
+    kicker: 'GOVERNANCE MAP 05',
+    title: 'A safety expert joins the board, but authority and public records decide the impact.',
+    description: 'Paul Christiano joins the foundation board and safety committee. He is only a non-voting observer on the business board.',
+    aria: 'Governance map showing Paul Christiano as a member of the OpenAI Foundation Board and safety committee, plus a non-voting role on the business board.',
+  },
+  'anthropic-cyber-alignment-review': {
+    kicker: 'INCIDENT LOOP 06',
+    title: 'A broken test boundary let a model reach real systems.',
+    description: 'Anthropic found four incidents, searched a wider set of records, added new controls, and asked METR for an independent review.',
+    aria: 'Cyber incident flow from a test with an incorrect internet connection to four real-system incidents, stronger controls, and an independent METR review.',
+  },
   'samsung-mistral-chip-factory': {
     kicker: 'FACTORY LOOP 01',
     title: 'Factory data can guide an AI model, but an engineer must check the result.',
@@ -259,6 +295,18 @@ const visualCopy: Record<string, { kicker: string; title: string; description: s
 
 function Diagram({ storyId }: ArticleVisualProps) {
   switch (storyId) {
+    case 'adi-alif-edge-ai-deal':
+      return <div className="visual-flow"><span>MOTION · SOUND · HEAT</span><i>→</i><span>EDGE AI CHIP</span><i>→</i><span>LOCAL DECISION</span><i>→</i><span className="checkpoint">MACHINE ACTION</span><div className="cost-line">$1.35B DEAL · LEGAL REVIEW PENDING</div></div>;
+    case 'iphone-duo-launch':
+      return <div className="visual-flow"><span>5.4-IN CLOSED</span><i>→</i><span>7.6-IN OPEN</span><i>→</i><span>TWO APPS</span><i>→</i><span className="checkpoint">DAILY USE</span><div className="cost-line">$1,999 · OCTOBER 23</div></div>;
+    case 'apple-health-intelligence':
+      return <div className="visual-flow"><span>ACTIVITY · SLEEP · HEART</span><i>→</i><span>READINESS 0–10</span><i>→</i><span>WELLNESS GUIDE</span><i>→</i><span className="checkpoint">MEDICAL ADVICE?</span><div className="cost-line">ASK A QUALIFIED PROFESSIONAL</div></div>;
+    case 'apple-reference-image':
+      return <div className="visual-flow"><span>CAMERA SENSOR</span><i>→</i><span>SIGNED REFERENCE</span><i>↔</i><span>EDITED PHOTO</span><i>→</i><span className="checkpoint">CONTEXT CHECK</span><div className="cost-line">PIXELS · TIME · PLACE · CAPTION</div></div>;
+    case 'openai-christiano-board':
+      return <div className="visual-ledger">{[['01', 'FOUNDATION BOARD', 'MEMBER'], ['02', 'SAFETY COMMITTEE', 'MEMBER'], ['03', 'BUSINESS BOARD', 'OBSERVER'], ['04', 'BUSINESS VOTE', 'NONE']].map(([index, label, state]) => <div key={index}><span>{index}</span><b>{label}</b><i>{state}</i></div>)}</div>;
+    case 'anthropic-cyber-alignment-review':
+      return <div className="visual-flow"><span>TEST SETUP</span><i>→</i><span className="checkpoint">OPEN INTERNET</span><i>→</i><span>4 INCIDENTS</span><i>→</i><span>METR REVIEW</span><div className="cost-line">481M RECORDS SEARCHED · ANTHROPIC FINDING</div></div>;
     case 'samsung-mistral-chip-factory':
       return <div className="visual-flow"><span>FACTORY DATA</span><i>→</i><span>PRIVATE MISTRAL MODEL</span><i>→</i><span>DEFECT SIGNAL</span><i>→</i><span className="checkpoint">ENGINEER CHECK</span><div className="cost-line">PLANNED USE · RESULTS NOT PUBLIC</div></div>;
     case 'openai-samsung-chip-research':
