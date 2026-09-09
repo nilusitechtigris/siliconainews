@@ -3,6 +3,42 @@ import type { CSSProperties } from 'react';
 type ArticleVisualProps = { storyId: string };
 
 const visualCopy: Record<string, { kicker: string; title: string; description: string; aria: string }> = {
+  'samsung-mistral-chip-factory': {
+    kicker: 'FACTORY LOOP 01',
+    title: 'Factory data can guide an AI model, but an engineer must check the result.',
+    description: 'Samsung plans to use private Mistral models for defect checks and equipment work. No public production result is available yet.',
+    aria: 'Factory flow from chip production data through a private Mistral AI model to a possible defect warning and a final check by a human engineer.',
+  },
+  'openai-samsung-chip-research': {
+    kicker: 'CHIP PATH 02',
+    title: 'OpenAI confirmed joint chip work, but Samsung’s exact role is not public.',
+    description: 'A future AI chip needs design, production, memory, packaging, and real tests. The partners have not said which steps Samsung will handle.',
+    aria: 'Chip development path from OpenAI design through a Samsung role that is not yet public, followed by memory and production, and a final real-world test.',
+  },
+  'uae-space-ai-constellation': {
+    kicker: 'ORBIT PLAN 03',
+    title: 'The $1 billion plan aims to place AI on 50 satellites.',
+    description: 'Images would be studied in orbit before a fast alert reaches Earth. Most satellites and services are still planned.',
+    aria: 'Planned space system showing one billion dollars funding 50 satellites, onboard AI studying Earth images, and a fast alert sent to people on the ground.',
+  },
+  'doha-driverless-demo': {
+    kicker: 'SERVICE CHECK 04',
+    title: 'Doha has one supervised public service and one driverless event demo.',
+    description: 'Paid Karwa rides still use a safety operator. The no-operator ride happened during a controlled transport event.',
+    aria: 'Two-lane comparison showing paid public robotaxi rides with a trained safety operator and a separate controlled event demonstration with no safety operator.',
+  },
+  'china-distillation-response': {
+    kicker: 'EVIDENCE MAP 05',
+    title: 'A US allegation and a Chinese denial are both claims that need evidence.',
+    description: 'The US advisory gives warning signs. China rejects the accusation. No court has judged the named companies.',
+    aria: 'Evidence flow showing a United States allegation and a Chinese denial leading to a review of technical records, company answers, and possible legal review.',
+  },
+  'anthropic-researcher-resignation': {
+    kicker: 'CLAIM CHECK 06',
+    title: 'An expert warning can guide safety work without becoming a proven forecast.',
+    description: 'A researcher left Anthropic over AI risk. His risk estimate is a personal belief, while public decisions need tests, evidence, and clear uncertainty.',
+    aria: 'Claim review flow from a researcher resignation and personal risk belief through open debate and safety tests to public policy decisions.',
+  },
   'chatgpt-images-25': {
     kicker: 'CREATIVE LOOP 01',
     title: 'A rough idea can become a focused edit without restarting the whole image.',
@@ -223,6 +259,18 @@ const visualCopy: Record<string, { kicker: string; title: string; description: s
 
 function Diagram({ storyId }: ArticleVisualProps) {
   switch (storyId) {
+    case 'samsung-mistral-chip-factory':
+      return <div className="visual-flow"><span>FACTORY DATA</span><i>→</i><span>PRIVATE MISTRAL MODEL</span><i>→</i><span>DEFECT SIGNAL</span><i>→</i><span className="checkpoint">ENGINEER CHECK</span><div className="cost-line">PLANNED USE · RESULTS NOT PUBLIC</div></div>;
+    case 'openai-samsung-chip-research':
+      return <div className="visual-flow"><span>OPENAI DESIGN</span><i>→</i><span className="checkpoint">SAMSUNG ROLE?</span><i>→</i><span>MEMORY · PRODUCTION</span><i>→</i><span>REAL TEST</span><div className="cost-line">PARTNERSHIP CONFIRMED · DETAILS LIMITED</div></div>;
+    case 'uae-space-ai-constellation':
+      return <div className="visual-flow"><span>$1B PLAN</span><i>→</i><span>50 SATELLITES</span><i>→</i><span>AI IN ORBIT</span><i>→</i><span className="checkpoint">FAST ALERT</span><div className="cost-line">MOST LAUNCHES AND SERVICES STILL PLANNED</div></div>;
+    case 'doha-driverless-demo':
+      return <div className="visual-ledger">{[['01', 'PAID PUBLIC RIDES', 'SAFETY OPERATOR'], ['02', 'EVENT DEMO', 'NO OPERATOR'], ['03', 'NEXT TEST', 'PUBLIC APPROVAL'], ['04', 'PROOF NEEDED', 'SAFETY DATA']].map(([index, label, state]) => <div key={index}><span>{index}</span><b>{label}</b><i>{state}</i></div>)}</div>;
+    case 'china-distillation-response':
+      return <div className="visual-flow"><span>US ALLEGATION</span><i>↔</i><span>CHINA DENIAL</span><i>→</i><span>EVIDENCE</span><i>→</i><span className="checkpoint">FAIR REVIEW</span><div className="cost-line">CLAIMS ARE NOT A COURT JUDGMENT</div></div>;
+    case 'anthropic-researcher-resignation':
+      return <div className="visual-flow"><span>RESEARCHER EXIT</span><i>→</i><span>PERSONAL WARNING</span><i>→</i><span>SAFETY TESTS</span><i>→</i><span className="checkpoint">PUBLIC DECISION</span><div className="cost-line">EXPERT BELIEF ≠ PROVEN FORECAST</div></div>;
     case 'chatgpt-images-25':
       return <div className="visual-flow"><span>SKETCH · PHOTO</span><i>→</i><span>IMAGES 2.5</span><i>→</i><span>FOCUSED EDIT</span><i>→</i><span className="checkpoint">HUMAN CHECK</span><div className="cost-line">UP TO 50% LOWER LATENCY · OPENAI CLAIM</div></div>;
     case 'meta-muse-agent':

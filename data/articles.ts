@@ -19,6 +19,233 @@ export type ArticleContent = {
 };
 
 export const articlesByStoryId: Record<string, ArticleContent> = {
+  'samsung-mistral-chip-factory': {
+    standfirst: 'Samsung and Mistral AI have announced a partnership for chip factories. Samsung plans to use Mistral models to find defects, improve equipment, and support engineers. The goals are clear, but the companies have not published results from real factory work yet.',
+    sections: [
+      {
+        heading: 'AI is moving closer to the factory floor',
+        paragraphs: [
+          'Samsung says it will add Mistral AI services to parts of its semiconductor business. Semiconductors are the small electronic parts inside phones, computers, cars, and many other products. Making them requires very clean factories and careful control.',
+          'The companies plan to build special models for Samsung. They say these models could find defects, improve factory equipment, shorten development work, and make production more stable. A defect is a small problem that can make a chip fail.',
+          'Samsung also wants some models to run on its own systems. This is called on-premise AI. It can keep sensitive factory data inside the company instead of sending it to a public cloud service.',
+        ],
+        citations: [1, 2],
+      },
+      {
+        heading: 'The business link is wider than one software deal',
+        paragraphs: [
+          'Samsung took part in Mistral AI’s latest funding round and received a share in the company. The new factory agreement was announced during a meeting between South Korean and French leaders in Paris.',
+          'This gives both sides a reason to make the work succeed. Mistral gets a large industrial customer. Samsung gets access to a European AI company that can build models for private systems.',
+          'However, an investment can also make public statements sound more positive. Readers should separate the confirmed partnership from future benefits. Neither company has shared a measured change in quality, cost, or production speed.',
+        ],
+        citations: [1, 2],
+      },
+      {
+        heading: 'Factory results need simple measures',
+        paragraphs: [
+          'The useful question is not whether an AI model sounds clever. It is whether engineers find more real problems, stop fewer good products, and make more working chips from the same materials.',
+          'Samsung should also explain how people check the model. A wrong warning can slow a factory. A missed defect can send a bad part to a customer. Human engineers need the final decision for important changes.',
+          'The partnership could become an important example of AI in physical industry. For now, it is a serious plan with no public result. Future reports should include factory tests, clear comparison points, and the cost of running the models.',
+        ],
+        citations: [1, 2],
+      },
+    ],
+    sources: [
+      { publisher: 'Samsung', title: 'Samsung and Mistral AI announce strategic partnership for intelligence-driven semiconductor infrastructure', date: 'September 9, 2026', url: 'https://news.samsung.com/global/samsung-and-mistral-ai-announce-strategic-partnership-for-intelligence-driven-semiconductor-infrastructure', kind: 'Primary source' },
+      { publisher: 'Seoul Economic Daily', title: 'Samsung partners with Mistral AI on chip manufacturing', date: 'September 9, 2026', url: 'https://en.sedaily.com/finance/2026/09/09/samsung-partners-with-mistral-ai-on-chip-manufacturing', kind: 'Research' },
+    ],
+    methodology: 'We used Samsung to confirm the partnership, planned factory uses, and investment link. We used Seoul Economic Daily for outside reporting from South Korea. We describe all expected factory improvements as plans because no public production test was available at publication time.',
+  },
+  'openai-samsung-chip-research': {
+    standfirst: 'OpenAI says it is working with Samsung on future AI chips. The work may cover research and production, but the companies have not explained Samsung’s exact role. This makes the news important for the supply chain, but too early for claims about speed or cost.',
+    sections: [
+      {
+        heading: 'OpenAI confirmed work, not a finished chip',
+        paragraphs: [
+          'Harrison Kim, the head of OpenAI Korea, said the companies are making progress on joint chip research and production. Reuters reported his comments from Seoul. Samsung said it could not discuss information about a possible customer.',
+          'The statement does not say which part Samsung may make. A modern AI chip needs a design, a factory process, memory, packaging, and testing. Different companies can handle each part.',
+          'OpenAI is already developing a custom inference chip with Broadcom. Inference means using a trained model to answer a request. Reuters says Taiwan Semiconductor Manufacturing Company is expected to make that chip.',
+        ],
+        citations: [1, 2],
+      },
+      {
+        heading: 'Samsung already has a wider OpenAI link',
+        paragraphs: [
+          'OpenAI announced a larger Samsung agreement in 2025 for its Stargate data centres. Samsung Electronics and SK Hynix planned to supply advanced memory. Samsung companies also discussed data centres, cloud services, and floating power systems.',
+          'Memory matters because an AI processor must move large amounts of data very quickly. A fast main chip can still wait if its memory is too slow. Samsung is one of the few companies with skills across memory, chip factories, and packaging.',
+          'The new comments may mean that this relationship is moving beyond supply. They do not prove that Samsung will replace TSMC or make OpenAI’s first chip. That would be a larger claim than the public facts support.',
+        ],
+        citations: [1, 2, 3],
+      },
+      {
+        heading: 'Watch for the missing details',
+        paragraphs: [
+          'The next useful facts are the chip’s purpose, the factory, the memory type, and the planned production date. Power use and real model speed will matter more than a broad promise about “next-generation” technology.',
+          'Custom chips can reduce cost when a company uses them at very large scale. They can also take years to design and may fall behind a fast market. OpenAI still needs other suppliers during that work.',
+          'The announcement shows that OpenAI wants more control over the hardware below its models. It also shows Samsung trying to win more AI work. Readers should treat it as a direction until the companies share a product and measured results.',
+        ],
+        citations: [1, 2, 3],
+      },
+    ],
+    sources: [
+      { publisher: 'Reuters via Investing.com', title: 'OpenAI says working with Samsung on next-generation chips, deepening cooperation', date: 'September 9, 2026', url: 'https://www.investing.com/news/stock-market-news/openai-says-working-with-samsung-on-nextgeneration-chips-deepening-cooperation-4892715', kind: 'Research' },
+      { publisher: 'Reuters via MarketScreener', title: 'OpenAI says working with Samsung on next-generation chips, deepening cooperation', date: 'September 9, 2026', url: 'https://www.marketscreener.com/news/openai-says-working-with-samsung-on-next-generation-chips-deepening-cooperation-ce785bd9db8ef123', kind: 'Research' },
+      { publisher: 'OpenAI', title: 'Samsung and SK join Stargate', date: 'October 1, 2025', url: 'https://openai.com/index/samsung-and-sk-join-stargate/', kind: 'Primary source' },
+    ],
+    methodology: 'We used two licensed Reuters pages for the September 9 comments and Samsung’s limited response. We used OpenAI’s earlier Stargate announcement for supply-chain context. We do not guess which chip Samsung will make or whether it will replace another supplier.',
+  },
+  'uae-space-ai-constellation': {
+    standfirst: 'UAE company Marlan Space plans to invest $1 billion in a French-led network of 50 Earth-watching satellites. The satellites would use AI in orbit to send faster alerts. The first launch is planned, while most of the network and its public safeguards still lie ahead.',
+    sections: [
+      {
+        heading: 'The plan moves some image work into space',
+        paragraphs: [
+          'Earth observation satellites take pictures and other measurements of the planet. They often send large files to the ground before people or software study them. This can delay an urgent answer.',
+          'The new plan would put Nvidia chips and Mistral AI models on the satellites. They could study images in orbit and send a smaller alert within seconds. The companies suggest uses such as fire warnings, damaged infrastructure, and missile detection.',
+          'Loft Orbital would build and operate the network. Marlan Space plans to provide $1 billion over three years. Le Monde reports that the first satellite is assembled and planned for an October launch on a SpaceX rocket.',
+        ],
+        citations: [1, 2, 3],
+      },
+      {
+        heading: 'A fast alert can serve many different users',
+        paragraphs: [
+          'A fire service may want to know about smoke before it spreads. An energy company may want to see damage after a storm. A government may want to watch military activity. The same camera and model can support all three jobs.',
+          'This makes the system “dual use.” That means it can support civil work and security work. Dual-use technology is not automatically harmful, but the customer, location, and purpose matter.',
+          'The companies say the satellites may use AI agents. An agent is software that can follow several steps toward a goal. In orbit, it might decide which image area deserves attention before sending information to Earth.',
+        ],
+        citations: [1, 2, 3],
+      },
+      {
+        heading: 'Most of the evidence is still in the future',
+        paragraphs: [
+          'One assembled satellite is not a working group of 50. Launches can move, rockets can fail, and space hardware can behave differently from a ground test. Nine more satellites are planned for 2027, according to Le Monde.',
+          'Public reporting should show alert speed, wrong alarms, missed events, and system costs. Governments also need rules for who can request an image, how long data stays, and when monitoring needs legal approval.',
+          'The investment is large and the technical idea is useful. Still, the network should be judged one launch and one measured service at a time. Speed alone does not answer questions about accuracy, access, or surveillance.',
+        ],
+        citations: [1, 2, 3],
+      },
+    ],
+    sources: [
+      { publisher: 'Le Monde', title: 'UAE commits $1 billion to French space AI project', date: 'September 9, 2026', url: 'https://www.lemonde.fr/en/economy/article/2026/09/09/uae-commits-1-billion-to-french-space-ai-project_6757342_19.html', kind: 'Research' },
+      { publisher: 'Marlan Space', title: 'Marlan Space', date: 'Accessed September 9, 2026', url: 'https://www.marlan.space/', kind: 'Primary source' },
+      { publisher: 'Loft Orbital', title: 'Media kit and company background', date: 'Accessed September 9, 2026', url: 'https://loftorbital.com/media-kit/', kind: 'Primary source' },
+    ],
+    methodology: 'We used Le Monde for the investment, satellite count, partners, launch plan, and proposed uses. We checked the two companies’ own sites for their roles. We label dates and benefits as plans because the full network is not operating yet.',
+  },
+  'doha-driverless-demo': {
+    standfirst: 'Pony.ai showed a robotaxi with no safety driver at a transport event in Doha. Its paid rides in the city still use a trained operator inside the car. The two facts can both be true, but they describe different levels of public access and risk.',
+    sections: [
+      {
+        heading: 'The public service and the demo are different',
+        paragraphs: [
+          'People in parts of Doha can request a Pony.ai robotaxi through the Karwa app. The current paid service has a trained safety operator inside. That person can take control if the car has a problem.',
+          'At the Autonomous e-Mobility Forum, Pony.ai also gave rides in a newer car with no safety operator. This was a controlled event demonstration. It showed a technical step, but it did not change every public ride into a driverless one.',
+          'The service covers areas including Old Doha, West Bay, and a connection to Hamad International Airport. Mowasalat, Qatar’s public transport company, works with Pony.ai on the local operation.',
+        ],
+        citations: [1, 2],
+      },
+      {
+        heading: 'Removing the operator changes the safety system',
+        paragraphs: [
+          'With a safety operator, one person can watch the road and take over. Without that person, the car must notice a problem, stop safely, and contact remote support. Passengers also need a clear way to ask for help.',
+          'A forum route may be easier to prepare than a full city service. Public roads include road works, unclear signs, unusual driving, and difficult weather. Doha also has strong sunlight and dust that can affect cameras and other sensors.',
+          'Useful public evidence would include ride distance, times when people took control, safe stops, and service areas. It should also explain what happens when the mobile network or remote support is not available.',
+        ],
+        citations: [1, 2],
+      },
+      {
+        heading: 'Growth claims need local proof',
+        paragraphs: [
+          'Pony.ai says it may deploy more than 4,000 vehicles outside China over time. This is a company goal, not a current fleet count. Rules, road design, and customer needs differ in every country.',
+          'The Doha demo is still useful. It shows that the partners are testing the next stage in the same city where they already run paid rides. That can help them learn from real local conditions.',
+          'The correct headline is smaller than a full driverless launch. Doha has a supervised commercial service and a separate driverless demonstration. The next milestone is safe, approved public rides without an operator, supported by clear performance data.',
+        ],
+        citations: [1, 2],
+      },
+    ],
+    sources: [
+      { publisher: 'Pony.ai', title: 'Pony.ai highlights progress in Doha robotaxi commercial operations', date: 'September 9, 2026', url: 'https://ir.pony.ai/zh-hans/news-releases/news-release-details/pony-ai-inc-highlights-progress-doha-robotaxi-commercial', kind: 'Primary source' },
+      { publisher: 'Gasgoo', title: 'Pony.ai, Mowasalat launch fully driverless robotaxi rides in Doha', date: 'September 9, 2026', url: 'https://autonews.gasgoo.com/articles/news/ponyai-mowasalat-launch-fully-driverless-robotaxi-rides-in-doha-2097526497610125313', kind: 'Research' },
+    ],
+    methodology: 'We used Pony.ai for the commercial service, event demo, routes, and growth goal. We used Gasgoo as an outside industry report. We keep the controlled driverless demonstration separate from paid public rides that still have a safety operator.',
+  },
+  'china-distillation-response': {
+    standfirst: 'China has rejected US claims that six Chinese AI companies secretly copied skills from US models. The response adds another side to a serious technical dispute. Neither a government accusation nor a denial is enough to prove what happened.',
+    sections: [
+      {
+        heading: 'China rejected the accusation',
+        paragraphs: [
+          'A Chinese Foreign Ministry spokesperson called the US claims unfair and asked the United States to stop what China described as unfounded attacks. The spokesperson also said the countries should work together on AI.',
+          'The response followed a joint notice from US and allied security agencies. That notice named DeepSeek, Moonshot AI, Alibaba, MiniMax, StepFun, and Z.AI. It accused them of hidden efforts to learn from US frontier models.',
+          'The named companies were not judged by a court in the documents we reviewed. The Chinese government’s denial also does not answer each technical claim. Readers need to keep both limits visible.',
+        ],
+        citations: [1, 2, 3],
+      },
+      {
+        heading: 'Distillation can be normal or abusive',
+        paragraphs: [
+          'Model distillation teaches one AI model by using answers from another model. Companies often use it with permission to make a smaller or cheaper system. The method itself is common research and engineering work.',
+          'The US notice says the problem was hidden access at a very large scale. It alleges millions of requests through many accounts and services. The agencies call this malicious distillation because they say it avoided rules and copied protected skills.',
+          'The public notice gives warning signs and a broad picture. It does not publish every account record or show how each company directed the work. Some evidence may be private for security reasons, but that makes careful public language more important.',
+        ],
+        citations: [1, 2, 3],
+      },
+      {
+        heading: 'Evidence should guide the next step',
+        paragraphs: [
+          'AI providers can watch for strange request patterns and share security signals. They should also protect normal customers from unfair blocks. Heavy use, work from China, or interest in one topic is not proof of abuse by itself.',
+          'A stronger public case would connect technical records to named organisations and explain the level of confidence. The accused companies should have a clear chance to answer the detailed evidence. Legal review may also be needed.',
+          'The disagreement now includes technology, trade, and diplomacy. Cooperation may be difficult, but common rules for model access could reduce confusion. Until stronger public proof appears, the most accurate words are “US allegation” and “Chinese denial.”',
+        ],
+        citations: [1, 2, 3],
+      },
+    ],
+    sources: [
+      { publisher: 'Associated Press', title: 'China rejects US accusations over AI model distillation', date: 'September 9, 2026', url: 'https://apnews.com/article/0f6ca61301630134607551b1dab0d632', kind: 'Research' },
+      { publisher: 'US National Security Agency', title: 'NSA and others warn China-based AI companies are distilling US frontier AI models', date: 'September 8, 2026', url: 'https://www.nsa.gov/Press-Room/Press-Releases-Statements/Press-Release-View/Article/4592113/nsa-and-others-warn-china-based-ai-companies-are-distilling-us-frontier-ai-mode/', kind: 'Primary source' },
+      { publisher: 'NSA, FBI, CISA and partners', title: 'China-based AI companies conduct malicious distillation against US frontier AI models', date: 'September 8, 2026', url: 'https://media.defense.gov/2026/Sep/08/2003992823/-1/-1/1/CSA_CHINA_BASED_AI_COMPANIES_MALICIOUS_DISTILLATION_AGAINST_US.PDF', kind: 'Primary source' },
+    ],
+    methodology: 'We used Associated Press for China’s response and the official US release and advisory for the allegations. We do not decide which government is correct. We distinguish ordinary model distillation from the hidden abuse alleged by US agencies.',
+  },
+  'anthropic-researcher-resignation': {
+    standfirst: 'Researcher Jacob Coxon says he left Anthropic because leading AI labs are moving too quickly toward systems that may improve themselves. Other safety researchers share his concern. These are serious expert beliefs, but they are not measured forecasts of what will happen.',
+    sections: [
+      {
+        heading: 'The warning came from inside leading labs',
+        paragraphs: [
+          'Coxon worked on model training at OpenAI and Anthropic for about three years in total, according to his public account. He says he resigned because the companies are racing toward much more powerful AI without enough care.',
+          'He is especially worried about self-improving AI. This means a system that can help design a better version of itself. If improvement becomes very fast, people may find it hard to understand or control the result.',
+          'Coxon believes such systems could create an extreme risk to human life before 2030. This is his personal view. It is not a date that researchers can test today, and many experts would choose a different chance or time.',
+        ],
+        citations: [1, 2, 3, 4],
+      },
+      {
+        heading: 'Another Anthropic researcher shares the concern',
+        paragraphs: [
+          'Evan Hubinger leads part of Anthropic’s work on alignment. Alignment means trying to make an AI system follow human goals and limits. Axios reports that he publicly agreed with the main concern in Coxon’s message.',
+          'Hubinger gave his own chance of an AI disaster within ten years as higher than 10%. This number shows how one expert thinks about uncertainty. It is not the result of a repeatable experiment or a shared scientific forecast.',
+          'Expert beliefs still matter when evidence is limited and possible harm is large. They can guide safety tests and emergency plans. However, news reports should not turn one person’s number into a fact about the future.',
+        ],
+        citations: [1, 2, 3, 4],
+      },
+      {
+        heading: 'Governance needs more than private fear',
+        paragraphs: [
+          'AI companies can publish clearer safety limits, outside test results, and rules for stopping a launch. Staff also need safe ways to raise a concern. An exit from a company can be an important signal, but it is not a full safety review.',
+          'Governments and researchers need useful measures for dangerous skills, control failures, and the speed of model improvement. They should also report uncertainty. Clear tests can support better decisions than a debate based only on confidence or fear.',
+          'Coxon’s resignation matters because it shows a deep disagreement inside frontier AI work. The right response is neither to ignore him nor to accept every claim. It is to ask for evidence, prepare for serious risks, and keep public choices open.',
+        ],
+        citations: [1, 2, 3, 4],
+      },
+    ],
+    sources: [
+      { publisher: 'Axios', title: 'AI researcher quits Anthropic, warning of race toward dangerous systems', date: 'September 9, 2026', url: 'https://www.axios.com/2026/09/09/openai-artificial-general-intelligence-safety', kind: 'Research' },
+      { publisher: 'Axios', title: 'Anthropic insiders warn AI could kill all humans', date: 'September 9, 2026', url: 'https://www.axios.com/2026/09/09/anthropic-insiders-warn-ai-could-kill-all-humans', kind: 'Research' },
+      { publisher: 'ABC News Australia', title: 'Anthropic researcher quits over threat to humanity', date: 'September 9, 2026', url: 'https://www.abc.net.au/news/2026-09-09/anthropic-researcher-coxon-quits-over-human-threat/107134164', kind: 'Research' },
+      { publisher: 'El País', title: 'An Anthropic researcher resigns over AI risk', date: 'September 9, 2026', url: 'https://elpais.com/tecnologia/2026-09-09/un-investigador-de-anthropic-dimite-porque-asegura-que-la-ia-puede-matarnos-antes-de-2030.html', kind: 'Research' },
+    ],
+    methodology: 'We compared Axios, ABC News Australia, and El País. We treat risk numbers and dates as personal beliefs, not predictions proven by data. We explain the technical words and focus on what the disagreement means for public safety rules.',
+  },
   'chatgpt-images-25': {
     standfirst: 'OpenAI has released ChatGPT Images 2.5 with faster generation and more exact editing. New sketch, comment, and template tools may help people guide the result. The main question is whether the model keeps important details when a user asks for many changes.',
     sections: [
