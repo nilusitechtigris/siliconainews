@@ -3,6 +3,42 @@ import type { CSSProperties } from 'react';
 type ArticleVisualProps = { storyId: string };
 
 const visualCopy: Record<string, { kicker: string; title: string; description: string; aria: string }> = {
+  'nvidia-australia-ai-capacity': {
+    kicker: 'CAPACITY CHECK 01',
+    title: 'A power target becomes useful compute only after several real-world checks.',
+    description: 'The partnership says up to 2 gigawatts by 2027. Sites, grid connections, operating systems, customer access, and measured use still need proof.',
+    aria: 'Infrastructure flow from a two-gigawatt upper target through approved sites and grid connections to running AI systems and customer use.',
+  },
+  'suno-v6-licensed-models': {
+    kicker: 'RIGHTS PATH 02',
+    title: 'Licensed music can enter a model only after consent, terms, and payment rules.',
+    description: 'Suno v6 uses new industry partnerships. Public details still do not show the payment received by each participating artist.',
+    aria: 'Music rights flow from participating artists and licensed recordings through Suno v6 to generated songs, credits, and creator payments.',
+  },
+  'california-ai-auditor-laws': {
+    kicker: 'AUDIT LOOP 03',
+    title: 'An audit needs an independent reviewer, a clear test, and a useful public result.',
+    description: 'California’s two laws create a verification framework and an auditor registry. Practical rules will decide how much trust they produce.',
+    aria: 'AI audit flow from a model and test plan through an independent registered auditor to evidence, limits, and a public report.',
+  },
+  'google-finland-ai-investment': {
+    kicker: 'INFRA LEDGER 04',
+    title: 'The €13 billion plan connects servers, energy, grid work, and local value.',
+    description: 'Google plans two years of investment across four Finnish areas, with nuclear, wind, battery, training, and community projects.',
+    aria: 'Investment map showing thirteen billion euros flowing to data centres, grid and clean energy work, a 94-megawatt battery, and local programmes.',
+  },
+  'arm-robot-capability-framework': {
+    kicker: 'ROBOT SCALE 05',
+    title: 'Six labels describe a path from direct reaction to self-improving behaviour.',
+    description: 'Arm’s RL0 to RL5 framework is a proposed shared language. Each level still needs repeatable tests and clear safety limits.',
+    aria: 'Six-step robot capability scale from RL0 reactive behaviour through context, planning, learning, and RL5 self-improving behaviour.',
+  },
+  'unesco-ai-education-statement': {
+    kicker: 'CLASSROOM GATE 06',
+    title: 'Learning goals and student rights should come before an AI tool.',
+    description: 'Education ministers call for critical thinking, teacher control, age-aware safeguards, and protection for student data.',
+    aria: 'Classroom decision flow from a learning goal through teacher review, age and data checks, a small trial, and measured learning results.',
+  },
   'adi-alif-edge-ai-deal': {
     kicker: 'EDGE PATH 01',
     title: 'Small processors can turn several sensor signals into one local decision.',
@@ -295,6 +331,18 @@ const visualCopy: Record<string, { kicker: string; title: string; description: s
 
 function Diagram({ storyId }: ArticleVisualProps) {
   switch (storyId) {
+    case 'nvidia-australia-ai-capacity':
+      return <div className="visual-flow"><span>UP TO 2 GW</span><i>→</i><span>APPROVED SITES</span><i>→</i><span>GRID + SYSTEMS</span><i>→</i><span className="checkpoint">CUSTOMER USE</span><div className="cost-line">2027 TARGET · NOT BUILT CAPACITY</div></div>;
+    case 'suno-v6-licensed-models':
+      return <div className="visual-flow"><span>ARTIST OPT-IN</span><i>→</i><span>LICENSED MUSIC</span><i>→</i><span>SUNO V6</span><i>→</i><span className="checkpoint">CREDIT + PAY</span><div className="cost-line">PUBLIC PER-ARTIST TERMS NOT SHOWN</div></div>;
+    case 'california-ai-auditor-laws':
+      return <div className="visual-flow"><span>MODEL + RECORDS</span><i>→</i><span>INDEPENDENT AUDITOR</span><i>→</i><span>TEST EVIDENCE</span><i>→</i><span className="checkpoint">PUBLIC RESULT</span><div className="cost-line">METHOD · LIMITS · CONFLICTS</div></div>;
+    case 'google-finland-ai-investment':
+      return <div className="visual-ledger">{[['01', 'INVESTMENT', '€13B'], ['02', 'LOCATIONS', '4 AREAS'], ['03', 'BATTERY', '94 MW'], ['04', 'DELIVERY', '2027–28']].map(([index, label, state]) => <div key={index}><span>{index}</span><b>{label}</b><i>{state}</i></div>)}</div>;
+    case 'arm-robot-capability-framework':
+      return <div className="visual-lanes"><div><span>RL0 · REACT</span><i style={{ '--fill': '17%' } as CSSProperties} /></div><div><span>RL2 · CONTEXT</span><i style={{ '--fill': '50%' } as CSSProperties} /></div><div><span>RL5 · SELF-IMPROVE</span><i className="striped" style={{ '--fill': '100%' } as CSSProperties} /></div><b>PROPOSED LANGUAGE · TESTS MUST FOLLOW</b></div>;
+    case 'unesco-ai-education-statement':
+      return <div className="visual-flow"><span>LEARNING GOAL</span><i>→</i><span>TEACHER CHECK</span><i>→</i><span>AGE + DATA RULES</span><i>→</i><span className="checkpoint">MEASURE LEARNING</span><div className="cost-line">AI SUPPORTS THINKING · PEOPLE STAY IN CONTROL</div></div>;
     case 'adi-alif-edge-ai-deal':
       return <div className="visual-flow"><span>MOTION · SOUND · HEAT</span><i>→</i><span>EDGE AI CHIP</span><i>→</i><span>LOCAL DECISION</span><i>→</i><span className="checkpoint">MACHINE ACTION</span><div className="cost-line">$1.35B DEAL · LEGAL REVIEW PENDING</div></div>;
     case 'iphone-duo-launch':

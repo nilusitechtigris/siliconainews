@@ -19,6 +19,238 @@ export type ArticleContent = {
 };
 
 export const articlesByStoryId: Record<string, ArticleContent> = {
+  'nvidia-australia-ai-capacity': {
+    standfirst: 'Nvidia and eight Australian partners say their sites could support up to 2 gigawatts of AI computing by 2027. The plan could give local teams more access to powerful systems. However, the announcement is a capacity goal, not a list of finished data centres.',
+    sections: [
+      {
+        heading: 'The plan joins several kinds of company',
+        paragraphs: [
+          'Nvidia named cloud providers, data-centre operators, and a network company. The group includes Firmus, Sharon AI, IREN, Megaport, ResetData, CDC, NEXTDC, and AirTrunk. Each partner would provide a different part of the system.',
+          'The partners plan to use Nvidia DSX systems. Nvidia would supply computing hardware, networking, software, and technical support. The local companies would operate the sites and sell access to customers.',
+          'Nvidia says the combined buildout could reach 2 gigawatts by 2027. Reuters reported the same upper target. The words “up to” matter because they describe a possible total, not capacity that is already running.',
+        ],
+        citations: [1, 2],
+      },
+      {
+        heading: 'Power is only the first limit',
+        paragraphs: [
+          'A gigawatt measures power, not useful AI work. Two sites with the same power limit can deliver different results. Chip choice, cooling, network speed, software, and how often the machines are busy all change the real output.',
+          'Large data centres also need grid connections, land, water or other cooling systems, and planning approval. The announcement does not give one complete schedule for every partner. It also does not explain the full energy mix for the combined target.',
+          'Local access could help Australian universities, startups, and companies keep sensitive work closer to home. It could also reduce delays when overseas systems are busy. Those benefits depend on price and fair access, not only the number of machines.',
+        ],
+        citations: [1, 2],
+      },
+      {
+        heading: 'Watch the delivery, not the headline number',
+        paragraphs: [
+          'The first useful check is built capacity. Partners should report which sites are approved, connected, and open to customers. They should separate firm projects from early plans.',
+          'The second check is public impact. New electricity demand should not quietly raise costs or weaken reliability for nearby users. Clear energy contracts and grid studies can show who pays for new supply and network work.',
+          'The third check is customer value. A regional AI system matters when researchers and smaller companies can buy useful time at a fair price. A large target can still produce limited public value if most capacity has one private buyer.',
+          'Australia may gain an important local computing base from this partnership. For now, readers should treat 2 gigawatts as a ceiling. The stronger evidence will be working sites, clear energy plans, customer prices, and measured use.',
+        ],
+        citations: [1, 2],
+      },
+    ],
+    sources: [
+      { publisher: 'Nvidia', title: 'NVIDIA expands AI infrastructure capacity with Australia’s data center ecosystem', date: 'September 9, 2026', url: 'https://nvidianews.nvidia.com/news/nvidia-expands-ai-infrastructure-capacity-in-partnership-with-australias-data-center-ecosystem', kind: 'Primary source' },
+      { publisher: 'Reuters via Investing.com', title: 'Nvidia teams up with Australian partners to build AI factory capacity', date: 'September 9, 2026', url: 'https://www.investing.com/news/stock-market-news/nvidia-teams-up-with-australian-partners-to-build-ai-factory-capacity-4894807', kind: 'Research' },
+    ],
+    methodology: 'We used Nvidia’s announcement to identify the partners, platform, target, and planned users. We checked the target against Reuters. We call 2 gigawatts an upper goal because the announcement says “up to” and does not give one completed-project list.',
+  },
+  'suno-v6-licensed-models': {
+    standfirst: 'Suno has launched three v6 music models after working with Warner Music Group, BMG, and Believe. The models offer more control and use licensed music from new partnerships. The change is important, but public payment details remain limited.',
+    sections: [
+      {
+        heading: 'One release serves three kinds of user',
+        paragraphs: [
+          'The main v6 model is for Pro and Premier subscribers. Suno says it aims for reliable and polished results. A second model, v6-wild, makes less predictable music for people who want new ideas.',
+          'The free v6-mini model is smaller and faster. Suno says all three models understand more musical detail. A user can describe vocals, instruments, structure, mood, or the general feel of a song.',
+          'New editing tools can change one word or line while keeping the rest of a song. Users can also bring text, images, or video as creative references. These controls may matter more than a small rise in sound quality.',
+        ],
+        citations: [1, 2, 3],
+      },
+      {
+        heading: 'Licensed training changes the rights story',
+        paragraphs: [
+          'Suno says v6 was developed with Warner, BMG, and Believe. Independent reports say the training set includes licensed recordings and user data. This is different from the company’s older models, which faced serious copyright disputes.',
+          'Warner and BMG say participating artists and writers should receive payment. Believe and TuneCore artists can choose whether to join some new products. These steps create a clearer legal path for the model.',
+          'Important questions remain. The public agreements do not show how much one artist earns, how usage is measured, or how a person can check that an opt-out worked. A license between companies does not automatically make the system simple for creators.',
+        ],
+        citations: [1, 2, 3],
+      },
+      {
+        heading: 'Creative control still belongs with people',
+        paragraphs: [
+          'A music model can help someone explore a melody or arrangement quickly. It can also make a finished-sounding track before the user has made many choices. Good design should make editing and comparison easy, not hide the decisions inside one button.',
+          'Listeners also need honest information. A clear AI label can explain how a track was made. Credits should identify the people who wrote, performed, edited, or approved the work when those roles apply.',
+          'Suno says it will retire older models and move users to v6. People with saved projects should check which editing tools and download rules continue to work. A model change can affect a creative process even when old songs remain in a library.',
+          'The move toward licensed data is real progress. The next test is whether artists can understand consent, payment, and credit without needing a lawyer. Better sound is useful, but a fair system needs better records too.',
+        ],
+        citations: [1, 2, 3],
+      },
+    ],
+    sources: [
+      { publisher: 'Suno', title: 'Introducing v6', date: 'September 9, 2026', url: 'https://about.suno.com/blog/introducing-v6', kind: 'Primary source' },
+      { publisher: 'Axios', title: 'Suno launches new AI music models with Warner and BMG', date: 'September 9, 2026', url: 'https://www.axios.com/2026/09/09/suno-v6-ai-music-warner-bmg', kind: 'Research' },
+      { publisher: 'MusicRadar', title: 'Suno rebuilt its AI music models with licensed music', date: 'September 9, 2026', url: 'https://www.musicradar.com/music-tech/suno-has-rebuilt-its-ai-music-models-from-scratch-with-licensed-music', kind: 'Research' },
+    ],
+    methodology: 'We used Suno for the model names, access levels, editing tools, and partner list. We used Axios and MusicRadar to check the licensing and payment context. We do not assume that a company partnership gives every creator the same terms.',
+  },
+  'california-ai-auditor-laws': {
+    standfirst: 'California has signed two laws for independent checks of AI systems. One creates a framework for verification groups. The other creates a state list of AI auditors and sets rules for their work. The result will depend on strong tests and real independence.',
+    sections: [
+      {
+        heading: 'The state is building an audit system',
+        paragraphs: [
+          'Governor Gavin Newsom signed Senate Bill 813 and Assembly Bill 1405. The state calls them first-in-the-nation steps for outside checks of AI systems. The laws add to earlier California rules for large AI developers.',
+          'SB 813 creates a framework for independent verification groups. These groups can check whether an AI system follows state law. AB 1405 creates a registry where people can find AI auditors.',
+          'The auditor law also sets standards for independence, openness, and honest work. This matters because an audit loses value when the reviewer depends too much on the company being checked.',
+        ],
+        citations: [1, 2, 3],
+      },
+      {
+        heading: 'An audit needs a clear question',
+        paragraphs: [
+          'The word “audit” can cover many different tasks. One team may check bias in hiring software. Another may test cyber risks in a large model. A third may inspect records that show how a company handled a safety problem.',
+          'These checks need clear limits. An auditor should state which model version was tested, which data was used, and what the test could not measure. A simple pass mark can hide important problems.',
+          'Access also matters. An outside team cannot check a serious claim if it only sees a short company summary. Auditors may need test access, technical records, incident reports, and enough time to repeat important work.',
+        ],
+        citations: [1, 2, 3],
+      },
+      {
+        heading: 'Independence must work in practice',
+        paragraphs: [
+          'Many auditors are paid by the company they examine. That does not always make the work weak, but it creates a possible conflict. Rules should make payment, other business links, and past work visible.',
+          'The public also needs useful results. A report can protect trade secrets while still explaining the test, major risks, and limits. If every important detail stays private, the audit cannot build much public trust.',
+          'OpenAI supported the two laws and two other California bills. That support is relevant, but it does not prove the rules are strong enough. Companies and public-interest groups may want different details during implementation.',
+          'The laws create the structure for better checks. The next work is practical: approve qualified auditors, prevent conflicts, define useful tests, and publish enough evidence. A registry is the start of accountability, not the final result.',
+        ],
+        citations: [1, 2, 3],
+      },
+    ],
+    sources: [
+      { publisher: 'Governor of California', title: 'Governor Newsom signs first-in-the-nation AI safeguards', date: 'September 9, 2026', url: 'https://www.gov.ca.gov/2026/09/09/governor-newsom-signs-first-in-the-nation-ai-safeguards-to-protect-californians-calls-on-the-federal-government-to-do-its-part/', kind: 'Primary source' },
+      { publisher: 'California Assembly Privacy and Consumer Protection Committee', title: 'AB 1405 policy committee analysis', date: 'March 2025', url: 'https://apcp.assembly.ca.gov/system/files/2025-03/ab-1405-bauer-kahan-apcp-analysis.pdf', kind: 'Primary source' },
+      { publisher: 'OpenAI', title: 'The AI policy window is open. We need to act.', date: 'September 9, 2026', url: 'https://openai.com/index/ai-policy-window/', kind: 'Research' },
+    ],
+    methodology: 'We used the governor’s release for the signed laws and their stated purpose. We read the legislative analysis for the registry background. We used OpenAI only to show industry support and do not treat that support as an independent review.',
+  },
+  'google-finland-ai-investment': {
+    standfirst: 'Google says it will invest at least €13 billion in Finnish data centres and related systems during 2027 and 2028. It also announced new energy and community work. The plan is large, but its results will arrive over several years.',
+    sections: [
+      {
+        heading: 'Four areas are part of the plan',
+        paragraphs: [
+          'Google named Hamina, Kajaani, Muhos, and Vaala. The company already runs a data centre in Hamina, inside a former paper mill. The other work will add more digital infrastructure in northern and central Finland.',
+          'Google calls the plan its largest single investment in Europe. It says the building phase could support more than 37,000 jobs across Finland. It also estimates an average yearly contribution of €3.6 billion to the economy during construction.',
+          'These are forecasts from Google and its studies. Construction jobs may last for a limited period, and one person can work on more than one project. Permanent jobs and local contracts should be reported separately later.',
+        ],
+        citations: [1, 2, 3],
+      },
+      {
+        heading: 'The energy package is part of the project',
+        paragraphs: [
+          'Data centres need electricity every hour. Google announced a 22-year agreement connected to the Loviisa nuclear plant. It also plans more wind power and a 94-megawatt battery system.',
+          'The battery can store power and help during periods with weak wind or high demand. It cannot power all of a very large data centre for a long time by itself. Nuclear, wind, storage, and grid connections have different jobs.',
+          'Google says careful site choice can reduce pressure on the southern grid. It also plans to study whether data centres can lower demand for short periods when the grid is under stress. These ideas need public measurements after the sites start work.',
+        ],
+        citations: [1, 2, 3],
+      },
+      {
+        heading: 'Local value needs its own record',
+        paragraphs: [
+          'The company plans €31 million for community programmes over four years. It says more than 4,400 workers can receive AI skills training. Another programme would create data-centre training for 100 students.',
+          'Google also promises work on forests, wetlands, public trails, saunas, and fishing areas. These projects can help nearby communities, but they should not replace clear reporting about energy use, water, noise, land, and local costs.',
+          'The strongest future report would separate money promised, money spent, projects connected, and services running. It would also show hourly energy demand, new supply, local prices, emissions, and permanent employment.',
+          'Finland offers cool weather, skilled workers, and low-carbon power. Those conditions make it attractive for AI infrastructure. The €13 billion headline is still a plan. Real public value will come from the systems, contracts, and checks that follow.',
+        ],
+        citations: [1, 2, 3],
+      },
+    ],
+    sources: [
+      { publisher: 'Google', title: 'Google deepens its commitment to Finland with a €13 billion investment', date: 'September 9, 2026', url: 'https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/google-ai-commitment-to-finland/', kind: 'Primary source' },
+      { publisher: 'Google', title: 'Our blueprint for responsible clean energy growth in Finland', date: 'September 9, 2026', url: 'https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/clean-energy-finland/', kind: 'Primary source' },
+      { publisher: 'TechRadar Pro', title: 'Google to invest $15 billion in AI infrastructure in Finland', date: 'September 9, 2026', url: 'https://www.techradar.com/pro/google-to-invest-usd15-billion-in-ai-infrastructure-in-finland-its-largest-single-investment-in-europe', kind: 'Research' },
+    ],
+    methodology: 'We used Google’s main announcement for the investment, places, jobs forecast, and community plans. We used its energy note for the nuclear, wind, battery, and grid details. We checked the main figures against independent reporting and label forecasts as forecasts.',
+  },
+  'arm-robot-capability-framework': {
+    standfirst: 'Arm has proposed six levels for describing what a robot can do. It also brought more than 80 companies into a programme for physical AI. A shared language may help buyers and builders, but only if the levels connect to repeatable tests.',
+    sections: [
+      {
+        heading: 'The framework runs from reaction to learning',
+        paragraphs: [
+          'Arm’s Robotics Capability Framework starts at RL0 and ends at RL5. A low-level system mainly reacts to direct input. Higher levels add more context, planning, learning, and independent improvement.',
+          'The six levels are meant to describe ability, not one type of machine. A warehouse arm, delivery robot, or humanoid robot could use the same language. This may make product claims easier to compare.',
+          'Arm says the framework is a starting point. It does not set one required chip, model, or robot design. It also does not mean that every company in the programme has adopted the levels for its products.',
+        ],
+        citations: [1, 2, 3],
+      },
+      {
+        heading: 'Physical AI needs a full system',
+        paragraphs: [
+          'A robot must sense, decide, and act in the real world. That requires cameras or other sensors, computing hardware, software, motors, and a safe control system. A strong model cannot solve every problem alone.',
+          'Arm expanded its Total Design programme to physical AI. More than 80 companies are taking part across cloud services, chips, models, software, sensors, and machines. Named members include AWS, Hugging Face, NXP, Siemens, and Unitree.',
+          'The group may reduce repeated engineering work when companies use common ideas and interfaces. However, membership is not proof that two products work together. It is also not an independent safety mark.',
+        ],
+        citations: [1, 2, 3],
+      },
+      {
+        heading: 'A level should answer a practical question',
+        paragraphs: [
+          'Buyers need to know what a robot can do in their own space. A level should explain the environment, task, time, failure rate, and kind of human help. Without those details, the label may be too broad.',
+          'Safety tests must also look at recovery. What happens when an object moves, a sensor fails, or a person enters the work area? A robot that succeeds in a clean demo may still fail in a busy factory or home.',
+          'Independent labs should be able to repeat the test. Results should show both success and serious failure cases. Different products can then use the same words without hiding important differences.',
+          'Arm has opened a useful discussion about shared robot language. The framework becomes valuable when clear tests follow it. Until then, RL0 to RL5 is a map for future work, not a simple score of safety or quality.',
+        ],
+        citations: [1, 2, 3],
+      },
+    ],
+    sources: [
+      { publisher: 'Arm', title: 'Arm brings the ecosystem together to define the next phase of physical AI', date: 'September 8, 2026', url: 'https://newsroom.arm.com/news/arm-total-design-and-robotics-capability-framework-for-physical-ai', kind: 'Primary source' },
+      { publisher: 'Arm', title: 'Robotics Capability Framework', date: 'September 2026', url: 'https://www.arm.com/markets/robotics/robotics-capability-framework', kind: 'Primary source' },
+      { publisher: 'The Deep View', title: 'Arm wants to make robots speak one language', date: 'September 8, 2026', url: 'https://www.thedeepview.com/articles/arm-wants-to-make-robots-speak-one-language', kind: 'Research' },
+    ],
+    methodology: 'We used Arm’s newsroom and framework pages for the six levels, programme, and member claims. We used independent coverage to check the main announcement. We separate joining the programme from adopting or passing a future standard.',
+  },
+  'unesco-ai-education-statement': {
+    standfirst: 'More than 25 education ministers and official representatives have backed eight priorities for AI in schools and universities. They want AI to protect student rights, support teachers, and help learners think. The statement is guidance, not a binding law.',
+    sections: [
+      {
+        heading: 'The statement puts learning before the tool',
+        paragraphs: [
+          'The group met during UNESCO’s Digital Learning Week in Paris. It described education as a human right and a common good. This means public goals should guide AI use, not only the interests of a technology provider.',
+          'One priority is critical understanding. AI tools should ask learners to reason and do mental work. They should not simply produce an answer that a student copies without understanding.',
+          'The statement also supports teacher agency. Teachers should help decide which systems enter a classroom. They need training, time, and the right to stop using a tool that does not help their students.',
+        ],
+        citations: [1, 2],
+      },
+      {
+        heading: 'Age and data need clear limits',
+        paragraphs: [
+          'A tool that works for a university student may not be right for a young child. UNESCO calls for age-aware rules based on children’s rights and development. Schools should be able to pause or end use when risks are too high.',
+          'Student and teacher data also need protection. People should understand which information is collected, why it is needed, how long it stays, and who can use it. Children have rights over their data too.',
+          'Buying decisions should include these questions before a school signs a contract. A free trial can still create future costs, dependence on one provider, or a record of sensitive classroom activity.',
+        ],
+        citations: [1, 2],
+      },
+      {
+        heading: 'Schools need evidence from real classrooms',
+        paragraphs: [
+          'UNESCO reported a survey of higher-education experts. Ninety-three percent believed students use generative AI for assignments. Sixty-three percent felt student thinking skills were getting weaker. These are views from respondents, not direct tests of all students.',
+          'Very few respondents wanted a complete ban or use without limits. Most expected controlled use, disclosure, or rules for particular tasks. This supports a careful middle path instead of one answer for every subject and age.',
+          'Schools can test a tool with small groups and clear learning goals. They should compare results with normal teaching, ask students and teachers about problems, and check whether some learners are left behind.',
+          'The ministerial statement gives a useful direction, but countries must turn it into policy and practice. The best sign of progress will not be the number of AI accounts. It will be stronger learning, protected rights, and teachers who remain in control.',
+        ],
+        citations: [1, 2],
+      },
+    ],
+    sources: [
+      { publisher: 'UNESCO', title: 'Education Ministers call for education to remain a common good in the age of AI', date: 'September 9, 2026', url: 'https://www.unesco.org/en/articles/education-ministers-call-education-remain-common-good-age-ai-unescos-digital-learning-week?hub=722', kind: 'Primary source' },
+      { publisher: 'UNESCO', title: 'Global consultation on education in the age of AI', date: 'September 8, 2026', url: 'https://www.unesco.org/en/digital-education/artificial-intelligence/consultation', kind: 'Research' },
+    ],
+    methodology: 'We used UNESCO’s report for the participants, eight priorities, and survey figures. We used the consultation page for the policy background. We call the survey results expert views because they are not direct measurements of every student.',
+  },
   'adi-alif-edge-ai-deal': {
     standfirst: 'Analog Devices has agreed to buy Alif Semiconductor for $1.35 billion in cash. Alif makes low-power processors that can run AI close to sensors. The deal is signed, but it still needs legal review before the companies can complete it.',
     sections: [
