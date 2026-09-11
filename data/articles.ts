@@ -19,6 +19,192 @@ export type ArticleContent = {
 };
 
 export const articlesByStoryId: Record<string, ArticleContent> = {
+  'anthropic-september-misuse-report': {
+    standfirst: 'Anthropic says it stopped harmful uses of Claude across cyberattacks, surveillance, fraud, weapons research, influence campaigns, and model copying. The cases show how AI can make harmful work faster. They also show why company reports need outside review.',
+    sections: [
+      {
+        heading: 'The report covers seven kinds of harm',
+        paragraphs: [
+          'Anthropic studied activity it found between December 2025 and August 2026. The company says the users included suspected government-backed groups, criminals, spyware sellers, and political actors. It says it stopped the activity and shared some information with authorities or industry partners.',
+          'The cyber cases are the clearest warning. Anthropic says some people used AI to help find targets, build tools, steal data, and change malware when security software found it. Humans still chose the targets and checked the stolen data. The AI helped them work across more steps with fewer people.',
+          'The report also describes blocked requests linked to biological research that could have made a virus more harmful. Anthropic says newer models now have stronger limits for sensitive biological questions. AP reported that the company cannot promise that today’s more capable models would never help a skilled user do harm.',
+        ],
+        citations: [1, 2],
+      },
+      {
+        heading: 'A case report is not a full measure of the problem',
+        paragraphs: [
+          'Anthropic says these are unusual and important cases, not normal use of Claude. That is a useful limit. The report does not tell us what share of all harmful activity the company finds, how many cases it misses, or how its results compare with other AI services.',
+          'The evidence also comes from the company that built and runs the models. Anthropic gives many technical details, which helps defenders learn. However, readers cannot see all account records, private messages, or detection rules. Some information must stay private for safety, but that makes independent checking harder.',
+          'A strong response needs several layers. Providers should block dangerous requests, watch for unusual patterns, and keep records that trained reviewers can study. They should also give users a way to appeal when a safety system blocks harmless work.',
+        ],
+        citations: [1, 2],
+      },
+      {
+        heading: 'The best test is what changes next',
+        paragraphs: [
+          'Security teams should not treat polished attacks as proof that a large state group is responsible. Anthropic says AI has reduced the gap between highly trained teams and smaller actors. Defenders need to look at the full evidence, not only the quality of the code.',
+          'Governments and AI companies can share warning signs without publishing instructions that help attackers. Independent researchers should be able to test the safeguards under strict rules. Public reports should explain both successful blocks and serious failures.',
+          'Anthropic’s report is valuable because it names real patterns and admits uncertainty. It is not a complete map of AI misuse. The important question is whether the new controls stop more harm, create fewer unfair blocks, and produce evidence that outside experts can trust.',
+        ],
+        citations: [1, 2],
+      },
+    ],
+    sources: [
+      { publisher: 'Anthropic', title: 'Detecting and countering misuse of AI: September 2026', date: 'September 10, 2026', url: 'https://www.anthropic.com/threat-intelligence-report-september-2026', kind: 'Primary source' },
+      { publisher: 'Associated Press', title: 'Anthropic says it blocked misuse of its AI that could have supported biological weapons', date: 'September 10, 2026', url: 'https://apnews.com/article/anthropic-ai-threat-bioweapon-russia-00266dca90e4f8853f669648998d3bda', kind: 'Research' },
+    ],
+    methodology: 'We used Anthropic’s report for the case types, time period, model limits, and response steps. We used AP to check the main claims and add outside context. We describe the actors as Anthropic’s findings because no court or independent audit has judged every case.',
+  },
+  'california-child-ai-safety-laws': {
+    standfirst: 'California has signed a large package of online child safety laws. The rules cover companion chatbots, social media feeds, privacy, school data, and AI-made abuse material. The goals are clear, but careful enforcement will decide whether children are safer without losing privacy.',
+    sections: [
+      {
+        heading: 'The package changes both AI and social media',
+        paragraphs: [
+          'One law, called Adam’s Law, adds safety duties for companion chatbots used by children. These are chatbots designed to feel like a friend or partner. Companies must add crisis steps for signs of suicide or self-harm, give parents controls, and warn parents if a child turns off safety settings.',
+          'The law also requires independent child safety audits and a risk check every year. A risk check asks what could go wrong before or while a product is used. It can help a company find weak points, but only if the test covers real use and the reviewer is truly independent.',
+          'Other laws ban autoplay and history-based feeds for users under 16. They also limit targeted advertising, protect school data used by AI, and extend rules on child sexual abuse material to some AI-made or changed images.',
+        ],
+        citations: [1, 2],
+      },
+      {
+        heading: 'Age checks can create a second privacy problem',
+        paragraphs: [
+          'A platform must know which users are children before it can apply child rules. That sounds simple, but age checks may ask for an identity document, a face scan, or more personal data. A safety system should collect as little information as possible and delete it when the check is complete.',
+          'The rules also need clear product boundaries. A child can move between a chatbot, a game, a social network, and a school tool in one hour. Regulators must explain which duty applies to each service and how companies should work together during a real crisis.',
+          'AP reports that large social media companies may face civil penalties of up to $1 million per child when negligence causes harm. A high penalty may push companies to act. It may also lead them to block too much, so courts and regulators will need fair evidence standards.',
+        ],
+        citations: [1, 2],
+      },
+      {
+        heading: 'Watch the audits, controls, and real outcomes',
+        paragraphs: [
+          'Parents need controls they can understand, not a long settings page. Children also need a clear way to ask for help. A warning should use simple words, show what will happen next, and avoid making a young person feel punished for speaking honestly.',
+          'Independent audits should publish the test method, serious findings, and limits. They should measure whether the system notices danger, how often it makes mistakes, and how quickly trained people respond. Company promises are not enough.',
+          'The law package sets a strong direction: safer defaults, less addictive design, and more responsibility for companies. Its success will depend on privacy-friendly age checks, honest audits, useful support, and public data showing that harm falls over time.',
+        ],
+        citations: [1, 2],
+      },
+    ],
+    sources: [
+      { publisher: 'Office of Governor Gavin Newsom', title: 'Governor Newsom signs the strongest child safety chatbot and social media laws in the nation', date: 'September 10, 2026', url: 'https://www.gov.ca.gov/2026/09/10/governor-newsom-signs-the-strongest-child-safety-chatbot-and-social-media-laws-in-the-nation/', kind: 'Primary source' },
+      { publisher: 'Associated Press', title: 'California governor signs laws aimed at protecting kids from risks of social media, AI chatbots', date: 'September 10, 2026', url: 'https://apnews.com/article/california-social-media-safety-kids-online-harms-6063026d1b54a8537d639605c23aab80', kind: 'Research' },
+    ],
+    methodology: 'We used the California governor’s bill summary for the signed measures and AP for independent reporting on penalties, company concerns, and wider context. We do not predict legal outcomes. We focus on the controls people can check after the laws take effect.',
+  },
+  'deepsky-weather-instruments': {
+    standfirst: 'Tomorrow.io has shown the planned sensor package for DeepSky, its next weather satellite system. Five instruments would study different parts of a storm. The plan could improve data for AI forecasts, but the new satellites are still being built.',
+    sections: [
+      {
+        heading: 'Five sensors would read one storm together',
+        paragraphs: [
+          'DeepSky would place five kinds of instrument on each satellite. A microwave sounder would measure temperature and moisture through most clouds. A rain radar would send a signal into a storm and measure the structure of the rain.',
+          'Visible and infrared cameras would follow clouds, heat, and possible fires. Two tools that use navigation satellite signals would measure air conditions and ocean wind. Each sensor sees something the others cannot see well.',
+          'The instruments would fly on the same spacecraft. This matters because they could study the same area at almost the same time. The combined data could give weather models a stronger picture of what is happening now, especially over oceans and places with little ground radar.',
+        ],
+        citations: [1, 2],
+      },
+      {
+        heading: 'The data gap is real, but the benefit is still a plan',
+        paragraphs: [
+          'Tomorrow.io says more than five billion people live outside ground radar coverage. It calls this a company estimate, not an outside measurement. About 71 percent of Earth is ocean, and ground radar covers almost none of it.',
+          'Better observations may help an AI model notice a storm changing quickly. They may also help national weather services give earlier warnings. However, a sensor plan does not yet prove a longer warning time or a more accurate forecast.',
+          'Tomorrow.io clearly says DeepSky is being built and does not describe what is in orbit now. Its first satellite group has 11 active microwave sounders. Earlier radar test satellites showed that small spacecraft can measure rain, but DeepSky’s full five-sensor design has not flown.',
+        ],
+        citations: [1, 2],
+      },
+      {
+        heading: 'Public value needs public evidence',
+        paragraphs: [
+          'The company has not published a final number of DeepSky satellites, a full launch schedule, or exact warning gains. Those details will matter. More satellites can shorten the time between measurements, while fast delivery decides whether an observation reaches a forecaster in time.',
+          'National weather agencies remain responsible for public warnings. A private satellite company can provide useful data, but agencies need stable access, clear quality checks, and a plan for service problems. Poorer regions should not receive better warnings only when they can pay a high price.',
+          'DeepSky is a serious design because it connects several proven ways to measure the atmosphere. The next evidence should come from instruments in orbit, outside forecast tests, warning-time results, and clear access terms. Until then, the architecture is promising, not proven.',
+        ],
+        citations: [1, 2],
+      },
+    ],
+    sources: [
+      { publisher: 'Tomorrow.io', title: 'DeepSky: The Early Warning Constellation, and The Five Instruments it Will Carry', date: 'September 10, 2026', url: 'https://www.tomorrow.io/blog/deepsky-the-early-warning-constellation-and-the-five-instruments-it-will-carry/', kind: 'Primary source' },
+      { publisher: 'Axios', title: 'AI could warn people of dangerous weather patterns', date: 'September 10, 2026', url: 'https://www.axios.com/2026/09/10/ai-dangerous-weather-warning', kind: 'Research' },
+    ],
+    methodology: 'We used Tomorrow.io’s technical article for the instruments, present fleet, and stated limits. We used Axios to check the announcement and add outside caution about unproven warning gains. We label the five-billion figure as a company estimate, as Tomorrow.io does.',
+  },
+  'doj-nvidia-groq-probe': {
+    standfirst: 'The US Justice Department is reported to be investigating Nvidia’s large technology licence with Groq. The deal gave Nvidia rights to Groq chip designs and moved senior Groq staff to Nvidia. The investigation asks whether this structure avoided normal review of a company purchase.',
+    sections: [
+      {
+        heading: 'The agreement looks different from a normal purchase',
+        paragraphs: [
+          'Groq announced the non-exclusive licence in December 2025. Non-exclusive means Groq can still use or licence the same technology. Founder Jonathan Ross, president Sunny Madra, and other workers joined Nvidia, while Groq said it would remain an independent company and keep GroqCloud running.',
+          'Nvidia’s annual report gives more financial detail. It records $14.4 billion of goodwill and a $2.5 billion technology asset. Nvidia says it paid $13 billion at closing and owed another $4 billion within one year. It says no customer contracts, current products, or company shares were bought.',
+          'Axios, citing the New York Times, reports that the Justice Department is examining whether the deal tried to avoid antitrust review. Antitrust law protects competition and can require government review when a large company buys another company.',
+        ],
+        citations: [1, 2, 3],
+      },
+      {
+        heading: 'AI companies are using new deal structures',
+        paragraphs: [
+          'A licence can be a normal way to share technology. Hiring people from a partner can also be normal. The concern grows when the payments, technology rights, and staff move together and leave much of the smaller company’s value with the larger company.',
+          'Groq builds processors for inference. Inference is the work an AI model does after training, such as answering a question. Faster and cheaper inference is important because every customer request uses computing power.',
+          'Nvidia already has a very strong position in AI chips. Access to Groq’s designs and team may help it improve inference products. Regulators may ask whether the deal weakens a possible rival or closes a path that other chip companies could have used.',
+        ],
+        citations: [1, 2, 3],
+      },
+      {
+        heading: 'An investigation does not prove a broken law',
+        paragraphs: [
+          'The public reporting does not say that Nvidia or Groq has been charged. A request for information is part of fact-finding. The companies may argue that the licence stays open, Groq remains independent, and the agreement did not transfer ownership.',
+          'The important evidence will include contract terms, which workers moved, which products each company can still build, and whether Groq can compete in practice. The price also matters because it shows how much value Nvidia expected from the technology and staff.',
+          'This case could shape more AI deals. If regulators decide that a licence plus a major staff move acts like a purchase, companies may need to report similar agreements earlier. For now, readers should separate the confirmed deal, the reported investigation, and any later legal finding.',
+        ],
+        citations: [1, 2, 3],
+      },
+    ],
+    sources: [
+      { publisher: 'Axios', title: 'DOJ investigates Nvidia’s deal with Groq', date: 'September 10, 2026', url: 'https://www.axios.com/2026/09/10/doj-nvidia-groq-antitrust', kind: 'Research' },
+      { publisher: 'Groq', title: 'Groq and Nvidia enter non-exclusive inference technology licensing agreement', date: 'December 24, 2025', url: 'https://groq.com/newsroom/groq-and-nvidia-enter-non-exclusive-inference-technology-licensing-agreement-to-accelerate-ai-inference-at-global-scale', kind: 'Primary source' },
+      { publisher: 'Nvidia', title: '2026 Annual Report', date: 'May 2026', url: 'https://s201.q4cdn.com/141608511/files/doc_financials/2026/ar/2026-annual-report-web-Hyperlinks.pdf', kind: 'Primary source' },
+    ],
+    methodology: 'We used Axios for the reported Justice Department investigation, Groq for the original agreement, and Nvidia’s filed annual report for the accounting and payment details. We state clearly that an investigation is not a charge or a finding of wrongdoing.',
+  },
+  'salesforce-enterprise-ai-harness': {
+    standfirst: 'Salesforce has introduced a planned architecture for controlling AI agents across a company. It joins data, actions, security, models, and governance in one system. Many base tools exist now, but the main unified experience will start arriving later.',
+    sections: [
+      {
+        heading: 'The harness joins six jobs around an AI agent',
+        paragraphs: [
+          'Salesforce calls the design a Trusted Enterprise AI Harness. A harness is the system around an AI model that gives it information, tools, rules, and checks. It matters when an agent can do work, not only write an answer.',
+          'The six parts cover context, agency, action, governance, security, and models. Context means approved business information. Agency means planning and memory. Action connects the agent to software and work steps. Governance and security set rules. Model choice lets a company use different AI systems for different tasks.',
+          'Salesforce also plans an AI Control Plane. This would be one place to register agents, give them identities, set policy, watch their behaviour, test performance, and follow costs. It is designed to include Salesforce tools and outside AI systems.',
+        ],
+        citations: [1, 2],
+      },
+      {
+        heading: 'Shared controls can reduce repeated work',
+        paragraphs: [
+          'A company may have many agents in sales, service, finance, and operations. If every team builds its own login rules, data links, and safety checks, small differences can create weak points. A shared control layer can make basic rules more consistent.',
+          'The design also tries to keep business context separate from one model. Models change quickly, while customer records, contracts, and company rules stay important. A company could change the model without rebuilding every connection.',
+          'There is a trade-off. One control layer can make management easier, but it also becomes an important point of failure. Wrong permissions or bad data could affect many agents at once. Companies will need strong change records, separate approvals, and a quick way to stop actions.',
+        ],
+        citations: [1, 2],
+      },
+      {
+        heading: 'Buyers should separate today’s tools from the roadmap',
+        paragraphs: [
+          'Salesforce says many technologies under the harness are available today. The new capabilities and unified experience are planned to start rolling out in early fiscal 2028. Pricing, packaging, and exact regional availability will come later.',
+          'That timing changes how buyers should read the announcement. It is a product direction, not one finished package that every customer can switch on now. Teams should base buying decisions on features they can test today, as Salesforce itself advises.',
+          'A useful control plane should answer simple questions: Which agents are running? What can each one read or change? Which person approved the action? What did it cost? Can the company stop it now? Salesforce has described the right areas. Real customer tests will show whether the planned system makes those answers clear.',
+        ],
+        citations: [1, 2],
+      },
+    ],
+    sources: [
+      { publisher: 'Salesforce', title: 'Salesforce introduces the Trusted Enterprise AI Harness', date: 'September 10, 2026', url: 'https://www.salesforce.com/news/stories/enterprise-ai-harness/?bc=OTH', kind: 'Primary source' },
+      { publisher: 'VentureBeat', title: 'Salesforce’s new Enterprise AI Harness seeks to ground agents in shared business context', date: 'September 10, 2026', url: 'https://venturebeat.com/orchestration/many-models-many-agents-many-tasks-salesforces-new-enterprise-ai-harness-seeks-to-ground-all-in-your-shared-business-context', kind: 'Research' },
+    ],
+    methodology: 'We used Salesforce’s announcement for the six parts, control-plane functions, availability, and product limits. We used VentureBeat to confirm the launch and add outside product context. We separate available base tools from planned unified features.',
+  },
   'nvidia-australia-ai-capacity': {
     standfirst: 'Nvidia and eight Australian partners say their sites could support up to 2 gigawatts of AI computing by 2027. The plan could give local teams more access to powerful systems. However, the announcement is a capacity goal, not a list of finished data centres.',
     sections: [

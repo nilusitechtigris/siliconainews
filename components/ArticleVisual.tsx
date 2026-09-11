@@ -3,6 +3,36 @@ import type { CSSProperties } from 'react';
 type ArticleVisualProps = { storyId: string };
 
 const visualCopy: Record<string, { kicker: string; title: string; description: string; aria: string }> = {
+  'anthropic-september-misuse-report': {
+    kicker: 'THREAT PATH 01',
+    title: 'AI can help across several attack steps, while people still choose the target.',
+    description: 'Anthropic reports cases across seven harm areas. The company says it stopped the activity and strengthened safeguards.',
+    aria: 'Security flow from a human choosing a target through AI-supported research, tools, and data theft to provider detection and a blocked account.',
+  },
+  'california-child-ai-safety-laws': {
+    kicker: 'SAFETY LAYERS 02',
+    title: 'Child safety rules connect product design, audits, privacy, and support.',
+    description: 'California’s new laws cover companion chatbots, addictive feeds, child data, parental controls, and crisis response.',
+    aria: 'Four-part child safety diagram showing safer product defaults, an independent audit, limited data collection, and a clear path to human help.',
+  },
+  'deepsky-weather-instruments': {
+    kicker: 'SENSOR STACK 03',
+    title: 'Five planned instruments would study different layers of one storm.',
+    description: 'The full DeepSky system is still being built. Real flights and outside forecast tests must show the benefit.',
+    aria: 'Weather sensor diagram showing microwave, radar, visible and infrared, radio occultation, and reflectometry data flowing into an AI forecast and public warning.',
+  },
+  'doj-nvidia-groq-probe': {
+    kicker: 'DEAL REVIEW 04',
+    title: 'Technology rights, large payments, and staff moves now face a competition review.',
+    description: 'The deal is confirmed and the investigation is reported. No authority has announced a finding of wrongdoing.',
+    aria: 'Deal review flow showing a non-exclusive technology licence, seventeen billion dollars in payments and obligations, staff moving to Nvidia, and a Justice Department investigation with no finding yet.',
+  },
+  'salesforce-enterprise-ai-harness': {
+    kicker: 'CONTROL PLANE 05',
+    title: 'One control layer would track many agents, tools, models, and permissions.',
+    description: 'Some base technology exists now. Salesforce plans to start rolling out the unified experience in early fiscal 2028.',
+    aria: 'Enterprise AI diagram showing agents using approved context and tools through one control plane with identity, policy, cost, and activity checks.',
+  },
   'nvidia-australia-ai-capacity': {
     kicker: 'CAPACITY CHECK 01',
     title: 'A power target becomes useful compute only after several real-world checks.',
@@ -331,6 +361,16 @@ const visualCopy: Record<string, { kicker: string; title: string; description: s
 
 function Diagram({ storyId }: ArticleVisualProps) {
   switch (storyId) {
+    case 'anthropic-september-misuse-report':
+      return <div className="visual-flow"><span>HUMAN TARGET</span><i>→</i><span>AI WORKFLOW</span><i>→</i><span>ATTACK STEPS</span><i>→</i><span className="checkpoint">DETECT + BLOCK</span><div className="cost-line">7 HARM AREAS · PROVIDER-REPORTED</div></div>;
+    case 'california-child-ai-safety-laws':
+      return <div className="visual-ledger">{[['01', 'SAFER DEFAULTS', 'REQUIRED'], ['02', 'INDEPENDENT AUDIT', 'ANNUAL'], ['03', 'CHILD DATA', 'LIMIT'], ['04', 'HUMAN HELP', 'CONNECT']].map(([index, label, state]) => <div key={index}><span>{index}</span><b>{label}</b><i>{state}</i></div>)}</div>;
+    case 'deepsky-weather-instruments':
+      return <div className="visual-flow"><span>5 SENSORS</span><i>→</i><span>STORM DATA</span><i>→</i><span>AI FORECAST</span><i>→</i><span className="checkpoint">PUBLIC WARNING</span><div className="cost-line">PLANNED SYSTEM · NOT YET IN ORBIT</div></div>;
+    case 'doj-nvidia-groq-probe':
+      return <div className="visual-flow"><span>TECH LICENCE</span><i>+</i><span>$17B OBLIGATION</span><i>+</i><span>STAFF MOVE</span><i>→</i><span className="checkpoint">DOJ REVIEW</span><div className="cost-line">INVESTIGATION ≠ FINDING</div></div>;
+    case 'salesforce-enterprise-ai-harness':
+      return <div className="visual-flow"><span>AGENTS + MODELS</span><i>→</i><span>CONTROL PLANE</span><i>→</i><span>DATA + TOOLS</span><i>→</i><span className="checkpoint">CHECKED ACTION</span><div className="cost-line">IDENTITY · POLICY · COST · LOGS</div></div>;
     case 'nvidia-australia-ai-capacity':
       return <div className="visual-flow"><span>UP TO 2 GW</span><i>→</i><span>APPROVED SITES</span><i>→</i><span>GRID + SYSTEMS</span><i>→</i><span className="checkpoint">CUSTOMER USE</span><div className="cost-line">2027 TARGET · NOT BUILT CAPACITY</div></div>;
     case 'suno-v6-licensed-models':
