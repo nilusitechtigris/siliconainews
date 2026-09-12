@@ -63,7 +63,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
             <span><Clock3 size={14} /> {story.time} read</span>
             <span>Published {publication?.label} · {story.published} CEST</span>
             <span>{article.sources.length} linked sources</span>
-            <span>Clear English · B1–B2</span>
+            <span>Written in clear B1–B2 English</span>
           </div>
         </header>
 
@@ -103,7 +103,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
                 <div><span className="body-index">SOURCE LEDGER</span><h2 id="sources-title">Read it for yourself.</h2></div>
                 <ShieldCheck size={26} aria-hidden="true" />
               </div>
-              <p className="sources-intro">We link every source used in this article. Open the original material, check the facts, and make your own decision.</p>
+              <p className="sources-intro">We use short sentences and explain technical words when they first appear. We also link every source, so you can check the facts yourself.</p>
               <ol>
                 {article.sources.map((source, index) => (
                   <li key={source.url}>
