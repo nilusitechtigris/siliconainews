@@ -3,6 +3,36 @@ import type { CSSProperties } from 'react';
 type ArticleVisualProps = { storyId: string };
 
 const visualCopy: Record<string, { kicker: string; title: string; description: string; aria: string }> = {
+  'openai-senate-huggingface-probe': {
+    kicker: 'OVERSIGHT PATH 01',
+    title: 'A serious AI incident moves from company records to independent public review.',
+    description: 'Two senators asked for evidence about the Hugging Face breach. Their requests are questions, not findings against OpenAI.',
+    aria: 'Oversight flow from the July Hugging Face breach through OpenAI records and Senate requests to independent review and a public report.',
+  },
+  'house-ai-safeguards-letter': {
+    kicker: 'LAW PATH 02',
+    title: 'An urgent letter matters only if it becomes public debate, bill text, and a vote.',
+    description: 'Four House members asked leaders to return for AI safeguards. No vote was promised when the letter became public.',
+    aria: 'Law-making flow from a House member letter through committee work and public debate to a possible vote, with the current stage marked at the letter.',
+  },
+  'ai-frontier-pacing-plan': {
+    kicker: 'PACING TEST 03',
+    title: 'Model progress would slow when shared safety tests show that controls are falling behind.',
+    description: 'Dario Amodei proposes outside access and national and international standards. Important triggers and enforcement details remain open.',
+    aria: 'AI pacing loop showing model capability tests, outside safety review, a decision to continue or slow down, and shared rules across companies and countries.',
+  },
+  'openai-habitat-storage': {
+    kicker: 'STORAGE PATH 04',
+    title: 'Habitat routes product requests through shared controls to several storage systems.',
+    description: 'OpenAI reports more than 70 million requests each second and 500 petabytes of data. These are company scale figures.',
+    aria: 'Storage diagram showing ChatGPT, Codex, and other services sending requests through Habitat controls to databases, caches, and file storage in several regions.',
+  },
+  'positron-ai-funding': {
+    kicker: 'CHIP ROADMAP 05',
+    title: 'New funding moves from memory-first design toward a planned production chip in 2027.',
+    description: 'Liberty Global joined the 875-million-dollar round. Positron’s next Asimov chip is not yet in production.',
+    aria: 'Hardware roadmap from an 875-million-dollar funding round through chip design and testing to planned Asimov production in the second half of 2027.',
+  },
   'anthropic-september-misuse-report': {
     kicker: 'THREAT PATH 01',
     title: 'AI can help across several attack steps, while people still choose the target.',
@@ -361,6 +391,16 @@ const visualCopy: Record<string, { kicker: string; title: string; description: s
 
 function Diagram({ storyId }: ArticleVisualProps) {
   switch (storyId) {
+    case 'openai-senate-huggingface-probe':
+      return <div className="visual-flow"><span>JULY BREACH</span><i>→</i><span>OPENAI RECORDS</span><i>→</i><span>SENATE REQUESTS</span><i>→</i><span className="checkpoint">OUTSIDE REVIEW</span><div className="cost-line">QUESTIONS · NOT LEGAL FINDINGS</div></div>;
+    case 'house-ai-safeguards-letter':
+      return <div className="visual-flow"><span className="checkpoint">LETTER</span><i>→</i><span>COMMITTEE WORK</span><i>→</i><span>PUBLIC DEBATE</span><i>→</i><span>VOTE?</span><div className="cost-line">NO HOUSE VOTE PROMISED</div></div>;
+    case 'ai-frontier-pacing-plan':
+      return <div className="visual-flow"><span>CAPABILITY TEST</span><i>→</i><span>OUTSIDE REVIEW</span><i>→</i><span className="checkpoint">CONTINUE OR SLOW</span><i>→</i><span>SHARED RULES</span><div className="cost-line">TRIGGERS AND ENFORCEMENT STILL OPEN</div></div>;
+    case 'openai-habitat-storage':
+      return <div className="visual-flow"><span>PRODUCT REQUEST</span><i>→</i><span className="checkpoint">HABITAT</span><i>→</i><span>ROUTE + LIMIT</span><i>→</i><span>STORE + CACHE</span><div className="cost-line">70M+ REQUESTS/S · 500+ PB · OPENAI-REPORTED</div></div>;
+    case 'positron-ai-funding':
+      return <div className="visual-flow"><span>$875M ROUND</span><i>→</i><span>ASIMOV DESIGN</span><i>→</i><span>CHIP TEST</span><i>→</i><span className="checkpoint">H2 2027 PRODUCTION</span><div className="cost-line">ROADMAP · NOT SHIPPING HARDWARE</div></div>;
     case 'anthropic-september-misuse-report':
       return <div className="visual-flow"><span>HUMAN TARGET</span><i>→</i><span>AI WORKFLOW</span><i>→</i><span>ATTACK STEPS</span><i>→</i><span className="checkpoint">DETECT + BLOCK</span><div className="cost-line">7 HARM AREAS · PROVIDER-REPORTED</div></div>;
     case 'california-child-ai-safety-laws':
