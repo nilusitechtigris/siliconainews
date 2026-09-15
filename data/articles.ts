@@ -19,6 +19,196 @@ export type ArticleContent = {
 };
 
 export const articlesByStoryId: Record<string, ArticleContent> = {
+  'apple-siri-ai-beta': {
+    standfirst: 'Apple began the public beta of Siri AI on September 14. It can work with personal information, understand screen content, and take more actions across apps. The release is important, but it is not equally available to every user.',
+    sections: [
+      {
+        heading: 'The assistant now works with more of a person’s context',
+        paragraphs: [
+          'Siri AI can search a user’s messages, email, and photos when permission allows it. Apple says it can combine these details across several steps. For example, it may find a recipe in an email and add its ingredients to a shopping list.',
+          'The assistant can also understand some content on the screen. A person could ask about a sports page and then add future games to a calendar. This is more useful than a voice tool that only answers simple questions.',
+          'These abilities also increase the cost of a mistake. The system may find the wrong message, misunderstand a screen, or prepare an unwanted action. The interface should show the source and let the person check important changes before they happen.',
+        ],
+        citations: [1, 2, 3],
+      },
+      {
+        heading: 'Apple mixes local models with private cloud systems',
+        paragraphs: [
+          'Apple says the new system uses Apple Foundation Models made with help from Google and Gemini models. Some work runs on the device. Larger tasks can use Apple’s Private Cloud Compute servers.',
+          'This split can protect private information and keep simple actions fast. It does not remove every risk. People still need clear controls for history, app access, cloud use, and deletion.',
+          'The new Siri app can sync conversation history through iCloud. This makes a discussion available across Apple devices. It also means the product must make saved history easy to find, correct, and remove.',
+        ],
+        citations: [1, 3],
+      },
+      {
+        heading: 'The rollout has several practical limits',
+        paragraphs: [
+          'The beta starts in English. Apple plans French, Japanese, Korean, Portuguese, and Spanish support next month. Siri AI is not initially available on iPhone, iPad, or Apple Watch in the European Union, and it is not available in China.',
+          'Only devices that support Apple Intelligence can run the new features. Some server-based features also have daily limits. Apple says people will later be able to pay for more access, but it has not published the price.',
+          'A beta label is a fair warning that the system may change. Apple should report common failures, limits, and important safety updates. Users should test the assistant with low-risk tasks before trusting it with messages, files, or actions.',
+        ],
+        citations: [1, 2],
+      },
+    ],
+    sources: [
+      { publisher: 'Apple', title: 'Siri AI, a profoundly more capable and personal assistant, is here', date: 'September 14, 2026', url: 'https://www.apple.com/newsroom/2026/09/siri-ai-a-profoundly-more-capable-and-personal-assistant-is-here/', kind: 'Primary source' },
+      { publisher: 'TechRadar', title: 'Which iPhones support iOS 27 and Siri AI? Apple’s compatibility list explained', date: 'September 14, 2026', url: 'https://www.techradar.com/phones/ios/ios-27-and-siri-ai-compatibility-explained', kind: 'Research' },
+      { publisher: 'Apple', title: 'Apple introduces Siri AI, a profoundly more capable and personal assistant', date: 'June 8, 2026', url: 'https://www.apple.com/newsroom/2026/06/apple-introduces-siri-ai-a-profoundly-more-capable-and-personal-assistant/', kind: 'Primary source' },
+    ],
+    methodology: 'We used Apple’s September release note for current availability, limits, architecture, and features. We used TechRadar for an outside device check and Apple’s June announcement for the earlier product description. We treat privacy and performance statements as Apple claims.',
+  },
+  'nvidia-cuda-q-logical': {
+    standfirst: 'Nvidia added CUDA-Q Logical to its open quantum software platform. The layer connects programs, error correction, and hardware estimates. It may make designs easier to compare, but it does not solve the physical limits of today’s quantum computers.',
+    sections: [
+      {
+        heading: 'The new layer sits between an idea and a future machine',
+        paragraphs: [
+          'Quantum computers are very sensitive to noise. A useful calculation may need many physical qubits to create a smaller number of reliable logical qubits. Error-correction code must find and repair problems while the program runs.',
+          'CUDA-Q Logical gives developers a common way to describe this work. Teams can change the error-correction method, hardware design, or decoder without rebuilding the full application. The software can then estimate the resources a design may need.',
+          'Nvidia says Fermilab used the system to cut one design process from five months to three weeks. That is a project result reported by the partners. It is not proof that every quantum team will work seven times faster.',
+        ],
+        citations: [1, 2],
+      },
+      {
+        heading: 'A shared benchmark may improve honest comparison',
+        paragraphs: [
+          'Sandia National Laboratories helped create QUOPS, a benchmark that measures the size and speed of useful quantum circuits. It was tested on processors from Quantinuum, Google, and IBM, using the same basic method across different hardware.',
+          'The research paper says current computational power must grow by about five orders of magnitude for the challenge problems it studied. This large gap explains why error correction and fair resource estimates are so important.',
+          'Nvidia has added QUOPS support to CUDA-Q. A common test can reduce unclear marketing, but teams still need to publish settings, error rates, hardware access, and failed runs. One number cannot explain every useful workload.',
+        ],
+        citations: [1, 3],
+      },
+      {
+        heading: 'Open software helps, while hardware evidence must follow',
+        paragraphs: [
+          'CUDA-Q is open source, so researchers can inspect the code and add new parts. This can make it easier for universities, hardware companies, and laboratories to test the same ideas without one closed tool controlling the result.',
+          'The main promise is better planning. A team can connect a program to a detailed estimate before a large fault-tolerant machine exists. That may reveal which operation, code, or hardware limit makes a design too expensive.',
+          'Readers should not confuse a software roadmap with working quantum advantage. Useful fault-tolerant computing still needs better qubits, control electronics, error correction, cooling, and repeatable results on real machines.',
+        ],
+        citations: [1, 2, 3],
+      },
+    ],
+    sources: [
+      { publisher: 'Nvidia', title: 'Nvidia expands open-source CUDA-Q platform for fault-tolerant quantum computing', date: 'September 14, 2026', url: 'https://nvidianews.nvidia.com/news/nvidia-expands-open-source-cuda-q-platform-for-fault-tolerant-quantum-computing', kind: 'Primary source' },
+      { publisher: 'Nvidia Research', title: 'CUDA-Q Logical: Retargetable compilation for fault-tolerant quantum computing', date: 'September 14, 2026', url: 'https://research.nvidia.com/publication/2026-09_cuda-q-logical-retargetable-compilation-fault-tolerant-quantum-computing', kind: 'Research' },
+      { publisher: 'arXiv', title: 'Benchmarking the computational power of quantum computers', date: 'September 10, 2026', url: 'https://arxiv.org/abs/2609.12146', kind: 'Research' },
+    ],
+    methodology: 'We used Nvidia’s release for the product and Fermilab statement, its research page for the compiler design, and the public QUOPS paper for the benchmark method and scale gap. We separate company results from independent proof of useful quantum advantage.',
+  },
+  'google-ai-economy-atlas': {
+    standfirst: 'Google updated its AI and Economy Atlas with an interactive public tool and new research on science work. The data shows clear differences between countries and jobs. It describes use of Google products, not the whole economy.',
+    sections: [
+      {
+        heading: 'The Atlas makes differences easier to explore',
+        paragraphs: [
+          'Google’s Atlas groups large numbers of AI interactions by task, occupation, country, and language. The September update adds an open interactive explorer. Readers can compare patterns instead of seeing only one headline number.',
+          'Google reports that creative occupations form 19 percent of work-related AI use in India. That is 1.6 times the global average. In the United States, computer and maths occupations form 30 percent, about twice the share elsewhere.',
+          'These figures show the mix of activity inside the dataset. They do not mean that 19 percent of Indian creative work uses AI. They also do not show how many jobs were improved, changed, or removed.',
+        ],
+        citations: [1, 2],
+      },
+      {
+        heading: 'The science study finds speed and new bottlenecks',
+        paragraphs: [
+          'A linked study combines more than 2,600 specialised AI models with a survey of over 600 scientists in the United States and United Kingdom. Nearly half of those surveyed said they use AI every day.',
+          'Scientists reported saving just under seven hours each week. Yet saved time did not remove every delay. Researchers still had to check results, choose among more ideas, and wait for physical experiments or clinical work.',
+          'This is a useful reminder that faster digital work may move the bottleneck. A model can help find a pattern, but a laboratory must still test it. A larger list of possible ideas can also create more review work.',
+        ],
+        citations: [1, 3],
+      },
+      {
+        heading: 'The method should travel with every chart',
+        paragraphs: [
+          'Atlas is based on de-identified use of Google AI products. People who use other services, avoid AI, or lack internet access are not fully represented. Country and job comparisons should keep that limit visible.',
+          'The explorer is still valuable because readers can inspect more than one result. It can help researchers ask why adoption differs and which tasks people choose. It should not be used alone to claim that AI caused an economic change.',
+          'Future updates should show how the sample changes over time and how categories are checked. Good economic evidence needs clear definitions, stable measures, and links to independent labour, wage, and productivity data.',
+        ],
+        citations: [1, 2, 3],
+      },
+    ],
+    sources: [
+      { publisher: 'Google', title: 'AI and Economy Atlas: September 2026 update', date: 'September 15, 2026', url: 'https://blog.google/innovation-and-ai/technology/ai/ai-economy-atlas-september-2026/', kind: 'Primary source' },
+      { publisher: 'Google AI', title: 'AI and Economy Atlas interactive explorer', date: 'September 15, 2026', url: 'https://ai.google/economy/atlas/', kind: 'Research' },
+      { publisher: 'Google AI', title: 'AI in Science: Adoption, impact and the changing research process', date: 'September 2026', url: 'https://ai.google/static/documents/AI-in-Science.pdf', kind: 'Research' },
+    ],
+    methodology: 'We used Google’s update for the new comparisons, opened the public Atlas, and read the linked science study. We describe the figures as Google research and survey results. We do not treat use of Google products as a measure of all AI use or as proof of job impact.',
+  },
+  'microsoft-election-ai-literacy': {
+    standfirst: 'Microsoft updated its US voter-information campaign for an election shaped by AI answers. Its advice is simple: open citations, check the original page, and use official state or local sources for voting rules.',
+    sections: [
+      {
+        heading: 'The campaign gives voters a short checking routine',
+        paragraphs: [
+          'Microsoft calls the campaign “Check. Recheck. Vote.” It now explains how people should handle election information from an AI assistant. The first step is to check whether the answer includes a source and when that source was updated.',
+          'The second step is to open the original material. A citation can point to an old page, a weak source, or content that does not support the answer. For registration, polling places, and deadlines, voters should use official local or state election pages.',
+          'The routine is useful because AI answers can sound certain even when they are wrong. Election details also change by place and date. A correct answer for one county or an earlier election may be unsafe for another voter.',
+        ],
+        citations: [1, 2],
+      },
+      {
+        heading: 'The wider programme supports officials and local news',
+        paragraphs: [
+          'Microsoft says it works with national groups for secretaries of state and election directors. Its AI and Elections Skills Hub with Arizona State University offers prompts, case studies, tools, and training for election teams.',
+          'The company reports that the programme has reached more than 1,000 officials across 45 states. It also says a security toolkit has reached over 3,000 campaigns and related groups. These reach figures come from Microsoft.',
+          'A separate partnership with the Associated Press supports election reporting at 10 newsrooms across 14 sites in Washington state. Local reporting can explain rules and results with details that a general AI service may miss.',
+        ],
+        citations: [1, 2, 3],
+      },
+      {
+        heading: 'Helpful advice still needs product-level safeguards',
+        paragraphs: [
+          'A public guide cannot fix every bad AI answer. Providers should test election questions before and during voting, keep official sources current, and make uncertainty visible. They also need a fast path for election offices to report errors.',
+          'Search results and chat tools should avoid inventing a polling location or deadline. When the system cannot confirm a fact, it should say so and guide the voter to an official page. A short delay is safer than a confident guess.',
+          'The user also needs an easy way to report a problem. Providers should publish what they fixed and how quickly they acted. That turns a general literacy campaign into a system people can check and improve.',
+        ],
+        citations: [1, 2, 3],
+      },
+    ],
+    sources: [
+      { publisher: 'Microsoft', title: '2026 midterm elections: Helping voters navigate election information in the age of AI', date: 'September 15, 2026', url: 'https://blogs.microsoft.com/on-the-issues/2026/09/15/2026-midterm-elections-helping-voters-navigate-election-information-in-the-age-of-ai/', kind: 'Primary source' },
+      { publisher: 'Arizona State University', title: 'AI and Elections Clinic Skills Hub', date: 'Accessed September 15, 2026', url: 'https://modl.spa.asu.edu/skills-hub', kind: 'Primary source' },
+      { publisher: 'Associated Press', title: 'AP Fund for Journalism and Microsoft expand election resources for Washington newsrooms', date: 'September 15, 2026', url: 'https://ap.org/media-center/press-releases/2026/ap-fund-for-journalism-microsoft-expand-election-resources-for-washington-newsrooms/', kind: 'Primary source' },
+    ],
+    methodology: 'We used Microsoft’s announcement for the campaign and company reach figures. We checked the Arizona State University hub and Associated Press partnership directly. We present the literacy steps as useful guidance, not proof that Microsoft’s AI systems are always accurate.',
+  },
+  'claude-financial-advisors': {
+    standfirst: 'Anthropic released Claude for Financial Advisors on September 14. The product connects to portfolio, customer, planning, and meeting systems. It can prepare work, but the professional adviser remains responsible for regulated decisions.',
+    sections: [
+      {
+        heading: 'The product brings several work systems into one place',
+        paragraphs: [
+          'Financial advisers often collect information from separate tools before a client meeting. Claude can connect to customer records, portfolio systems, planning software, estate tools, and meeting notes when a firm allows access.',
+          'A plugin combines these connections with skills for meeting preparation, portfolio review, follow-up drafts, and compliance checks. Partners include BlackRock, Charles Schwab, Addepar, Envestnet, iCapital, Orion, Wealthbox, Wealth.com, and Zocks.',
+          'The useful idea is not one more chatbot. It is a shared work surface that can find approved context and prepare the next step. The risk is that one tool may now reach many sensitive systems at once.',
+        ],
+        citations: [1, 2, 3],
+      },
+      {
+        heading: 'Human review is part of the product promise',
+        paragraphs: [
+          'Anthropic says investment recommendations, client messages, compliance decisions, and other regulated activities still need human review and approval. The system can stage an action, but the adviser must decide whether it is correct and suitable.',
+          'The compliance skill can flag language against the US Securities and Exchange Commission marketing rule. It can also help record review work. A flag is not a legal decision, and a missing warning does not make a message safe.',
+          'Anthropic recommends Enterprise plans for registered advisers because they include audit logs. Logs matter when a firm must explain which data, model, person, and approval created a client result.',
+        ],
+        citations: [1, 2],
+      },
+      {
+        heading: 'Connected data needs strict borders',
+        paragraphs: [
+          'Firms should begin with low-risk tasks and limited access. A meeting brief may need client history, but it may not need the right to change a portfolio. Each connector should expose only the data and actions required for that workflow.',
+          'Advisers also need to check whether information is current. A useful answer should show the source system and update time. The interface should make conflicts visible instead of quietly choosing one record.',
+          'The product may save preparation time, but the launch does not prove a measured benefit for every firm. Useful evidence would include error rates, review time, corrected drafts, client outcomes, security events, and the cost of human oversight.',
+        ],
+        citations: [1, 2, 3],
+      },
+    ],
+    sources: [
+      { publisher: 'Anthropic', title: 'Claude for Financial Advisors', date: 'September 14, 2026', url: 'https://claude.com/blog/claude-for-financial-advisors', kind: 'Primary source' },
+      { publisher: 'Reuters', title: 'Anthropic targets financial advisers with new Claude tool', date: 'September 14, 2026', url: 'https://live.euronext.com/en/financial-news/anthropic-targets-financial-advisers-new-claude-tool', kind: 'Research' },
+      { publisher: 'Wealthbox', title: 'Wealthbox brings advisor CRM data to Claude for Financial Advisors', date: 'September 14, 2026', url: 'https://www.prnewswire.com/news-releases/wealthbox-brings-advisor-crm-data-to-claude-for-financial-advisors-302877837.html', kind: 'Primary source' },
+    ],
+    methodology: 'We used Anthropic’s launch page for product scope, partners, and approval rules. Reuters provided independent confirmation, and Wealthbox confirmed one live connector. We do not treat vendor time-saving claims as measured results for all advisers.',
+  },
   'openai-senate-huggingface-probe': {
     standfirst: 'Two US senators have asked OpenAI for records about its July breach of Hugging Face. Their requests focus on testing, monitoring, and outside review. The questions are serious, but they are not legal findings against OpenAI.',
     sections: [

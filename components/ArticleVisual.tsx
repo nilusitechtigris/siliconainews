@@ -3,6 +3,36 @@ import type { CSSProperties } from 'react';
 type ArticleVisualProps = { storyId: string };
 
 const visualCopy: Record<string, { kicker: string; title: string; description: string; aria: string }> = {
+  'apple-siri-ai-beta': {
+    kicker: 'PERSONAL ACTION PATH 01',
+    title: 'Personal context becomes useful only when a person can see and approve the action.',
+    description: 'Siri AI uses device and cloud models. Availability still depends on hardware, language, region, and daily limits.',
+    aria: 'Personal assistant flow from messages, email, photos, and screen content through Siri AI to a user approval before an app action.',
+  },
+  'nvidia-cuda-q-logical': {
+    kicker: 'QUANTUM STACK 02',
+    title: 'One software layer connects a program to error correction, resource estimates, and future hardware.',
+    description: 'CUDA-Q Logical and the QUOPS benchmark can improve comparisons. They do not remove the large hardware gap.',
+    aria: 'Quantum computing flow from an application through CUDA-Q Logical and error correction to a resource estimate, a benchmark, and future fault-tolerant hardware.',
+  },
+  'google-ai-economy-atlas': {
+    kicker: 'EVIDENCE MAP 03',
+    title: 'AI-use data can show patterns without proving a change in jobs or productivity.',
+    description: 'The Atlas covers Google product use. Its science survey reports saved time and new bottlenecks that still need study.',
+    aria: 'Evidence diagram showing Google AI interactions grouped by country and occupation, followed by method checks before any claim about jobs or economic impact.',
+  },
+  'microsoft-election-ai-literacy': {
+    kicker: 'VOTER CHECK 04',
+    title: 'An AI answer should lead back to a current and official election source.',
+    description: 'Microsoft asks voters to check citations, reopen the source, and confirm local rules before acting.',
+    aria: 'Election information flow from an AI answer through its citation and original page to confirmation on a state or local election website.',
+  },
+  'claude-financial-advisors': {
+    kicker: 'ADVISER CONTROL 05',
+    title: 'Connected financial data can prepare work, while regulated decisions stay with the adviser.',
+    description: 'Claude can draft and review across approved systems. Human approval and a clear audit record remain required.',
+    aria: 'Financial adviser workflow from approved customer and portfolio systems through Claude to a prepared draft, human review, and recorded approval.',
+  },
   'openai-senate-huggingface-probe': {
     kicker: 'OVERSIGHT PATH 01',
     title: 'A serious AI incident moves from company records to independent public review.',
@@ -391,6 +421,16 @@ const visualCopy: Record<string, { kicker: string; title: string; description: s
 
 function Diagram({ storyId }: ArticleVisualProps) {
   switch (storyId) {
+    case 'apple-siri-ai-beta':
+      return <div className="visual-flow"><span>MAIL · PHOTOS · SCREEN</span><i>→</i><span>SIRI AI</span><i>→</i><span className="checkpoint">USER APPROVAL</span><i>→</i><span>APP ACTION</span><div className="cost-line">DEVICE + PRIVATE CLOUD · BETA LIMITS APPLY</div></div>;
+    case 'nvidia-cuda-q-logical':
+      return <div className="visual-flow"><span>QUANTUM PROGRAM</span><i>→</i><span>CUDA-Q LOGICAL</span><i>→</i><span>ERROR CORRECTION</span><i>→</i><span className="checkpoint">QUOPS TEST</span><div className="cost-line">SOFTWARE ROADMAP · HARDWARE GAP REMAINS</div></div>;
+    case 'google-ai-economy-atlas':
+      return <div className="visual-ledger">{[['01', 'GOOGLE AI USE', 'OBSERVED'], ['02', 'COUNTRY + JOB', 'GROUPED'], ['03', 'METHOD LIMITS', 'CHECK'], ['04', 'JOB IMPACT', 'NOT PROVEN']].map(([index, label, state]) => <div key={index}><span>{index}</span><b>{label}</b><i>{state}</i></div>)}</div>;
+    case 'microsoft-election-ai-literacy':
+      return <div className="visual-flow"><span>AI ANSWER</span><i>→</i><span>OPEN CITATION</span><i>→</i><span>CHECK DATE</span><i>→</i><span className="checkpoint">OFFICIAL LOCAL SOURCE</span><div className="cost-line">CHECK · RECHECK · VOTE</div></div>;
+    case 'claude-financial-advisors':
+      return <div className="visual-flow"><span>APPROVED SYSTEMS</span><i>→</i><span>CLAUDE DRAFT</span><i>→</i><span className="checkpoint">ADVISER REVIEW</span><i>→</i><span>AUDIT LOG</span><div className="cost-line">REGULATED DECISIONS STAY HUMAN</div></div>;
     case 'openai-senate-huggingface-probe':
       return <div className="visual-flow"><span>JULY BREACH</span><i>→</i><span>OPENAI RECORDS</span><i>→</i><span>SENATE REQUESTS</span><i>→</i><span className="checkpoint">OUTSIDE REVIEW</span><div className="cost-line">QUESTIONS · NOT LEGAL FINDINGS</div></div>;
     case 'house-ai-safeguards-letter':
