@@ -3,6 +3,36 @@ import type { CSSProperties } from 'react';
 type ArticleVisualProps = { storyId: string };
 
 const visualCopy: Record<string, { kicker: string; title: string; description: string; aria: string }> = {
+  'aiforce-any-interface': {
+    kicker: 'INTERFACE PATH 01',
+    title: 'Business data can move into many AI screens, while permissions stay at the centre.',
+    description: 'AIforce connects Salesforce actions to Claude, Slack, AWS, and Google tools. Important changes still need a visible approval gate.',
+    aria: 'Enterprise interface flow from Salesforce data and permission rules through AIforce to Claude, Slack, Amazon, and Google interfaces, ending with human approval.',
+  },
+  'salesforce-koa-crm-model': {
+    kicker: 'MODEL TEST 02',
+    title: 'A specialised model moves from synthetic CRM tasks to pilots and outside tests.',
+    description: 'Salesforce reports fewer action errors on its own benchmark. Independent results and real customer failures still need to be published.',
+    aria: 'Model development flow from Nvidia Nemotron through synthetic CRM training and a Salesforce benchmark to customer pilots and independent testing.',
+  },
+  'agility-digit-5': {
+    kicker: 'ROBOT SHIFT 03',
+    title: 'Faster charging and a higher payload support work, while safety decides deployment.',
+    description: 'Digit 5 can lift 22.7 kilograms and run for 90 minutes. Early access is planned for 2027.',
+    aria: 'Humanoid robot work loop showing a 22.7 kilogram lift, 90 minutes of work, nine minutes of charging, and an independent workplace safety check.',
+  },
+  'gensyn-open-1b-audit': {
+    kicker: 'AUDIT CHAIN 04',
+    title: 'Published data, checkpoints, and hashes let an auditor replay a training step.',
+    description: 'Open-1b adds evidence beyond open weights. Gensyn reports that its reproducible runtime is about five times slower.',
+    aria: 'AI training audit flow from published data and code through a saved checkpoint and replayed training step to a matching public hash.',
+  },
+  'claude-small-business-workflows': {
+    kicker: 'SMALL START 05',
+    title: 'A useful workflow begins with narrow access, a draft, and a clear owner decision.',
+    description: 'Claude offers 43 small-business workflows and 27 new integrations. Messages, payments, and public posts should begin in approval mode.',
+    aria: 'Small business workflow from connected accounting, customer, and email tools through a Claude draft to owner approval and a recorded action.',
+  },
   'apple-siri-ai-beta': {
     kicker: 'PERSONAL ACTION PATH 01',
     title: 'Personal context becomes useful only when a person can see and approve the action.',
@@ -421,6 +451,16 @@ const visualCopy: Record<string, { kicker: string; title: string; description: s
 
 function Diagram({ storyId }: ArticleVisualProps) {
   switch (storyId) {
+    case 'aiforce-any-interface':
+      return <div className="visual-flow"><span>SALESFORCE DATA</span><i>→</i><span>PERMISSIONS</span><i>→</i><span>AIFORCE</span><i>→</i><span className="checkpoint">APPROVE ACTION</span><div className="cost-line">CLAUDE · SLACK · AWS · GOOGLE</div></div>;
+    case 'salesforce-koa-crm-model':
+      return <div className="visual-flow"><span>NEMOTRON</span><i>→</i><span>SYNTHETIC CRM TASKS</span><i>→</i><span>SALESFORCE TEST</span><i>→</i><span className="checkpoint">OUTSIDE TEST</span><div className="cost-line">PILOT NOW · WIDER US RELEASE PLANNED</div></div>;
+    case 'agility-digit-5':
+      return <div className="visual-ledger">{[['01', 'PAYLOAD', '22.7 KG'], ['02', 'RUN TIME', '90 MIN'], ['03', 'CHARGE', '9 MIN'], ['04', 'EARLY ACCESS', '2027']].map(([index, label, state]) => <div key={index}><span>{index}</span><b>{label}</b><i>{state}</i></div>)}</div>;
+    case 'gensyn-open-1b-audit':
+      return <div className="visual-flow"><span>DATA + CODE</span><i>→</i><span>CHECKPOINT</span><i>→</i><span>REPLAY STEP</span><i>→</i><span className="checkpoint">MATCH HASH</span><div className="cost-line">PUBLIC EVIDENCE · ~5× SLOWER RUNTIME</div></div>;
+    case 'claude-small-business-workflows':
+      return <div className="visual-flow"><span>CONNECTED TOOLS</span><i>→</i><span>CLAUDE DRAFT</span><i>→</i><span className="checkpoint">OWNER APPROVAL</span><i>→</i><span>RECORDED ACTION</span><div className="cost-line">43 WORKFLOWS · 27 NEW INTEGRATIONS</div></div>;
     case 'apple-siri-ai-beta':
       return <div className="visual-flow"><span>MAIL · PHOTOS · SCREEN</span><i>→</i><span>SIRI AI</span><i>→</i><span className="checkpoint">USER APPROVAL</span><i>→</i><span>APP ACTION</span><div className="cost-line">DEVICE + PRIVATE CLOUD · BETA LIMITS APPLY</div></div>;
     case 'nvidia-cuda-q-logical':

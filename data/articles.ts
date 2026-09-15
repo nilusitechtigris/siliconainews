@@ -19,6 +19,196 @@ export type ArticleContent = {
 };
 
 export const articlesByStoryId: Record<string, ArticleContent> = {
+  'aiforce-any-interface': {
+    standfirst: 'Salesforce introduced AIforce at Dreamforce on September 15. It lets people and AI agents reach Salesforce data and actions from tools such as Claude, Slack, Amazon services, and Gemini Enterprise. The idea removes screens, but it also makes clear control more important.',
+    sections: [
+      {
+        heading: 'Salesforce is moving work outside the normal Salesforce screen',
+        paragraphs: [
+          'AIforce is a new interface layer over Salesforce data, rules, and actions. A worker can ask a question in another tool. The answer can use customer records and prepare a change without opening the main Salesforce app.',
+          'The first versions include links to Claude, Slack, and Agentforce Coworker. Salesforce says the Claude connection includes 37 sales skills. These cover tasks such as company research, meeting preparation, pipeline review, and draft record updates.',
+          'The design can remove many clicks. It can also hide where a fact came from or what will change. A useful AI screen should show the source record, the planned action, and the person who must approve it.',
+        ],
+        citations: [1],
+      },
+      {
+        heading: 'Amazon and Google add different routes into the same business data',
+        paragraphs: [
+          'AWS says Amazon Quick can use Salesforce context and actions. AWS agents can also appear in Slack. A new link between Amazon Connect and Agentforce Voice is meant to support two-way voice work between the services.',
+          'Google Cloud says Gemini Enterprise can use Salesforce data and capabilities without a custom connection for every task. Salesforce has also started running live Hyperforce traffic on Google Cloud. A wider North American release is planned for November.',
+          'Many parts have different release stages. Some are available now, while others are beta, preview, or planned. Buyers should check the exact region, price, data path, and support level before they change an important workflow.',
+        ],
+        citations: [2, 3],
+      },
+      {
+        heading: 'Permissions become part of the user experience',
+        paragraphs: [
+          'Salesforce says requests keep the access rules that a company already uses. It also says model providers do not keep the business data after answering. These are important claims, but each connection needs a real test.',
+          'Teams should begin with read-only work. They can test whether the assistant finds the right record and cites it clearly. Write access should come later, with approval for messages, customer changes, purchases, or other high-impact actions.',
+          'A good audit trail should record the user, model, source data, proposed action, approval, and final result. If the system makes a mistake, an administrator should be able to find the cause and reverse the change quickly.',
+        ],
+        citations: [1, 2, 3],
+      },
+    ],
+    sources: [
+      { publisher: 'Salesforce', title: 'Salesforce unveils AIforce, bringing the full power of its platform to any interface', date: 'September 15, 2026', url: 'https://www.salesforce.com/news/stories/aiforce-announcement/', kind: 'Primary source' },
+      { publisher: 'Amazon', title: 'AWS and Salesforce put CRM data, AI agents, and model choice into the tools teams use every day', date: 'September 15, 2026', url: 'https://press.aboutamazon.com/aws/2026/9/aws-and-salesforce-put-crm-data-ai-agents-and-model-choice-into-the-tools-teams-use-every-day', kind: 'Primary source' },
+      { publisher: 'Google Cloud', title: 'Salesforce and Google Cloud unify infrastructure and agents for one connected AI stack', date: 'September 15, 2026', url: 'https://www.googlecloudpresscorner.com/2026-09-15-Salesforce-and-Google-Cloud-Unify-Infrastructure-and-Agents-for-One-Connected-AI-Stack', kind: 'Primary source' },
+    ],
+    methodology: 'We compared the Salesforce, AWS, and Google Cloud announcements. We separated features available now from previews and planned releases. Security, retention, and performance statements remain company claims until customers and independent reviewers test them.',
+  },
+  'salesforce-koa-crm-model': {
+    standfirst: 'Salesforce and Nvidia introduced Koa, a reasoning model for sales, service, and other customer work. It is based on Nvidia Nemotron and trained with synthetic business tasks. The early error result comes from a Salesforce benchmark.',
+    sections: [
+      {
+        heading: 'Koa is a specialised model, not a new general chatbot',
+        paragraphs: [
+          'Salesforce built Koa by adding new training to Nvidia Nemotron 3 Super. The goal is to make the model reason through several business steps. Examples include updating a sales opportunity, routing a service case, or scheduling a follow-up.',
+          'The training used synthetic scenarios instead of real customer data. Salesforce says the scenarios covered more than 14 industries. Each one joined a business role, a goal, and the tool calls needed to finish the work.',
+          'This narrow training can be useful. A smaller specialist may understand company actions better than a general model. It can also run inside a controlled service, with clearer rules about data and model access.',
+        ],
+        citations: [1, 2],
+      },
+      {
+        heading: 'The main performance claim needs outside testing',
+        paragraphs: [
+          'Salesforce says Koa matches or beats leading models on its CRM benchmark and makes three times fewer action errors. The test includes common business tasks. However, Salesforce created the benchmark and reported the result.',
+          'A strong test should publish the task set, scoring rules, model versions, tool setup, and failed examples. Independent teams should also repeat the work. Without these details, readers cannot compare the result fairly with another model.',
+          'Tool errors matter more than a polished answer. A wrong field update can harm a customer or change a forecast. Tests should measure bad actions, safe refusal, recovery, and whether the model asks for help when information is unclear.',
+        ],
+        citations: [1, 3],
+      },
+      {
+        heading: 'The first release is a pilot, not wide use',
+        paragraphs: [
+          'Koa is available to selected Agentforce pilot customers. Salesforce expects a wider US release in winter 2026. It says several companies are testing the model, including Xero, Formula 1, and UChicago Medicine.',
+          'Salesforce controls the model weights and runs training and use inside its own trust boundary. That may help customers with strict data rules. It does not remove the need for access limits, human approval, logs, and incident reporting.',
+          'The important question is simple: does the model complete real work with fewer harmful errors? Pilot users should publish clear task results and limits. A company benchmark is a useful start, but it is not the final answer.',
+        ],
+        citations: [1, 2, 3],
+      },
+    ],
+    sources: [
+      { publisher: 'Salesforce', title: 'Announcing Koa: Salesforce’s first CRM reasoning model, built on Nvidia Nemotron', date: 'September 15, 2026', url: 'https://www.salesforce.com/news/press-releases/2026/09/15/koa-reasoning-model/', kind: 'Primary source' },
+      { publisher: 'Salesforce', title: 'Salesforce unveils AIforce, bringing the full power of its platform to any interface', date: 'September 15, 2026', url: 'https://www.salesforce.com/news/stories/aiforce-announcement/', kind: 'Primary source' },
+      { publisher: 'Yahoo Tech / TechCrunch', title: 'Salesforce and Nvidia’s new reasoning model is everything the AI labs should fear', date: 'September 15, 2026', url: 'https://tech.yahoo.com/ai/meta-ai/articles/salesforce-nvidia-reasoning-model-everything-120000558.html', kind: 'Research' },
+    ],
+    methodology: 'We used the joint announcement for the model design, benchmark claim, pilots, and release plan. We used Salesforce’s wider AIforce note and independent TechCrunch reporting for context. We label the benchmark result as a Salesforce claim.',
+  },
+  'agility-digit-5': {
+    standfirst: 'Agility Robotics introduced Digit 5, a stronger humanoid robot for warehouses and factories. The company says it can work near people without a fixed safety fence. Early access starts in 2027, so the new system still needs broad field evidence.',
+    sections: [
+      {
+        heading: 'The hardware is built for longer and heavier work',
+        paragraphs: [
+          'Digit 5 can repeatedly lift up to 50 pounds, or 22.7 kilograms. That is a 40 percent increase over the earlier design. New tool mounts also let a customer change the gripper for different jobs.',
+          'Agility says the battery can run for 90 minutes and charge in nine minutes. The earlier robot had a much lower run-to-charge ratio. Fast charging could let several robots share charging points during a long shift.',
+          'The robot stands 1.81 metres tall and can reach 2.2 metres. Its planned jobs include moving containers, loading machines, preparing kits, checking quality, and building pallets. These tasks still need testing in each real facility.',
+        ],
+        citations: [1],
+      },
+      {
+        heading: 'Safety beside people is the central promise',
+        paragraphs: [
+          'Digit uses several sensors and AI to detect a nearby person. It can avoid the person, stop, or move into a seated position. Lights and sounds are meant to show workers what the robot plans to do.',
+          'An independent safety controller watches the response when a person enters an unsafe area. The robot also uses Nvidia IGX Thor and Halos Core. Nvidia describes Halos as a safety system for robots that work around people.',
+          'A safety design is not the same as a completed safety case. Independent reviewers should test blocked sensors, unusual clothing, bad light, dropped objects, network loss, and emergency stops. Workers also need simple training and a clear reporting path.',
+        ],
+        citations: [1, 2],
+      },
+      {
+        heading: 'Orders and factory capacity are not delivered results',
+        paragraphs: [
+          'Agility reports more than 65,000 hours of operation for Digit 4 and about 98 percent task accuracy at one GXO site. It also reports more than 300 million dollars in Digit 5 orders tied to contract milestones.',
+          'The company says its Oregon factory could make up to 10,000 robots each year at full capacity. Early Digit 5 access is expected in the first half of 2027. General availability is planned by the end of that year.',
+          'These numbers show interest and production plans. They do not show long-term safety, uptime, cost, or value across many customers. The best evidence will be public incident rates, completed work, repair time, and worker feedback.',
+        ],
+        citations: [1, 2, 3],
+      },
+    ],
+    sources: [
+      { publisher: 'Agility Robotics', title: 'Agility unveils Digit 5 humanoid robot built for cooperatively safe work at scale', date: 'September 15, 2026', url: 'https://www.agilityrobotics.com/content/agility-unveils-digit-5-humanoid-robot-built-for-cooperatively-safe-work-at-scale', kind: 'Primary source' },
+      { publisher: 'Nvidia', title: 'Nvidia Halos for Robotics', date: 'Accessed September 15, 2026', url: 'https://www.nvidia.com/en-us/ai-trust-center/halos/robotics/', kind: 'Primary source' },
+      { publisher: 'Portland Business Journal', title: 'Agility Robotics unveils latest robot that already has $300M in sales booked', date: 'September 15, 2026', url: 'https://www.bizjournals.com/portland/news/2026/09/15/agility-robotics-digit-five-launch.html', kind: 'Research' },
+    ],
+    methodology: 'We used Agility’s release for specifications, field history, orders, and dates. We checked Nvidia’s Halos description and independent local reporting. Most performance figures come from Agility and should be tested after Digit 5 reaches customer sites.',
+  },
+  'gensyn-open-1b-audit': {
+    standfirst: 'Gensyn released open-1b with code, data, checkpoints, and a public record of its training steps. An auditor can replay a step on different hardware and compare the result. This improves evidence, but it is slower than normal training.',
+    sections: [
+      {
+        heading: 'The release tries to connect model weights to their full history',
+        paragraphs: [
+          'Open model weights show what a model became. They do not prove which data and operations created those weights. Gensyn adds a public hash for the data, model state, optimiser state, and gradients at every training step.',
+          'An auditor can choose a step, load the earlier checkpoint, and replay the work. The new result should match the published hash. Gensyn says this works on Nvidia hardware, x86 and Arm processors, and Apple Silicon.',
+          'The release includes base and instruction models, training code, data, checkpoints, an audit tool, and a dataset search tool. This gives outside researchers more evidence than a normal open-weight release.',
+        ],
+        citations: [1, 2],
+      },
+      {
+        heading: 'Reproducibility required strict and slower computing rules',
+        paragraphs: [
+          'Normal processors can add the same numbers in different orders. Tiny differences then grow during training. Gensyn fixed the order of operations, random choices, data delivery, and communication between machines.',
+          'The model has 1.61 billion parameters and used hundreds of billions of training tokens. Gensyn reports that the main run took 27.8 active days on 48 Nvidia H100 processors. The full work lasted about 29.5 calendar days.',
+          'The reproducible system reached about five percent model computing use. Gensyn says this is about five times slower than an optimised PyTorch system with the same recipe. Clear evidence therefore comes with a real speed and energy cost.',
+        ],
+        citations: [1],
+      },
+      {
+        heading: 'A public audit needs independent people to use it',
+        paragraphs: [
+          'Gensyn invites people to replay any of 80,957 steps. One laptop cannot check the whole run quickly, so the project records checks from many machines. The public site shows which parts have been checked.',
+          'Matching a hash can confirm that a published step follows the published recipe. It cannot prove that the model is safe, fair, or useful. Reviewers must still study the data, licence, test results, and possible harmful behaviour.',
+          'The release is an important technical experiment, not a final standard. Independent teams should reproduce random steps, examine missing evidence, and publish failures. Larger models will also show whether the method can scale at a practical cost.',
+        ],
+        citations: [1, 2, 3],
+      },
+    ],
+    sources: [
+      { publisher: 'Gensyn', title: 'Introducing open-1b: the first model you do not have to trust', date: 'September 15, 2026', url: 'https://www.gensyn.ai/news/introducing-open-1b-auditable-training', kind: 'Primary source' },
+      { publisher: 'Gensyn', title: 'Open-1b training audits', date: 'September 15, 2026', url: 'https://open1b.gensyn.ai/', kind: 'Research' },
+      { publisher: 'PR Newswire', title: 'Gensyn challenges Big Tech with an auditable AI model', date: 'September 15, 2026', url: 'https://www.prnewswire.com/news-releases/gensyn-challenges-big-tech-with-the-industrys-first-auditable-ai-model-302878850.html', kind: 'Primary source' },
+    ],
+    methodology: 'We read Gensyn’s technical release and opened its public audit site. We used the timed press release to confirm the launch. The design, speed, and scale figures are Gensyn claims until independent auditors publish their own results.',
+  },
+  'claude-small-business-workflows': {
+    standfirst: 'Anthropic expanded Claude for Small Business with 43 workflows and 27 new integrations. The tools can prepare or schedule everyday business work. Owners should begin with limited access and keep approval on for messages, payments, and public posts.',
+    sections: [
+      {
+        heading: 'The workflows cover work that often crosses several apps',
+        paragraphs: [
+          'The new workflows include weekly reports, lead replies, proposals, marketing, invoices, and month-end accounts. Claude can use connected tools such as QuickBooks, PayPal, HubSpot, Google Workspace, Microsoft 365, Stripe, Shopify, and Xero.',
+          'An owner can ask for a Monday report that joins cash, sales, the customer pipeline, overdue invoices, and the calendar. Another workflow can turn a voice note and old project records into a draft proposal.',
+          'This can help a small team because the information already exists. The difficult work is finding it and joining it safely. A ready workflow may also be easier to review than a long custom automation built from many steps.',
+        ],
+        citations: [1, 2, 3],
+      },
+      {
+        heading: 'Scheduled work changes the risk',
+        paragraphs: [
+          'Each workflow starts in approval mode. Claude can prepare the work, but it waits before anything sends, posts, or pays. After testing, an owner can allow some workflows to run on a chosen schedule.',
+          'A schedule is useful for a weekly report or a draft. It is more risky for customer messages, money, hiring, or public content. One wrong action can damage trust before the owner notices it.',
+          'The safe path is to start with read-only access and one task. The owner should check the sources and results for several runs. Write access should use small limits, named approvers, and a simple emergency stop.',
+        ],
+        citations: [1, 2, 3],
+      },
+      {
+        heading: 'Company examples show possibilities, not normal results',
+        paragraphs: [
+          'Anthropic reports that the earlier plugin was installed more than 900,000 times. It also gives examples of companies that saved time or connected more sales to new workflows. These results were selected by Anthropic and its customers.',
+          'A small business should measure its own result. Useful measures include hours saved, mistakes found, payments delayed, customer replies corrected, and money spent on the service. Staff should also report where the workflow creates extra checking work.',
+          'Training matters because many owners do not have an IT team. Anthropic plans free workshops and partner sessions. Clear teaching should include permissions, privacy, fraud, recovery, and when a human professional must make the final decision.',
+        ],
+        citations: [1, 2, 3],
+      },
+    ],
+    sources: [
+      { publisher: 'Anthropic', title: 'Claude for Small Business launches new workflows, integrations, and training programs', date: 'September 15, 2026', url: 'https://claude.com/blog/claude-for-small-business-launches-new-workflows-integrations-and-training-programs', kind: 'Primary source' },
+      { publisher: 'Anthropic', title: 'Claude for Small Business', date: 'Accessed September 15, 2026', url: 'https://claude.com/solutions/small-business', kind: 'Primary source' },
+      { publisher: 'Anthropic', title: 'Claude for Small Business plugin', date: 'Accessed September 15, 2026', url: 'https://claude.com/plugins/small-business', kind: 'Primary source' },
+    ],
+    methodology: 'We used Anthropic’s launch post for the new counts and customer examples. We checked the product page and setup guide for approval and workflow details. We treat adoption and business results as company-reported examples, not average outcomes.',
+  },
   'apple-siri-ai-beta': {
     standfirst: 'Apple began the public beta of Siri AI on September 14. It can work with personal information, understand screen content, and take more actions across apps. The release is important, but it is not equally available to every user.',
     sections: [
