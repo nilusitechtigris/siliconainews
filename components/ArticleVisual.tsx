@@ -3,6 +3,36 @@ import type { CSSProperties } from 'react';
 type ArticleVisualProps = { storyId: string };
 
 const visualCopy: Record<string, { kicker: string; title: string; description: string; aria: string }> = {
+  'ai-energy-management-alliance': {
+    kicker: 'GRID RESPONSE 01',
+    title: 'Flexible computing turns a data centre from a fixed load into a measured grid resource.',
+    description: 'The alliance proposes clear response rules. Real sites must still prove speed, duration, reliability, and local benefit.',
+    aria: 'Energy flow from the power grid to a flexible AI data centre that can shift computing, use stored energy, and report a verified response.',
+  },
+  'lawzero-sovereign-safe-ai-funding': {
+    kicker: 'PUBLIC RESEARCH 02',
+    title: 'Public funding moves into researchers, sovereign computing, tests, and published evidence.',
+    description: 'Canada and Germany plan up to 300 million Canadian dollars. Scientist AI remains a research programme.',
+    aria: 'Funding path from Canada and Germany to LawZero researchers and sovereign computing, followed by Scientist AI tests and public evidence.',
+  },
+  'cohesity-agent-resilience': {
+    kicker: 'RECOVERY PATH 03',
+    title: 'Agent recovery must restore trusted state and repair the systems the agent changed.',
+    description: 'Cohesity starts with selected Amazon Bedrock customers. Microsoft and Google support remains on the roadmap.',
+    aria: 'Recovery flow from agent memory and configuration through an immutable recovery point to a restored agent, repaired data, and human verification.',
+  },
+  'salesforce-missionforce-openai': {
+    kicker: 'PUBLIC CONTROL 04',
+    title: 'A government AI action should keep its source, permission, reviewer, and appeal path visible.',
+    description: 'Missionforce plans OpenAI access through Amazon Bedrock and connections to ChatGPT for approved workflows.',
+    aria: 'Government AI flow from official records through permissions and a model to human review, an audit record, and a citizen appeal route.',
+  },
+  'eit-ai-robotics-community': {
+    kicker: 'ROBOTICS PIPELINE 05',
+    title: 'Research reaches a real factory through funding, testing, safety evidence, and a paying customer.',
+    description: 'The EIT programme runs through 2028. Its innovation, scale-up, and investment figures are targets.',
+    aria: 'European robotics pathway from a research idea through founder support, scale-up funding, industrial validation, safety evidence, and customer deployment.',
+  },
   'aiforce-any-interface': {
     kicker: 'INTERFACE PATH 01',
     title: 'Business data can move into many AI screens, while permissions stay at the centre.',
@@ -451,6 +481,16 @@ const visualCopy: Record<string, { kicker: string; title: string; description: s
 
 function Diagram({ storyId }: ArticleVisualProps) {
   switch (storyId) {
+    case 'ai-energy-management-alliance':
+      return <div className="visual-flow"><span>GRID SIGNAL</span><i>→</i><span>SHIFT COMPUTE</span><i>+</i><span>STORED ENERGY</span><i>→</i><span className="checkpoint">VERIFY RESPONSE</span><div className="cost-line">SPEED · DURATION · RELIABILITY · LOCAL COST</div></div>;
+    case 'lawzero-sovereign-safe-ai-funding':
+      return <div className="visual-flow"><span>UP TO C$300M</span><i>→</i><span>RESEARCH + COMPUTE</span><i>→</i><span>SCIENTIST AI</span><i>→</i><span className="checkpoint">OUTSIDE TEST</span><div className="cost-line">PUBLIC MILESTONES · SAFETY EVIDENCE · FAILURES</div></div>;
+    case 'cohesity-agent-resilience':
+      return <div className="visual-flow"><span>AGENT STATE</span><i>→</i><span>TRUSTED SNAPSHOT</span><i>→</i><span>RESTORE + REPAIR</span><i>→</i><span className="checkpoint">HUMAN VERIFY</span><div className="cost-line">MEMORY · SETTINGS · DATA · CREDENTIALS</div></div>;
+    case 'salesforce-missionforce-openai':
+      return <div className="visual-flow"><span>OFFICIAL RECORDS</span><i>→</i><span>PERMISSIONS</span><i>→</i><span>MODEL ACTION</span><i>→</i><span className="checkpoint">REVIEW + APPEAL</span><div className="cost-line">MODEL · SOURCE · APPROVER · AUDIT LOG</div></div>;
+    case 'eit-ai-robotics-community':
+      return <div className="visual-flow"><span>RESEARCH IDEA</span><i>→</i><span>FOUNDER SUPPORT</span><i>→</i><span>FACTORY TEST</span><i>→</i><span className="checkpoint">SAFE DEPLOYMENT</span><div className="cost-line">FUNDING · CUSTOMER · COMPLIANCE · EVIDENCE</div></div>;
     case 'aiforce-any-interface':
       return <div className="visual-flow"><span>SALESFORCE DATA</span><i>→</i><span>PERMISSIONS</span><i>→</i><span>AIFORCE</span><i>→</i><span className="checkpoint">APPROVE ACTION</span><div className="cost-line">CLAUDE · SLACK · AWS · GOOGLE</div></div>;
     case 'salesforce-koa-crm-model':

@@ -19,6 +19,196 @@ export type ArticleContent = {
 };
 
 export const articlesByStoryId: Record<string, ArticleContent> = {
+  'ai-energy-management-alliance': {
+    standfirst: 'Google, Nvidia, Emerald AI, and energy companies launched the AI Energy Management Alliance on September 16. The group wants data centres to change electricity use when the grid is under pressure. That could help, but only measured performance can prove the value.',
+    sections: [
+      {
+        heading: 'The alliance treats computing as a flexible power user',
+        paragraphs: [
+          'Large AI sites normally ask utilities for steady power at all hours. A flexible site could move some computing to another time. It could also use stored energy or lower its demand during a grid emergency.',
+          'The new coalition brings together 20 technology and energy organisations. Nvidia, Google, and Emerald AI are leading the launch. Members also include Anthropic, National Grid, AES, Constellation, NRG, RWE, and GridUnity.',
+          'The group says flexibility could help projects connect sooner and reduce the need for some grid upgrades. These are goals, not proven savings. Every local grid has different limits, prices, and reliability needs.',
+        ],
+        citations: [1, 2, 3],
+      },
+      {
+        heading: 'A useful promise needs a clear technical contract',
+        paragraphs: [
+          'The alliance plans to focus on results instead of one required technology. Important measures include response speed, duration, predictability, and behaviour during an emergency. Utilities also need accurate operating data.',
+          'A data centre may have some jobs that can wait and others that cannot. Training work may move more easily than a live service. Operators must protect users while also keeping the power promise they made.',
+          'The difficult question is who carries the risk. A failed response could raise costs or weaken grid reliability. Agreements should define tests, penalties, emergency rules, and the evidence needed to confirm each response.',
+        ],
+        citations: [1, 2, 3],
+      },
+      {
+        heading: 'Public results will matter more than membership',
+        paragraphs: [
+          'The launch is useful because power limits now slow many AI projects. A shared method could help utilities compare proposals. It could also stop every company from inventing a different way to describe flexibility.',
+          'The alliance should publish results from real sites. Readers need to see megawatts changed, response time, duration, missed events, local prices, and any effect on emissions. A company claim is not enough.',
+          'Communities also need a voice. Flexible use can reduce pressure, but a large site still needs land, water, equipment, and new wires. Faster grid access should follow clear public rules and local review.',
+        ],
+        citations: [1, 2, 3],
+      },
+    ],
+    sources: [
+      { publisher: 'Nvidia', title: 'Emerald AI, Google and Nvidia launch alliance to advance flexible AI data centers', date: 'September 16, 2026', url: 'https://blogs.nvidia.com/blog/ai-energy-management-alliance/', kind: 'Primary source' },
+      { publisher: 'Axios', title: 'Tech giants launch flexible-power coalition for data centers', date: 'September 16, 2026', url: 'https://www.axios.com/2026/09/16/tech-giants-launch-flexible-power-coalition-data-centers', kind: 'Research' },
+      { publisher: 'GridUnity', title: 'GridUnity selected as founding board member of new AI Energy Management Alliance', date: 'September 16, 2026', url: 'https://www.prnewswire.com/news-releases/gridunity-selected-as-founding-board-member-of-new-ai-energy-management-alliance-302879872.html', kind: 'Primary source' },
+    ],
+    methodology: 'We compared the launch statements from Nvidia and GridUnity with independent reporting from Axios. We treat expected grid, price, and environmental benefits as coalition goals until utilities publish measured operating results.',
+  },
+  'lawzero-sovereign-safe-ai-funding': {
+    standfirst: 'Canada and Germany plan to give LawZero up to C$300 million. The nonprofit, founded by Yoshua Bengio, is developing Scientist AI. It aims to produce evidence without acting toward its own hidden goal. The design is promising, but it remains research.',
+    sections: [
+      {
+        heading: 'Two governments are funding one different AI path',
+        paragraphs: [
+          'Canada plans to invest C$150 million. Germany plans to add €100 million, subject to European Commission notification. LawZero describes the combined commitment as worth up to C$300 million.',
+          'The money will support researchers, engineering, and computing. LawZero will build dedicated computing capacity in Canada with Hypertec and 5C. It also plans to open an office in Berlin.',
+          'The Canadian government expects the project to create 360 full-time jobs. Jobs and local computing are useful public outcomes. They do not prove that the new AI method will work as planned.',
+        ],
+        citations: [1, 2],
+      },
+      {
+        heading: 'Scientist AI is designed to answer without pursuing a goal',
+        paragraphs: [
+          'Many AI agents choose actions to reach an objective. LawZero wants Scientist AI to work more like an evidence tool. It should make predictions, show uncertainty, and avoid having its own preferred outcome.',
+          'LawZero says the system could help researchers and watch other powerful AI systems. It also wants outputs to be transparent, auditable, and verifiable. These are difficult technical goals, not current product guarantees.',
+          'A system without an action goal can still be wrong. It may use weak evidence or miss an important factor. Outside researchers need access to methods, tests, limits, and failed examples.',
+        ],
+        citations: [2, 3],
+      },
+      {
+        heading: 'Public money needs public milestones',
+        paragraphs: [
+          'The project supports Canadian and German control over advanced AI research. This can reduce dependence on foreign companies. It can also create a public-interest path beside commercial frontier labs.',
+          'The funding announcement does not give every delivery date or test. Governments should publish staged milestones. Useful measures include research releases, outside evaluations, computing costs, safety results, and reasons for any delay.',
+          'Scientist AI should be judged against the systems it aims to improve. Can it find false claims, explain uncertainty, and help people make safer decisions? Strong answers require repeated independent tests, not only a good theory.',
+        ],
+        citations: [1, 2, 3],
+      },
+    ],
+    sources: [
+      { publisher: 'Government of Canada', title: 'Canada and Germany invest in LawZero to build a new approach to safe, sovereign AI', date: 'September 16, 2026', url: 'https://www.canada.ca/en/innovation-science-economic-development/news/2026/09/canada-and-germany-invest-in-lawzero-to-build-a-new-approach-to-safe-sovereign-ai.html', kind: 'Primary source' },
+      { publisher: 'LawZero', title: 'LawZero receives a commitment of up to $300M in joint funding from Canada and Germany', date: 'September 16, 2026', url: 'https://lawzero.org/en/news/lawzero-receives-commitment-300m-joint-funding-canada-and-germany', kind: 'Primary source' },
+      { publisher: 'LawZero', title: 'Scientist AI research programme', date: 'Accessed September 16, 2026', url: 'https://lawzero.org/en/research', kind: 'Research' },
+    ],
+    methodology: 'We used the Canadian government release for funding conditions, jobs, and infrastructure. We checked LawZero for the combined value and research goal. Claims about future safety remain goals until independent tests support them.',
+  },
+  'cohesity-agent-resilience': {
+    standfirst: 'Cohesity introduced Agent Resilience on September 16. The tool is designed to map an AI agent, protect its memory and settings, and restore a trusted version after a failure. It begins with selected Amazon Bedrock customers before wider availability.',
+    sections: [
+      {
+        heading: 'An agent has more state than a normal application',
+        paragraphs: [
+          'An AI agent may depend on prompts, memory, settings, guardrails, credentials, runtimes, and connected data. A normal database backup may protect some business records. It may not restore the exact state that guided the agent.',
+          'Cohesity says Agent Topology maps these parts and their connections. The product can protect memory and configuration with saved recovery points. It can also cover databases, files, and other systems touched by the agent.',
+          'This is a practical idea. An agent can change many records before a person sees the problem. Recovery must therefore include both the agent state and the work that the agent changed.',
+        ],
+        citations: [1, 2, 3],
+      },
+      {
+        heading: 'The first release is limited',
+        paragraphs: [
+          'The product starts with Amazon Bedrock AgentCore and Bedrock Agents. It is available now to selected customers. Cohesity targets general availability by the end of 2026 and lists Microsoft and Google support on its roadmap.',
+          'The company says it uses immutable backups and clean recovery environments. Those controls can reduce risk. Customers still need to test how often snapshots occur and how much recent work could be lost.',
+          'A restore is not automatically safe. Teams must confirm that the recovery point is clean. They also need to rotate exposed credentials, review connected systems, and understand why the agent failed.',
+        ],
+        citations: [1, 2, 3],
+      },
+      {
+        heading: 'Recovery tests should be routine, not emergency theatre',
+        paragraphs: [
+          'Cohesity reports that many surveyed organisations feel unprepared for harmful agent actions. This is company-sponsored research. It shows concern, but it does not prove that the new product solves every risk.',
+          'A useful test should start with a clear failure. Teams can corrupt agent memory, change a setting, or let a test agent alter safe sample data. They should then measure detection, restore time, lost work, and remaining damage.',
+          'Monitoring, access limits, and human approval still matter. Recovery is the last safety layer, not the first. It becomes valuable when teams practise it and record what worked before a real incident arrives.',
+        ],
+        citations: [1, 2, 3],
+      },
+    ],
+    sources: [
+      { publisher: 'Cohesity', title: 'Cohesity introduces Agent Resilience to protect and recover AI agent infrastructure', date: 'September 16, 2026', url: 'https://www.cohesity.com/newsroom/press/cohesity-introduces-agent-resilience-to-protect-ai-agent-infrastructure/', kind: 'Primary source' },
+      { publisher: 'Cohesity', title: 'Agent Resilience for AI agents', date: 'Accessed September 16, 2026', url: 'https://www.cohesity.com/platform/agent-resilience/', kind: 'Primary source' },
+      { publisher: 'Cohesity', title: 'Cohesity Agent Resilience: protect and recover the infrastructure that powers AI agents', date: 'September 16, 2026', url: 'https://www.cohesity.com/blogs/cohesity-agent-resilience/', kind: 'Primary source' },
+    ],
+    methodology: 'We compared the launch release, product page, and technical blog. All performance and survey figures come from Cohesity. We separate features available to selected customers from roadmap items and wider future availability.',
+  },
+  'salesforce-missionforce-openai': {
+    standfirst: 'Salesforce announced new Missionforce tools and a partnership with OpenAI on September 16. Government agencies could use OpenAI models through Amazon Bedrock and connect approved work to ChatGPT. Public decisions still need strict human control.',
+    sections: [
+      {
+        heading: 'The partnership joins models with government records and actions',
+        paragraphs: [
+          'Salesforce says OpenAI models will connect to Public Sector Solutions through Amazon Bedrock. Missionforce workflows are also planned for ChatGPT. Staff could ask questions about approved records and start a multi-step task.',
+          'The Policy Engine aims to turn approved policy documents into clear software rules and test cases. A person must review the output before use. This is important because a small rule error can affect many people.',
+          'Missionforce Operations covers procurement, suppliers, invoices, and logistics. Salesforce also plans to use tuned Nvidia models in private or isolated environments. Different agencies may therefore use different model and hosting paths.',
+        ],
+        citations: [1, 2, 3],
+      },
+      {
+        heading: 'The word secure needs details',
+        paragraphs: [
+          'Government data can include personal, financial, security, or operational information. A secure design must name the data location, retention period, access rights, model version, logs, and people who can approve an action.',
+          'Some environments may be air-gapped, while others use cloud services. These are not the same risk. Agencies should publish which option they use and what information can cross each boundary.',
+          'Salesforce says existing permissions can govern connected work. Permissions are necessary, but they can be too broad or out of date. Teams need regular access reviews and alerts for unusual agent activity.',
+        ],
+        citations: [1, 2, 3],
+      },
+      {
+        heading: 'Public accountability cannot disappear inside a workflow',
+        paragraphs: [
+          'A system may help staff find a rule or prepare a decision. The responsible public officer must still check important facts. Citizens also need a way to understand and challenge an incorrect result.',
+          'Every high-impact task should record the source document, model, prompt, proposed action, human reviewer, and final result. Agencies need a tested way to pause the service and correct affected records.',
+          'The announcement gives examples, not public deployment results. Before wide use, agencies should run controlled pilots and publish error rates. Independent auditors should test bias, security, access control, and appeal routes.',
+        ],
+        citations: [1, 2, 3],
+      },
+    ],
+    sources: [
+      { publisher: 'Salesforce', title: 'Salesforce expands Missionforce with purpose-built AI and new partnership with OpenAI', date: 'September 16, 2026', url: 'https://www.salesforce.com/news/stories/missionsforce-expansion-agents-nvidia-openai-partnerships/', kind: 'Primary source' },
+      { publisher: 'Salesforce', title: 'Announcing Koa: Salesforce first CRM reasoning model, built on Nvidia Nemotron', date: 'September 15, 2026', url: 'https://www.salesforce.com/news/press-releases/2026/09/15/koa-reasoning-model/', kind: 'Primary source' },
+      { publisher: 'Salesforce', title: 'Salesforce and OpenAI customers are putting AI to work', date: 'September 15, 2026', url: 'https://www.salesforce.com/blog/openai-agentforce/', kind: 'Primary source' },
+    ],
+    methodology: 'We used Salesforce materials to map the planned OpenAI, Amazon, Nvidia, and ChatGPT connections. Availability and security claims are company statements. We separate current products, selected access, and planned integrations.',
+  },
+  'eit-ai-robotics-community': {
+    standfirst: 'The European Institute of Innovation and Technology expanded its AI programme into the EIT AI and Robotics Community on September 16. It will support founders, scale-ups, and factory tests through 2028. Delivery now matters more than the new name.',
+    sections: [
+      {
+        heading: 'The programme joins research, funding, and industrial tests',
+        paragraphs: [
+          'The community is led by 28DIGITAL with EIT Food, EIT Health, and EIT Culture and Creativity. It covers health, manufacturing, food, biotechnology, robotics, and advanced sensing.',
+          'Its first open call is the AI Entrepreneurs Lab. Up to 15 people can join a five-day programme in Paris, Brussels, and Amsterdam. Up to five teams may receive a €10,000 prize.',
+          'Other parts target later growth. The Growth Studio offers €100,000 to €200,000 for selected companies. FactoryX will connect startups with industrial partners for shared real-world tests.',
+        ],
+        citations: [1, 2],
+      },
+      {
+        heading: 'Europe is trying to close a known delivery gap',
+        paragraphs: [
+          'Europe produces strong robotics research, but many teams struggle to reach customers and large deployments. Hardware needs more time and money than a software demo. It also needs safe places for testing.',
+          'The programme aims to launch 14 innovations and support more than 10 promising scale-ups. It hopes participants can use the programme to reach more than €80 million in investment by 2028.',
+          'These numbers are targets. A prize or workshop can help an early team, but it does not build a factory-ready robot. Later funding, patient customers, supply chains, and strong engineering support remain essential.',
+        ],
+        citations: [1, 2],
+      },
+      {
+        heading: 'Safety evidence should grow with the company',
+        paragraphs: [
+          'The community says teams will prepare for the EU AI Act and the Machinery Regulation. This matters when a model controls a machine near workers, patients, food, or expensive equipment.',
+          'Each project should define the task, operating limits, human role, stop method, and incident process. Factory tests should record failures as carefully as successful demonstrations.',
+          'By 2028, readers should be able to see more than investment totals. Useful results include products deployed, safe operating hours, customers retained, jobs created, and lessons from projects that stopped.',
+        ],
+        citations: [1, 2, 3],
+      },
+    ],
+    sources: [
+      { publisher: 'European Institute of Innovation and Technology', title: 'The EIT AI Community becomes the EIT AI and Robotics Community', date: 'September 16, 2026', url: 'https://www.eit.europa.eu/news-events/news/eit-ai-community-eit-ai-robotics-community', kind: 'Primary source' },
+      { publisher: 'EIT AI and Robotics Community', title: 'AI Entrepreneurs Lab', date: 'Accessed September 16, 2026', url: 'https://ai.eitcommunity.eu/entrepreneurs-lab', kind: 'Primary source' },
+      { publisher: 'European Commission', title: 'AI Act regulatory framework', date: 'Accessed September 16, 2026', url: 'https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai', kind: 'Research' },
+    ],
+    methodology: 'We checked the EIT announcement and application page for dates, places, funding, and targets. We used the European Commission page for the wider AI rules. Programme results remain future goals until EIT reports delivery.',
+  },
   'aiforce-any-interface': {
     standfirst: 'Salesforce introduced AIforce at Dreamforce on September 15. It lets people and AI agents reach Salesforce data and actions from tools such as Claude, Slack, Amazon services, and Gemini Enterprise. The idea removes screens, but it also makes clear control more important.',
     sections: [
