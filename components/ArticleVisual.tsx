@@ -3,6 +3,36 @@ import type { CSSProperties } from 'react';
 type ArticleVisualProps = { storyId: string };
 
 const visualCopy: Record<string, { kicker: string; title: string; description: string; aria: string }> = {
+  'openai-misalignment-framework': {
+    kicker: 'DISCLOSURE LOOP 01',
+    title: 'A model boundary failure moves from detection to a public report and an outside check.',
+    description: 'OpenAI published six cases and a three-track process. The process remains a company policy rather than a shared industry rule.',
+    aria: 'AI safety flow from unexpected model behaviour through internal investigation, public disclosure, a planned fix, and independent review.',
+  },
+  'huawei-atlas-960e-superpod': {
+    kicker: 'OPTICAL FABRIC 02',
+    title: 'Near-packaged optics links thousands of AI processors with fewer separate optical modules.',
+    description: 'Huawei claims lower power use and higher reliability. Delivered systems and independent tests must confirm those figures.',
+    aria: 'Hardware diagram showing up to 4,096 Ascend processors linked by Hi-ONE optical engines inside one Atlas 960E SuperPoD, followed by independent performance and power tests.',
+  },
+  'ratepayer-protection-act': {
+    kicker: 'COST PATH 03',
+    title: 'A large data centre would face a state review before new grid costs reach other customers.',
+    description: 'The House passed the bill 417 to 3. Senate action and detailed state rules are still required.',
+    aria: 'Energy cost flow from a data centre above 100 megawatts through a state utility review to a site contract, with household customers protected from extra grid costs.',
+  },
+  'scotland-ai-principles-summit': {
+    kicker: 'PROMISE TEST 04',
+    title: 'Shared AI principles need public text, measurable duties, evidence, and outside review.',
+    description: 'The Scotland meeting discussed human dignity and social benefit. It announced no binding rule or finished framework.',
+    aria: 'Governance path from a private AI summit through published principles and measurable company duties to independent review and public results.',
+  },
+  'amazon-generac-backup-power': {
+    kicker: 'RESILIENCE LEDGER 05',
+    title: 'Backup generators protect computing during an outage while adding fuel, cost, and emissions.',
+    description: 'Generac expects 2.4 billion dollars of initial deliveries in 2027 and 2028. The wider 8 billion dollar figure is a possible payment threshold.',
+    aria: 'Data centre power diagram showing the normal electric grid, an outage, backup generators, restored server power, and a public ledger for fuel, emissions, tests, and failures.',
+  },
   'ai-energy-management-alliance': {
     kicker: 'GRID RESPONSE 01',
     title: 'Flexible computing turns a data centre from a fixed load into a measured grid resource.',
